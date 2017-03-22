@@ -1,0 +1,32 @@
+\newpage
+\subsection{IU52 Pantalla de vista de consulta de libros}
+
+\subsubsection{Objetivo}
+	En esta pantalla se mostrará la informacion necesaria relacionada con la informacion del libro buscado.  
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al momento de mostrar los resultados obtenidos de la busqueda.
+	Si en la base de datos no hay algún registro del libro buscado en cuestion, se muestra el mensaje de error. 
+
+\IUfig[.7]{../images/cu5/UI52PantallaVistaConsulta}{UI52}{Pantalla de Vista de la Consulta.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Vista de los resultados obtenidos en la busqueda del libro.
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{OK}: Muestra la \IUref{UI51}{Pantalla Consulta de libros}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf [E1]} Error al conectar a la BD.
+		\item {\bf MSG1} No se ha encontrado registros de los libros solicitados. Intente nuevamente.
+	\end{Citemize}

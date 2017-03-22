@@ -1,0 +1,33 @@
+\newpage
+\subsection{IU51 Pantalla de Consulta de libros}
+
+\subsubsection{Objetivo}
+	Pantalla de Búsqueda, en esta interfaz se podrán buscar la ubicación de los libros para su consulta dentro de la biblioteca. 
+
+\subsubsection{Diseño}
+	Esta pantalla aparece seleccionar la sección 'Consulta de Libros en Existencia', una vez que se acceda, se debe seleccionar el tipo de filtro por el cual se va a buscar el libro, puede ser por título del libro, autor, categoría, número de páginas, fecha de publicación y editorial.   \\\\
+	
+
+\IUfig[.7]{../images/cu5/UI51PantallaConsulta}{UI51}{Pantalla de Consulta de Libros.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Texto de busqueda: Este texto servirá como parametro para hacer la busqueda en la base de datos.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Buscar}: Activa el algoritmo para buscar los libros con el filtro seleccionado y el texto de busqueda introducido. Ademas redirecciona a la \IUref{UI52}{Pantalla de vista de consulta de libros} donde se mostrará la informacion obtenida.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf [E1]} Error al conectar a la BD.
+		\item {\bf [E2]} Error al buscar el libro.
+		\item {\bf MSG1} No se ha encontrado registros publicaciones con esos criterios de búsqueda. 
+	\end{Citemize}
