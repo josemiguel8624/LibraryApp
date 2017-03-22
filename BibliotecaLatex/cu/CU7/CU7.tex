@@ -10,7 +10,7 @@
 		\UCitem{Entradas}{
 						\begin{itemize}
 							\item ID Usuario.
-							\item ISBN del libro.
+							\item Nombre del libro.
 						\end{itemize}
 					}
 		\UCitem{Salidas}{Se redireccionará al usuario a una pantalla donde muestre los resultados de su peticion.}
@@ -26,7 +26,7 @@
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] Dará click en  \IUbutton{Pretsamo de Libros} de la interfaz \IUref{UI01}{Pantalla de Inicio}  .
-		\UCpaso[\UCactor] Llenará el formulario de la interfaz \IUref{UI02}{Pantalla de prestamo a domicilio} \BRitem Se llenara con el ID del usuario y el 				ISBN del libro que el usuario quiere como pretsamo  \Trayref{A}.
+		\UCpaso[\UCactor] Llenará el formulario de la interfaz \IUref{UI02}{Pantalla de prestamo a domicilio} \BRitem Se llenara con el ID del usuario y el 				Nombre del libro que el usuario quiere como pretsamo  \Trayref{A}.
 		\UCpaso[\UCactor] Dará click en  \IUbutton{Realizar tramite} 
 		\UCpaso[\UCsist] Se conecta a la BD \Trayref{B}.
 		\UCpaso[\UCsist] Verificará la cuenta del usuario \Trayref{C} \Trayref{D} \Trayref{E} \Trayref{F}. .
