@@ -1,0 +1,71 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU12}{Apartar Libro}{
+		Este caso de uso tiene como objetivo describir la funcionalidad del sistema donde se podrá apartar un libro cuando este no este disponible, para que de esta manera el usuario que aparte tenga la seguridad de que al llegar el libro a la biblioteca pueda ir a recogerlo y hacer uso de el. Siempre y cuando el usuario este registrado.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Usuario}
+		\UCitem{Propósito}{Generar una orden de apartado de libro para  obtener un libro al volver a estar disponible. }
+		\UCitem{Entradas}{
+		\begin{itemize}
+			\item Nombre del Usuario
+			\item Id del Usuario
+			\item Fecha del Día Actual
+			\item Nombre de Libro Requerido
+		\end{itemize}		
+		}
+		\UCitem{Salidas}{Orden de cita. Que contendrá: fecha del día en que se hizo la orden, nombre de quien hizo la orden, nombre del libro, autor, id del libro.
+		
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Interna: Que exista el libro. 
+				\item Interna: Que el libro no esté disponible.
+				\item Interna: Que el libro no este apartado ya.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
+		\UCitem{Autor}{López Orozco Diego Efraín}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] El usuario se dirige a la opción de \IUbutton{Buscar Libro} que aparece en la \IUref{UI01}{Pantalla de Inicio}.
+		\UCpaso[\UCsist] El sistema llama al caso de uso \UCref{5}.
+		\UCpaso[\UCsist] El sistema verifica si el libro no esta disponible conforme a la regla de negocio \BRref{20}{Libro Disponible para Apartado}\Trayref{C}.
+		\UCpaso[\UCactor] El usuario se dirige a la opción de  Apartar Libro que aparece en la \IUref{UI02}{Libro no Disponible}.
+		\UCpaso[\UCsist] El sistema despliega la ventana \IUref{UI03}{Formulario Apartar Libro} mostrando la interfaz de usuario.
+		\UCpaso[\UCactor] El usuario llena los campos: Clave del Usuario (id).
+		\UCpaso[\UCactor] El usuario da clic en el botón de Apartar en la parte inferior derecha de la \IUref{UI03}{Formulario Apartar Libro}.
+		\UCpaso[\UCsist] El sistema validará los datos conforme a las reglas de negocio \BRref{18}{Apartado Libro}\BRref{19}{Apartado para Usuario}\Trayref{A}\Trayref{V}.
+		\UCpaso[\UCsist] El sistema llena la tabla de la entidad LibrosApartados en la base de datos \Trayref{D}, donde se guardarán los registros nuevos de los libros apartados. 
+		\UCpaso[\UCsist] El sistema envia un correo con los datos de la orden de apartado y los datos del libro \Trayref{E}.		
+		\UCpaso[\UCsist] El sistema abre la \IUref{UI03}{Formulario Apartar Libro} y muestra el \MSGref{MSG1}{Operación Exitosa},
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{El libro ya fue apartado}
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG3}{Libro Apartado}. Notificando la violación de la \BRref{18}{Apartado Libro}.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{B}{El usuario no se encuentra registrado}
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{E4}{Usuario sin Registrar}. Notificando la violación de la \BRref{19}{Apartado para Usuario}.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{C}{El libro se encuentra disponible}
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG5}{Libro Disponible}. Notificando la violación de la \BRref{20}{Libro Disponible para Apartado}.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{D}{No se realizo exitosamente la conexión a la base de datos}
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{E1}{Sin conexión a la BD}. Notificando que no se pudo realizar la conexión a la base de datos.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{E}{El email no se puedo enviar}
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{E6}{Libro Apartado}. Notificando que no se pudo enviar el correo al usuario.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- TERMINA descripción del caso de uso.
