@@ -1,0 +1,39 @@
+\newpage
+\subsection{IU01 Pantalla de Inicio}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, para registrar el estado de un libro en concreto.
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al iniciar el sistema.  \\\\
+	Si en la base de datos no algún registro de citas agendadas, la parte de consultar estará inhabilitada. 
+	Esta pantalla aparece despues del proceso de entrega y prestamo de un libro.
+
+\IUfig[.7]{CU6/ESTADOS}{UI01}{Pantalla para registrar estado de un libro}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Mensaje de registro exitoso \MSGref{MSG1}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item ICBN : Identificador del libro
+		\item DISPONIBILIDAD : Describe la disponibilidad de un libro.
+		\item ESTADOS FISICOS : Estados fisicos que tiene el libro.
+	\end{Citemize}
+
+\subsubsection{Comandos} 
+\begin{itemize}
+	\item \IUbutton{Buscar Libro}: Solicita el ICBN de un libro para agregar estado del libro.
+	\item \IUbutton{Continuar}: Realiza el registro del estado del libro.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf  MSG6} ¿Los Datos Son Correctos ?
+		\item {\bf  MSG1} El registro fue Exitoso
+		\item {\bf  MSG7} Intentalo nuevamente
+		\item {\bf  [E7]} Número Máximo de Intentos, Intentalo más Tarde
+		 \item {\bf [E4]} El libro no Existe
+	\end{Citemize}
