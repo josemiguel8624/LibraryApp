@@ -1,0 +1,99 @@
+MENSAJES GENERALES
+	\begin{Citemize}
+		\item {\bf [E1]} Error al conectar a la BD.
+		\item {\bf [E2]} Error al generar las citas de entrevista. 
+		\item {\bf [E3]} Datos incompletos. Favor de completar todos los campos de entrada.
+	\item {\bf [E4]}Registro no encontrado.
+	\item {\bf [E5]}Registro ya existente en el catálogo.
+	\item {\bf [E6]}Error en el envío de email.
+	\item {\bf [E7]}Error de escritura en la base de datos. Intentalo nuevamente.
+
+	\item {\bf [MASG1]} Operación realizada exitosamente.
+	\item {\bf [MASG2]} El usuario cuenta con adeudos. No se puede completar la operación.
+	\item {\bf [MASG3]} El libro no está disponible.
+	\item {\bf [MASG4]} El usuario se encuentra bloqueado.
+	\item {\bf [MASG5]} El recurso solicitado está disponible.
+	\item {\bf [MASG6]} Confirma que los datos ingresados sean correctos.
+	\item {\bf [MASG7]} Límite máximo de intentos alcanzado.
+
+CONSIDERANDO LOS CASOS DE USO
+
+	\item {\bf [1]} Directorio de roles
+		\begin{enumerate}
+			\item Referencia a MSG1
+			\item Referencia a [E4]
+			\item Referencia a [E5] 
+		\end{enumerate}
+	\item {\bf [2]} Generación de cuentas de usuario
+	\item {\bf [3]} Generación de credencial
+		\begin{enumerate}
+			\item Referencia a MSG1
+			\item Referencia a [E4]
+			\item Refencia a MSG2
+		\end{enumerate}		 
+	\item {\bf [4]} Directorio de roles
+		\begin{enumerate}
+			\item Referencia a [E3]
+			\item MSG8. El ISBN no corresponde a la edición del libro
+			\item Referencia a [E1]	
+		\end{enumerate}
+	\item {\bf [5]} Consulta de libros
+	\item {\bf [6]} Estado de libro
+		\begin{enumerate}
+			\item Referencia a MSG6
+			\item Referencia a MSG1
+			\item Referencia a [E7]
+			\item Referencia a MSG7
+			\item Referencia a [E4]
+		\end{enumerate}
+	\item {\bf [7]} Préstamo a domicilio
+		\begin{enumerate}
+			\item Referencia a [E3]
+			\item Referencia a [E1]
+			\item Referencia a [E4]
+			\item MSG0. El límite de préstamos para este usuario ha alcanzado su límite, no se pueden hacer más préstamos a este usuario.
+			\item Referencia a MSG2
+			\item Referencia a MSG4
+			\item Referencia a MSG3
+		\end{enumerate}
+	\item {\bf [8]} Préstamo interbibliotecario
+	\item {\bf [9]} Devolución de libro
+		\begin{enumerate}
+			\item MSG10. La fecha de entrega se ha vencido para este libro, se cobrará multa por devolver el libro fuera de tiempo.
+			\item MSG11. El registro no se realizó correctamente, por favor inténtelo de nuevo.
+		\end{enumerate}
+	\item {\bf [10]} Renovación de préstamo
+	\item {\bf [11]} Donación de libro
+		\begin{enumerate}
+			\item Referencia a MSG1
+			\item Referencia a [E2]
+			\item Referencia a [E2]
+		\end{enumerate}
+	\item {\bf [12]} Apartado de libro
+		\begin{enumerate}
+			\item Referencia a MSG3
+			\item Referencia a [E4]
+			\item Referencia a MSG5
+			\item Referencia a [E1]
+			\item Referencia a [E6]
+			\item Referencia a MSG1
+		\end{enumerate}
+	\item {\bf [13]} Registro de multa
+		\begin{enumerate}
+			\item Referencia a [E1]
+			\item Referencia a [E3]
+			\item Referencia a [E4]
+			\item Referencia a MSG4
+		\end{enumerate}
+	\item {\bf [14]} Generación de multas
+		\begin{enumerate}
+			\item Referencia a MSG1
+			\item Referencia a [E2]
+			\item Referencia a [E1]
+		\end{enumerate}
+	\item {\bf [15]} Consulta de inventario
+		\begin{enumerate}
+			\item Referencia a MSG1
+			\item Referencia a [E1]
+		\end{enumerate}
+	\end{Citemize}
