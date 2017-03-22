@@ -1,0 +1,84 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU06}{Generar Citas}{
+		El administrador puede asociar diferentes estados a un libro, esto con base a una fecha de revisión que el administrador registra. Estos estados se definen en los procedimientos de devolución y préstamo. 
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador bibliotecario}
+		\UCitem{Propósito}{El administrador pueda controlar y gestionar el préstamo de libros con base a la disponibilidad  y estado de cada uno de los libros registrados en la biblioteca.}
+		\UCitem{Entradas}{El identificador del libro , la fecha -hora cuando se realiza el registro y los estados que se asocian al libro.}
+		\UCitem{Salidas}{Se registra la fecha y hora del cambio de estado del libro , esto indica la disponibilidad y características durante ese cambio.}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador realizo el proceso CU9 de entrega de libro previamente.
+				\item administrador realizo el proceso de préstamo \UCref(CU07) previamente.
+				\item Un libro debe estar registrado
+				\item La disponibilidad debe estar registrada
+				\item El estado físico debe estar registrado.
+
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{El cambio de estado queda registrado con una fecha y hora, una disponibilidad y  0 o más condiciones físicas.}
+		\UCitem{Autor}{BAUTISTA ROSALES MAURICIO}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+
+			\UCpaso[\UCactor] El administrador  realiza el proceso de entrega o préstamo \UCref(CU07) , \UCref(CU09) \Trayref{A}
+			\UCpaso[\UCsist] El sistema conserva el identificador del libro e identifica si se trata de una entrega o un préstamo.
+			\UCpaso[\UCsist] El sistema establece la disponibilidad con base a las reglas de negocio \BRref{RN30} \BRref{RN31}{Disponibilidad de un Libro} \Trayref{B}
+			\UCpaso[\UCsist] El sistema despliega UI solicitando al usuario que seleccione las  condiciones físicas del libro que aplique.
+			\UCpaso[\UCactor] El administrador presiona el botón \IUbutton{CONTINUAR}
+			\UCpaso[\UCsist] El sistema obtiene la fecha y hora en  que se hace el registro.
+			\UCpaso[\UCsist] El sistema solicita a través del \MSGref{MSG6}  que el administrador confirme los datos.\Trayref{C}
+			\UCpaso[\UCactor] El administrador confirma los datos presionando el botón  \IUbutton{OK}
+			\UCpaso[\UCsist] El sistema registra la  disponibilidad del libro y sus condiciones físicas en la fecha y hora indicada.\Trayref{D}
+			\UCpaso[\UCsist] El sistema muestra el mensaje \MSGref{MSG1} como resultado del éxito de registró.
+			\UCpaso[\UCactor] El administrador confirma presionando el botón  \IUbutton{OK}
+
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{El administrador desea cambiar el estado de un libro en concreto.}
+			\UCpaso[\UCsist]  El sistema solicita el identificador del libro.
+			\UCpaso[\UCactor] El administrador ingresa el identificador del libro 
+			\UCpaso[\UCsist] El sistema comprueba que exista el libro en los registros.\Trayref{F}
+			\UCpaso[\UCsist] El sistema despliega la UI y solicita al administrador que seleccione la disponibilidad del libro.
+			\UCpaso[\UCactor] El administrador indica la disponibilidad del libro.
+			     Trayectoria principal paso 4 \Trayref{Principal}
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{B}{El administrador desea modificar la disponibilidad del libro.}
+			\UCpaso[\UCactor] El administrados presiona el botón \IUbutton{MODIFICAR}
+			\UCpaso[\UCsist] El sistema habilita el selector que indica la disponibilidad del libro
+			\UCpaso[\UCactor] El administrador selecciona la disponibilidad correcta.
+			 trayectoria principal paso 4 \Trayref{Principal}
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{C}{El administrador presiona el botón \IUbutton{NO} no confirmando los datos.}
+			\UCpaso[\UCsist] El sistema nuestra los datos previamente indicados por el administrador.
+			\UCpaso[\UCactor] El administrador realiza las modificaciones correspondientes 
+			Paso 5 trayectoria principal \Trayref{Principal}
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{D}{No se logró registrar los datos }
+			\UCpaso[\UCsist] El sistema verifica el número de intentos con base a la regla del negocio \BRref{RN32}\Trayref{F}
+			\UCpaso[\UCsist] El sistema muestra el mensaje \MSGref{E7}.
+
+			Trayectoria principal paso 9\Trayref{Principal}
+		\end{UCtrayectoriaA}
+	
+		\begin{UCtrayectoriaA}{E}{Excede el Número de Intentos}
+			\UCpaso[\UCsist] El sistema muestra el mensaje \MSGref{MSG7}
+			\UCpaso[\UCactor]El administrador presiona el botón \IUbutton{OK} 
+			Fin del caso de uso 
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{F}{No existe registro del libro  }
+			\UCpaso[\UCsist] El sistema muestra el mensaje \MSGref{E4}
+			\UCpaso[\UCactor]El administrador presiona el botón \IUbutton{OK} 
+
+			Trayectoria Alternativa A paso 1  \Trayref{A}
+		\end{UCtrayectoriaA}
+				
+%-------------------------------------- TERMINA descripción del caso de uso.
