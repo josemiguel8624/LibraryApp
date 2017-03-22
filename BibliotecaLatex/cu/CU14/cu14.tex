@@ -1,0 +1,55 @@
+\begin{UseCase}{CU14}{Generar Multas}{
+		En este caso de uso tiene como objetivo generar las multas a las cuales los usuarios serán 			 acreedores, por no cumplir con las normas que se establecierón y que ellos aceptarón, cuando crearón su credencial para poder obtener los ejemplares de la biblioteca. Estas se les generaran solo si no cumples con las reglas establecidas.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Generar multas a los usuarios del servicio de la biblioteca que no cumplan con las condiciones de devolución.}
+		\UCitem{Entradas}{
+			\begin{itemize}
+				\item Tipo de afectación en el ejemplar.
+				\item Identificador del ejemplar.
+				\item Identificador del usuario.
+			\end{itemize}					
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Monto de multa aplicable.
+			\end{itemize}					
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El usuario debe de estar registrado. 
+				\item El usuario debe de tener un ejemplar registrado como "Prestamo".
+				\item El administrador verifica el estado del libro y del préstamo en el CU9.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se registrará una multa en el historial del usuario.
+			\end{itemize}					
+		}
+		\UCitem{Autor}{
+				Miguel Tejeda
+				Erubey Martínez					
+		}
+\end{UseCase}
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio RN-11, RN-12, RN-13, RN-14. \Trayref{A}
+	\UCpaso[\UCsist] El sistema lee el costo del libro de a cuerdo al identificador proporcionado. \Trayref{B}
+	\UCpaso[\UCsist] El sistema lee las fechas de préstamo y de devolución establecidas en la emisión anterior \Trayref{B}
+	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
+	1. "Pérdida de libro". Se considerará el costo total obtenido en el paso 2. \BRitem
+	2. "Devolución a destiempo". Se tomará la fecha de devolución del paso 3 y contarán los días dde diferencia entre la fecha actual. La cantidad de días multiplicará por 20. \BRitem
+	3. "Maltrato de libro". Se cosiderará el costo en el paso 2 y se multiplicara por 0.35 \BRitem
+	4. "Sustitución de libro". Se considerará el costo obtenido en el paso 2 y se multiplicará por 0.5.
+	\UCpaso[\UCsist] El sistema devolverá la cantidad de multa correspondiente al paso anterior, la cual se asociará al usuario dado por el identificador de entrada \Trayref{B} 
+	\UCpaso[\UCsist] Se mostrará el mensaje MSG1
+\end{UCtrayectoria}
+\begin{UCtrayectoriaA}{A}{Se introdujo un número de multa inexistente}	
+			\UCpaso[\UCsist] El sistema mostrará el mensaje [E2].
+			\UCpaso[\UCsist] Se reiniciará el CU, volviendo al paso 1 de la trayectoria principal. 
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{B}{Se presentó un error en la conexión y/o en la transacción actual con base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaeje [E1].
+			\UCpaso[\UCsist] Se reiniciará el CU, volviendo al paso 1 de la trayectoria principal.
+\end{UCtrayectoriaA}
