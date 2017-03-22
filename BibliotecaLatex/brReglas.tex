@@ -28,7 +28,7 @@
 \end{BussinesRule}
 
 
-\begin{BussinesRule}{RN}{Limite de prestamos.} 
+\begin{BussinesRule}{RN05}{Limite de prestamos.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
 	\BRitem[Descripción:]El límite de préstamos por usuario no debe ser mayor a tres.
@@ -116,7 +116,7 @@
 	\BRitem[Descripción:]Cada libro donado deberá existir un donante y se deberá registrar si es un usuario o librería y el nombre del mismo, así como su teléfono y e-mail.
 \end{BussinesRule}
 
-\begin{BussinesRule}{RN18}{Apartado Libro".} 
+\begin{BussinesRule}{RN18}{Apartado Libro.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
 	\BRitem[Descripción:]El libro solo puede ser apartado 1 vez.
@@ -157,5 +157,60 @@
 	%\BRitem[Autor:] Cortés Pérez Edy
 	\BRitem[Descripción:]El registro se completa al guardar este en la base de Datos.
 \end{BussinesRule}
+
+\begin{BussinesRule}{RN25}{Renovar préstamo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Los usuarios podrán renovar sus prestamos de forma presencial en el mostrador de servicios, telefónicamente o vía Internet utilizando el acceso y la clave generada al momento del registro .
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN26}{Renovar periodo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Los usuarios que tienen en su posesión material que se les haya sido prestado por la biblioteca, tienen la opción de renovar el préstamo, extendiendo la fecha límite para la devolución del libro, únicamente por dos periodos de 5 días naturales.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN27}{Plazo de préstamo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]La renovación de un préstamo se puede realizar siempre que no haya finalizado el plazo de préstamo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN28}{Fecha de renovación.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]La fecha a partir de la cual puede realizarse la renovaciones de 3 días antes de la fecha de devolución y hasta las 10:00 am del día en que vence el préstamo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN29}{Libro apartado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Es posible renovar siempre y cuando el material no haya sido apartado por otro usuario a través del sistema.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN30}{Disponibilidad de un libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Cuando se realiza el proceso de entrega, la disponibilidad del libro cambia a “Disponible”. Cuando se realiza el proceso de préstamo la disponibilidad del libro en “EN USO”.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN31}{Estado de un libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Todos los libros deben poseer un estado que describa su disponibilidad en la biblioteca establecido en una fecha y hora concreta.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN32}{Número de Intentos para Registrar Estado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El número máximo de intentos para registrar un estado de un libro  son 3, al exceder del número máximo se debe esperar 10  minutos para volver a intentarlo.
+\end{BussinesRule}
+
+
+
+
+
+
+
 %---------------------------------------------------------
 
