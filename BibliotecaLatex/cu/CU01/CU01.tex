@@ -1,0 +1,71 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU01}{Directorio de roles}{
+		Este caso de uso tiene como proposito general la creación de un directorio de roles, donde un administrador podrá crear, modificar, consultar o eliminar los roles.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{El usuario administrador será capaz de administrar los roles dentro del sistema, esto incluye la creación, modificación, consulta y eliminado de dichos roles. }
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Salidas}{Ninguna.}
+		\UCitem{Precondiciones}{ 
+			N/A
+		}
+		\UCitem{Postcondiciones}{La tabla "Roles de la base de datos estará poblada".}
+		\UCitem{Autor}{Guarneros Santana Víctor Hugo.}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Crear
+	\begin{UCtrayectoria}{Crear rol}
+		\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Crear} de la pantalla \IUref{IU01}{Pantalla principal}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU02}{Crear rol}
+		\UCpaso[\UCactor] El administrador asigna el nombre al nuevo rol
+		\UCpaso[\UCactor] Selecciona el botón \IUbutton{Crear} de la pantalla \IUref{IU02}{Crear rol}
+		\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN01}{Duplicidad de roles} y crea el nuevo rol, \Trayref{A}
+		\UCpaso[\UCsist] Muestra mensaje %\MSGref{MSG1}{Operación exitosa}
+		Operación exitosa
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Modificar
+	\begin{UCtrayectoria}{Modificar rol}
+		\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Modificar} de la pantalla \IUref{IU01}{Pantalla principal}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU03}{Modificar rol}
+		\UCpaso[\UCactor] El administrador ingresa el nombre del rol que desea modificar.
+		\UCpaso[\UCactor] El administrador ingresa el nuevo nombre del rol.
+		\UCpaso[\UCactor] Selecciona el botón \IUbutton{Modificar} de la pantalla \IUref{IU03}{Modificar rol}
+		\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN01}{Duplicidad de roles} y modifica el rol,si el rol a modificar no existe muestra el mensaje %\MSGref{MSG02}{Registro inexistente} ,\Trayref{A}
+		Registro inexistente
+		\UCpaso[\UCsist] Muestra mensaje %\MSGref{MSG01}{Operación exitosa}
+		Operación exitosa
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}
+	\end{UCtrayectoria}
+				%-------------------------------------- COMIENZA descripción Trayectoria Eliminar
+	\begin{UCtrayectoria}{Eliminar rol}
+		\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Eliminar} de la pantalla \IUref{IU01}{Pantalla principal}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU04}{Eliminar rol}
+		\UCpaso[\UCactor] El administrador ingresa el nombre del rol que desea eliminar.
+		\UCpaso[\UCactor] Selecciona el botón \IUbutton{Eliminar} de la pantalla \IUref{IU04}{Eliminar rol}
+		\UCpaso[\UCsist]Verifica si el rol a eliminar existe si no muestra el mensaje 
+		%\MSGref{MSG02}{Registro inexistente}
+		Registro inexistente
+		\UCpaso[\UCsist] Muestra mensaje %\MSGref{MSG01}{Operación exitosa}
+		Operación exitosa
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}
+	\end{UCtrayectoria}
+		%-------------------------------------- COMIENZA descripción Trayectoria Consultar
+	\begin{UCtrayectoria}{Consultar rol}
+		\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Consulta} de la pantalla \IUref{IU01}{Pantalla principal}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU05}{Consultar rol}
+		\UCpaso[\UCactor]  El Administrador selecciona el botón \IUbutton{Regresar} de la pantalla \IUref{IU05}{Consultar rol}.
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa Crear.
+		\begin{UCtrayectoriaA}{A}{Registro ya existente}
+			\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG03}{Registro ya existente}.
+			\UCpaso[\UCactor] Ingresa un nuevo valor valido.
+			\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN01}{Duplicidad de roles} y crea el nuevo rol, \Trayref{A}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG01}{Operación exitosa}
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- TERMINA descripción del caso de uso.
