@@ -1,11 +1,161 @@
 %---------------------------------------------------------
 \section{Reglas de Negocio}
 
-\begin{BussinesRule}{RN01}{Generación de Entrevistas.} 
+\begin{BussinesRule}{RN01}{Duplicidad de roles.} 
 	\BRitem[Tipo:] Restricción (validación).
-	\BRitem[Autor:] Cortés Pérez Edy
-	\BRitem[Descripción:]	Las entrevistas que se generen deberán contar con un entrevistador, un entrevistado, día a realizar, hora de inicio y final de la entrevista, así como el salón en el que se llevará a cabo.
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]No podrán haber dos roles con el mismo nombre.
 \end{BussinesRule}
 
+\begin{BussinesRule}{RN02}{Generar credencial.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Sólo se puede generar credencial a los usuarios dados de alta en el sistema
+.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN03}{Adeudos.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]No se puede generar la credencial si el usuario tiene adeudos.
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN04}{Usuario no registrado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:] El usuario deberá estar dado de alta en el sistema..
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN}{Limite de prestamos.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El límite de préstamos por usuario no debe ser mayor a tres.
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN06}{Sanción de préstamos.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Si el usuario devuelve un libro con un retraso mayor a dos semanas, no puede pedir otro libro para préstamo si no es hasta después de un mes de haber regresado el libro que pidió a préstamo.
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN07}{Usuario bloqueado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario no puede pedir préstamos por no haber devuelto el o los libros que pidió para préstamo.
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN08}{Estado de libro para préstamo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El libro solo se puede prestar si se cuenta con dos copias del mismo de lo contrario no se puede prestar el libro.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN09}{Registrar Devolución.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El sistema debe registrar cuándo devuelven los libros en préstamo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN10}{Devolución en fecha.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Todo libro sin excepción debe devolverse en la fecha especificada o incluso antes de dicha fecha.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN11}{Perdida de libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario repondrá el costo total del libro, de acuerdo al precio que se encuentra almacenado en el catálogo de la biblioteca.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN12}{Devolución a destiempo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario pagará 20 pesos por cada día de retardo en la entrega de un libro.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN13}{Maltrato de libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario pagará 35 por ciento del valor del libro, de acuerdo al precio que se encuentra almacenado en el catálogo de la biblioteca. Un libro se considera maltratado por las siguientes situaciones:
+	\begin{itemize}
+	\item Cuenta con páginas rotas
+	\item Se encuentra rayado
+	\item Faltan páginas
+	\item Cuenta con manchas de pintura u otros materiales
+
+	\end{itemize}
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN14}{Sustitución de libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario pagará 50 por ciento del valor del libro cuando intente devolver un ejemplar distinto al que le fue proporcionado.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN15}{Campos llenos usuario.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Para poder registrar un usuario todos los campos deben estar llenos.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN16}{Registro de Libros.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Cada registro de libro deberá contar con los datos: Titulo, Autor, Editorial, Genero, Idioma, Año, Número de Páginas, Edición, ISBN, EAN.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN17}{Datos Donante.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Cada libro donado deberá existir un donante y se deberá registrar si es un usuario o librería y el nombre del mismo, así como su teléfono y e-mail.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN18}{Apartado Libro".} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El libro solo puede ser apartado 1 vez.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN19}{Apartado para Usuario.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El usuario debe estar registrado para poder aparta un libro.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN20}{Libro Disponible para Apartado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El libro no se puede apartar si se encuentra disponible.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN21}{Consultar inventario.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Solo el administrador puede consultar el inventario de libros.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN22}{Campos llenos libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]No puede haber campos vacíos al registrar un libro.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN23}{Registrar libro.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Al registrar un libro el ISBN solo se podrá repetir si es la misma edición y es una copia del libro.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN24}{Registro completo.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]El registro se completa al guardar este en la base de Datos.
+\end{BussinesRule}
 %---------------------------------------------------------
 
