@@ -1,0 +1,122 @@
+\newpage
+\subsection{IU01 Pantalla de Inicio}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, en esta Interfaz se podrá acceder a las funcionalidades del sistema.  
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al iniciar el sistema.  
+
+\IUfig[.7]{CU7/UI1}{UI01}{Pantalla de Inicio.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}
+
+
+
+
+
+
+
+\newpage
+\subsection{UI02 Pantalla de prestamo a domicilio}
+
+\subsubsection{Objetivo}
+	Pantalla donde se introduciran el ID del usuario y el ISBN del libro que se quiere para prestamo.
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al iniciar el modulo. Deben de ser llenados todos los campos, de lo contrario, cuando se precione  \IUbutton{Realizar tramite} se re direccionara a la misma pero mostrara el mensaje \MSGref{E3}{Datos incompletos}.
+
+\IUfig[.7]{CU7/UI2}{UI02}{Formulario para el prestamo del libro.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item ID de usuario.
+		\item ISBN del libro.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item  \IUbutton{Realizar tramite} Activa el modulo encargado de aceptar o rechazar la peticion del prestamo del libro.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf  \MSGref{E3}{Datos incompletos} }
+	\end{Citemize}
+
+\newpage
+\subsection{IU03 Prestamo satisfacotrio}
+
+\subsubsection{Objetivo}
+	Pantalla donde se mostrara la fecha de devolucuion del libro .
+
+\subsubsection{Diseño}
+	Esta pantalla aparece cuando el prestamo puede ser efectuado con satisfaccion.
+
+\IUfig[.7]{CU7/UI3}{UI03}{Prestamo satisfactorio.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}
+
+
+\newpage
+\subsection{UI04 Error}
+
+\subsubsection{Objetivo}
+	Pantalla donde se muestra los errores del tramite de prestamos a domicilio.
+
+\subsubsection{Diseño}
+	Esta pantalla solo se mostrara los errores y las causas del por qué no se puede hacer el prestamo del libro.
+
+\IUfig[.7]{CU7/UI4}{UI04}{Pantalla de errores.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item El sistema le mandara a esta interfaz el error por el cual no se puede prestar el libro al usario.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item  \IUbutton{Aceptar} Redirecciona a  \IUref{UI01}{Pantalla de Inicio} .
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf     \MSGref{E1}{Fallo de conexion}  }
+		\item {\bf \MSGref{E4}{Usuario no registrado} }
+		\item {\bf   \MSGref{MSG7}{Limite de prestamos}     }
+		\item {\bf    \MSGref{MSG2}{Sancion}   }
+		\item {\bf    \MSGref{MSG4}{Usuario bloqueado}  }
+		\item {\bf    \MSGref{MSG3}{Libro no disponible}  }
+
+
+	\end{Citemize}
+
+
+
+
