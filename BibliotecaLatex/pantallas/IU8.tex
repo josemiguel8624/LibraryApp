@@ -1,0 +1,60 @@
+\newpage
+\subsection{IU8.1 Pantalla de Inicio}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, es la pantalla principal.  
+
+\subsubsection{Diseño}
+	En esta pantalla muestra el botón \IUbutton{préstamo}.  \\\\
+	El administrado dará en el botón \IUbutton{préstamo}
+
+\IUfig[.7]{gui/UI01}{UI01}{Pantalla de Inicio.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item generara la pantalla \IUref{UI02}{Pantalla de préstamo}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna
+	\end{Citemize}
+
+
+
+
+\subsection{IU8.2 Pantalla de prestamo}
+
+\subsubsection{Objetivo}
+	Pantalla de préstamo, en esta pantalla se recibirán los datos para el préstamo
+
+\subsubsection{Diseño}
+	Esta pantalla aparece cuando presionas el botón \IUbutton{Préstamo}  \\\\
+	El administrador ingresara el nombre del libro y el nombre de la biblioteca
+	El administrado dará en el \IUbutton{préstamo}
+
+\IUfig[.7]{gui/UI02}{UI02}{Pantalla de Préstamo.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item se efectuara el préstamo y dará el mensaje \MSGref{MSG1}{Operación realizada exitosa mente}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}
+
+
+%\subsubsection{Comandos}
+%\begin{itemize}
+%	\item \IUbutton{Generar}: Activa el algoritmo que genera las citas de entrevista de acuerdo a la disponibilidad de horarios y entrevistadores. 
+%	\item \IUbutton{Consultar}: Muestra la interfaz \IUref{UI02}{Pantalla de Consulta}.
+%\end{itemize}
+
+%\subsubsection{Mensajes}
+%	\begin{Citemize}
+%		\item {\bf [E1]} Error al conectar a la BD.
+%		\item {\bf [E2]} Error al generar las citas de entrevista.
+%		\item {\bf MSG1} No se ha encontrado registros de entrevistas agendadas previamente. Para consultar primero genere entrevistas. 
+%	\end{Citemize}
