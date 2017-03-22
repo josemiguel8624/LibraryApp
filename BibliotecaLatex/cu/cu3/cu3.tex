@@ -1,0 +1,56 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU03}{Generar Credencial}{
+		El sistema se encargará de producir una credencial para un usuario dado, 
+		tomando de él datos como: nombre completo, teléfono, fecha de emisión y fecha de expedición. 
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Brindar al usuario una credencial que lo reconozca como miembro de la biblioteca para que pueda hacer uso de sus servicios. }
+		\UCitem{Entradas}{Usuario:
+		\begin{itemize}
+			\item Nombre [String]
+			\item Apellido Paterno [String]
+			\item Apellido Materno [String]
+			\item Teléfono [String]
+			\item Tipo de Usuario [int]
+			\item Fecha de Emision [Date]
+			\item Fecha de Expiración [Date]
+		\end{itemize}
+}
+		\UCitem{Salidas}{El usuario obtiene su credencial}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El aspirante debe ya estar registrado en el sistema
+				\item El aspirante no deberá tener adeudos
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{1.	El usuario podrá hacer uso de los servicios de la biblioteca.}
+		\UCitem{Autores}{Hernández Flores Luis Ángel y Hernandez Aguirre Ezequiel Absalon}
+	\end{UseCase}
+	
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Selecciona el botón:  \IUbutton{Generar Credencial} de la pantalla IGU1 \IUref{UI01}{Pantalla de Inicio}.	
+		\UCpaso[\UCsist] Se conecta a la BD \Trayref{A}.
+		\UCpaso[\UCsist] Valida las reglas de negocio RN2 y RN3 \Trayref{B}.
+		\UCpaso[\UCsist] Produce la credencial del usuario
+		\UCpaso[\UCsist] Envía al usuario el mensaje \MSGref{MSG01}{Operación realizada exitosamente}.
+		\UCpaso[\UCactor]Da click en \IUbutton{Aceptar}.
+
+		\end{UCtrayectoria}		
+		%	-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{No se puede conectar a la Base de datos}
+			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{E1}{Error al conectar la Base de datos}
+			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{B}{El usuario tiene adeudos o no está registrado}
+			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{MSG02}{ El usuario no está dado de alta o cuenta con adeudos}
+			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
+		\end{UCtrayectoriaA}
+		
+
+
+%-------------------------------------- TERMINA descripción del caso de uso.

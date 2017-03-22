@@ -1,0 +1,34 @@
+\newpage
+\subsection{IU01 Pantalla de Inicio}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, en esta Interfaz se podrá generar la credencial para los usuarios.
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al dar click en el apartado "Generar Credencial".  \\\\
+
+\IUfig[.7]{cu3/UI01PantallaInicio}{UI01}{Pantalla de Inicio.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Estado del usuario: Variable booleana que indica si el usuario puede solicitar la crendencial. 
+		Si el valor es true: permite solicitar la credencial
+		Si el valor es false: impide solicitar la credencial, debido a adeudos o porque el usuario no está registrado en la 				base de datos
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Generar}: Activa el algoritmo que produce las credenciales para el usuario.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf [MSG01]} Operación realizada exitosamente. 
+		\item {\bf [E1]} Error en la conexión a la base de datos.
+		\item {\bf [MSG02]} El usuario cuenta con adeudos.No se puede completar la operación
+	\end{Citemize}
