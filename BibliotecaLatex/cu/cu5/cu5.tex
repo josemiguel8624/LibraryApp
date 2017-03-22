@@ -1,7 +1,7 @@
 % Copie este bloque por cada caso de uso:
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
-	\begin{UseCase}{CU09}{Consultar libros}{
+	\begin{UseCase}{CU05s}{Consultar libros}{
 		En este caso de uso se describirá el comportamiento y funcionamiento del sistema para buscar un libro dentro de una base de datos. La consulta se realizará a tráves del nombre del libro y arrojará como resultado todos los libros que coincidan con ese nombre, mostrando en pantalla la información relacionada al libro.
 	}
 		\UCitem{Versión}{0.1}
@@ -26,11 +26,11 @@
 		%\UCpaso[\UCactor] Se conecta a la BD \Trayref{A}.
 		%\UCpaso[\UCsist] Referenciar a una regla de negocio. Business Rule \BRref{RN01}{Nombre}
 		%\UCpaso[\UCactor] Referenciar a un mensaje \MSGref{MSG01}{Un salón solo tiene asignado una entrevista a la vez}
-		\UCpaso[\UCactor] El Usuario llena el campo disponible con el nombre del libro y hace clic en el el boton \IUbutton{Buscar} de la \IUref{UI09}{Pantalla Consulta de libros}.
+		\UCpaso[\UCactor] El Usuario llena el campo disponible con el nombre del libro y hace clic en el el boton \IUbutton{Buscar} de la \IUref{UI51}{Pantalla Consulta de libros}.
 		\UCpaso[\UCsist] El sistema valida que el campo no esté vacío. \Trayref{A}
 		\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{B}
 		\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el nombre solicitado. \Trayref{C}
-		\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI10}{Pantalla de vista de consulta} los resultados obtenidos, incluyendo el estado del libro.
+		\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa A.
 		\begin{UCtrayectoriaA}{A}{La cadena para generar la búsqueda es invalida.}
