@@ -1,0 +1,36 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU01}{Generar Citas}{
+		En este caso de uso tiene como objetivo generar citas...
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Generar los datos para las citas de entrevistas de acuerdo a la disponibilidad de horarios y entrevistadores. }
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Salidas}{Ninguna.}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador debe haber ingresado al sistema. 
+				\item Tiene que existir datos de entrevistadores en la BD.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
+		\UCitem{Autor}{Cortes Pérez Edy.}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Para agregar un item button:  \IUbutton{Generar} .
+		\UCpaso[\UCactor] Para agregar un salto de línea \BRitem en el mismo paso.
+		\UCpaso[\UCsist] Para referenciar una interfaz/pantalla se usa:  \IUref{UI01}{Pantalla de Inicio}.
+		\UCpaso[\UCactor] Se conecta a la BD \Trayref{A}.
+		\UCpaso[\UCsist] Referenciar a una regla de negocio. Business Rule \BRref{RN01}{Nombre}
+		\UCpaso[\UCactor] Referenciar a un mensaje \MSGref{MSG01}{Un salón solo tiene asignado una entrevista a la vez}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Descripción de la condición}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

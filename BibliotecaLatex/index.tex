@@ -1,0 +1,30 @@
+%--------Se especifica el tipo de documento
+\documentclass[oneside,10pt]{book}
+%--------Se importan las librerías que usaremos
+\usepackage{cdtBook}
+\usepackage{usecases}
+
+%-------- Datos del documento
+\title{Documento de análisis y diseño}
+\subtitle{Aplicación}
+\author{Nombre del autor}
+\organization{Escuela Superior de Cómputo, IPN}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+%%=========================================================
+\chapter{Modelo de comportamiento}
+Introducción del capitulo. 
+
+%% Aregar a partir de un documento externo
+\cfinput{cu/cu1}
+\cfinput{pantallas/IU01}
+
+\end{document}
