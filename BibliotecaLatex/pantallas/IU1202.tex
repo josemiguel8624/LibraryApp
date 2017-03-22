@@ -1,0 +1,31 @@
+\newpage
+\subsection{IU02 Pantalla Apartar Libro}
+
+\subsubsection{Objetivo}
+	Pantalla de Apartar Libro, esta interfaz sirve para poder dar clic a un botón que nos lleva al formulario para apartar libro.
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al dar clic al botón Buscar Libro.  \\\\
+	Si en la base de datos no algún registro de libros, la parte de consultar estará inhabilitada. 
+
+\IUfig[.7]{CU12/UI02PantallaApartar}{UI02}{Libro no Disponible}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item BD Vacio: Variable booleana que indica si existe al menos algún registro en la BD de la entidad entrevistas. Si el valor es 1: habilita el \IUbutton{Apartar Libro} en caso contrario lo deshabilita. 
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Apartar Libro}: Llama a la interfaz \IUref{UI03}{Formulario Apartar Libro}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}

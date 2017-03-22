@@ -1,0 +1,38 @@
+\newpage
+\subsection{IU03 Pantalla de Formulario para Apartar Libro}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, en esta Interfaz se podrá llenar el formulario para poder apartar el libro.
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al dar clic al botón de Apartar Libro.  \\\\
+	Si en la base de datos el libro esta disponible, la parte del formulario estará inhabilitada. 
+
+\IUfig[.7]{CU12/UI03FormularioApartar}{UI03}{Formulario Apartar Libro}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Mensaje de orden de apartado del Libro.
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item idUsuario: Variable con la clave del Usuario.
+		\item idLibro: Variable con la clave del Libro a apartar.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Apartar}: Registra el apartado del libro.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item Ninguna.
+		\item El libro no se puede apartar, ya fue apartado.
+		\item El usuario no está registrado.
+		\item El libro no se puede apartar, se encuentra disponible.
+		\item No se concecto a la base de datos. Intente mas tarde.
+		\item No se pudo enviar el correo. Intente mas tarde.
+		\item Se aparto correctamente el libro. Se envió un correo electrónico.
+	\end{Citemize}

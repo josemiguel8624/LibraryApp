@@ -1,0 +1,48 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU09}{Devolver Libro}{
+		Este caso de uso tiene como objetivo describir la operación en la que un usuario devuelve un libro, registrando y verificando los datos que se le proporciona tanto como el usuario como dicho libro y al finalizar se modifican los registros de los libros que fueron devueltos.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario, Usuario}
+		\UCitem{Propósito}{Registrar y verificar en el sistema la devolución de un libro, identificando tanto el libro como el usuario que lo devuelve. Al terminar, la biblioteca se queda con el libro devuelto. }
+		\UCitem{Entradas}{
+		Se necesitan de los siguientes datos
+					\begin{itemize}
+				\item Nombre del Usuario 
+			\end{itemize}}
+		\UCitem{Salidas}{Datos actualizados de los libros que fueron devueltos}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Interna: Que exista al menos un Bibliotecario en la base de datos 
+				\item Interna: Que exista al menos un Usuario registrado en la base de datos
+				\item Interna: Que exista al menos 2 libros registrados y prestados
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se registra la devolución de libro, actualizando los libros prestados del Socio y las copias del libro devuelto.}
+		\UCitem{Autor}{Esteban Pablo Martínez Ibáñez}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] El usuario se identifica y solicita devolver un libro en prestamos al bibliotecario. \Trayref{A} 
+		\UCpaso[\UCactor] El bibliotecario identifica al usuario.\IUbutton{OK} \IUref{UI01}{Pantalla de verificación}
+				\UCpaso[\UCsist] Presenta la información del usuario y sus libros en préstamo con su fecha de devolución.\IUref{UI02}{Pantalla de información}.
+						\UCpaso[\UCactor] El bibliotecario comprueba que la copia devuelta está entre los libros pendientes de devolución.
+		\UCpaso[\UCactor] El bibliotecario marca la copia el libro como disponible. \IUbutton{Devolver}
+				\UCpaso[\UCsist] Se actualiza el registro del libro como Disponible. \IUbutton{OK}\Trayref{B} \IUref{UI03}{Pantalla de información}
+
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{El usuario devuelve un libro depues de la fecha especificada}
+			\UCpaso[\UCactor] El bibliotecario verifica la fecha de devolución.
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando que la fecha de devolucion ha vencido. \MSGref{MSG10}{Se ha vencido la fecha de entrega}
+			\UCpaso[\UCsist] Nos redirigira a la interfaz de multas
+		\end{UCtrayectoriaA}
+
+
+		\begin{UCtrayectoriaA}{B}{El sistema no registra la devoucion del libro}
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando el problema. \MSGref{MSG11}{El registro no se realizó, intentelo de nuevo}
+			\UCpaso[\UCactor]El bibliotecario repite el paso 5 de la trayectoria Principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.

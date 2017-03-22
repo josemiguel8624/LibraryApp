@@ -1,0 +1,68 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU10}{Renovar préstamo de libro}{
+		Este caso de uso tiene como objetivo describir la parte del sistema que se encarga de extender el tiempo y fecha límite que tiene un usuario para realizar la devolución de un libro que pidió prestado con anterioridad en la biblioteca.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario, Usuario}
+		\UCitem{Propósito}{Solicitar un tiempo extra para que el usuario pueda tener en su posesión un libro que se le ha prestado.}
+		\UCitem{Entradas}{
+		Se necesitan de los siguientes datos
+					\begin{itemize}
+				\item Nombre del Usuario 
+				\item Contraseña
+			\end{itemize}}
+		\UCitem{Salidas}{Nueva fecha de devolución}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Interna: Que el usuario haya iniciado sesión.
+				\item Interna: Que el libro ya esté en estado de préstamo para el mismo usuario.
+				\item Interna: Que el libro no esté apartado
+
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Extensión del plazo o fecha límite para entregar el libro.}
+		\UCitem{Autor}{\begin{itemize}
+				\item Nava Campos Jose Andres
+				\item Olvera Neria Yamile Giselle
+
+			\end{itemize}
+			}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] El usuario se dirige al apartado Préstamos en el menú principal de UIX en la página web.  
+		\UCpaso[\UCsist]El sistema despliega la ventana IUX mostrando en la pantalla una lista con sus préstamos actuales otorgados por la biblioteca.\IUref{UI01}{Pantalla de Prestamos}
+				\UCpaso[\UCactor] El usuario solicita al sistema una prórroga de entrega  dando clic en el botón \IUbutton {Renovar}
+						\UCpaso[\UCsist]El sistema otorga la renovación del préstamo apegado a las reglas de negocio RN1,RN2,RN3,RN4,RN5. \Trayref{A} \Trayref{B} \Trayref{C} \Trayref{C} \Trayref{D} 
+		\UCpaso[\UCsist] El sistema despliega el \MSGref{MSG1}{Operacion exitosa} informándole al usuario el resultado exitoso para renovar el préstamo.
+				\UCpaso[\UCactor]El usuario presiona el botón OK confirmando el mensaje.
+				\UCpaso[\UCsist]El sistema muestra la ventana IUX con los préstamos actuales y la fecha de devolución actualizada.\IUref{UI02}{Pantalla de Confirmacion}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{La solicitud de renovación de préstamo ha superado el número de periodos posibles.}
+			\UCpaso[\UCsist]El sistema muestra una notificación de error en la renovación de préstamo \MSGref{MSG11}{Fallo el registro}
+			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
+			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{B}{: El plazo de préstamo ha finalizado y la fecha límite de entrega ha expirado}
+			\UCpaso[\UCsist]El sistema muestra una notificación de plazo de préstamo finalizado \MSGref{MSG13}{El plazo del prestamo del libro seleccionado ha terminado}
+			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
+			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
+		\end{UCtrayectoriaA}
+		
+				\begin{UCtrayectoriaA}{C}{No se encuentra dentro de los 3 días naturales pre expiración de la fecha de entrega}
+			\UCpaso[\UCsist]El sistema muestra una notificación de error en la renovación de préstamo \MSGref{MSG14}{Aun no se encuentra en la fecha de renovacion del prestamo del libro seleccionado}
+			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
+			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
+		\end{UCtrayectoriaA}
+		
+				\begin{UCtrayectoriaA}{D}{El libro ya ha sido apartado por otro usuario para su préstamo }
+			\UCpaso[\UCsist]El sistema muestra una notificación error en la renovación  \MSGref{MSG11}{Fallo el registro}
+			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
+			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
+		\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

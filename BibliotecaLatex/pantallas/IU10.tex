@@ -1,0 +1,42 @@
+\newpage
+\subsection{IU01 Pantalla de Inicio}
+
+\subsubsection{Objetivo}
+	Pantalla de Prestamos, en esta Interfaz se podrán visualizar los prestamos actuales que se le han otorgado al usuario, la fecha en que comenzó su préstamo y la fecha límite para la devolución del libro.  
+	
+\subsubsection{Diseño}
+	Esta pantalla se despliega al dar clic en el menú prestamos de la pantalla principal.  \\\\
+	Está ubicado a la izquierda de cada préstamo un botón habilitado para renovar el prestamo. 
+
+\IUfig[.7]{CU10/Pantalla2}{UI01}{Pantalla de Prestamos.}
+\IUfig[.7]{CU10/Pantalla1}{UI02}{Pantalla de Confirmacion.}
+
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+	\item Notificación del resultado de la operación. 
+	\item Actualización del tiempo límite de devolución.
+			\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna.
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Renovar}: En caso de cumplir con todas las restricciones, aumenta un periodo de 5 días naturales a la fecha de devolución actual.
+ Muestra la interfaz \IUref{UI02}{Pantalla de Consulta}.Actualizada con la nueva fecha de entrega.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item {\bf [MSG1]} Operación Realizada Exitosamente.
+		\item {\bf [MSJ12]} Ha superado el número de periodos para la renovación del préstamo del libro seleccionado.
+		\item {\bf [MSJ13]} El plazo del préstamo del libro seleccionado ha terminado.
+		\item {\bf [MSJ14]} Aun no se encuentra en la fecha de renovación del préstamo del libro seleccionado.
+		\item {\bf [MSG3]} El libro no está disponible.
+		
+		
+		
+	\end{Citemize}
