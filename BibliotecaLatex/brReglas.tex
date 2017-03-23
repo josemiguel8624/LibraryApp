@@ -45,7 +45,7 @@
 \begin{BussinesRule}{RN07}{Usuario bloqueado.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
-	\BRitem[Descripción:]El usuario no puede pedir préstamos por no haber devuelto el o los libros que pidió para préstamo.
+	\BRitem[Descripción:]El usuario no puede pedir préstamos por no haber devuelto el o los libros que pidió para préstamo,tampoco puede recibir multas.
 \end{BussinesRule}
 
 
@@ -107,7 +107,7 @@
 \begin{BussinesRule}{RN16}{Registro de Libros.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
-	\BRitem[Descripción:]Cada registro de libro deberá contar con los datos: Titulo, Autor, Editorial, Genero, Idioma, Año, Número de Páginas, Edición, ISBN, EAN.
+	\BRitem[Descripción:]Cada registro de libro deberá contar con los datos: ISBN,Numero de clasificación, decimal dewey, autor personal, titulo propiamente dicho,mención de responsabilidad, mención de edición, lugar de publicación,nombre del editor, fecha de publicación, extension, termino temático, existencias.
 \end{BussinesRule}
 
 \begin{BussinesRule}{RN17}{Datos Donante.} 
@@ -204,6 +204,24 @@
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
 	\BRitem[Descripción:]El número máximo de intentos para registrar un estado de un libro  son 3, al exceder del número máximo se debe esperar 10  minutos para volver a intentarlo.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN33}{Registro de multa.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Para registrarse una Multa, el usuario debe ser merecedor de la misma.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN34}{Datos para el registro de multa.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]Para registrar exitosamente la multa,el nombre debe de existir en la base de datos.
+\end{BussinesRule}
+
+\begin{BussinesRule}{RN35}{Registro de empleado.} 
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Cortés Pérez Edy
+	\BRitem[Descripción:]EL empleado no puede estar registrado anteriormente.
 \end{BussinesRule}
 
 
