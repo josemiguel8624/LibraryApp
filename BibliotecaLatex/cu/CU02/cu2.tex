@@ -1,0 +1,108 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU02}{Generar cuentas de usuario}{
+		En este caso de uso tiene como objetivo generar las cuentas de los nuevos usuarios al sistema.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Generar nuevas cuentas de usuarios para que puedan acceder a los servicios ofrecidos por la biblioteca (consultar procesos de negocio). }
+		\UCitem{Entradas}{
+		\begin{itemize}
+		\item Una instancia de la clase Usuario
+		  \begin{itemize}
+		   \item nombres[String]
+		   \item apellidoPa[String]
+		   \item apellidoMa[String]
+		   \item email[String]
+		   \item calle[String]
+		   \item no[int]
+		   \item cp[int]
+		   \item curp[String]
+		   \item telefono[String]
+		   \item rol[int]
+		   \item foto[file]
+		  \end{itemize}
+		\end{itemize}				
+		}
+		\UCitem{Salidas}{
+		\begin{itemize}
+		\item Se enviará un correo al usuario con sus datos de registro y su idUsuario
+		\item Actualizará la capa de modelo
+		\end{itemize}				
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador debe haber ingresado al sistema mediante el 			                 enlace. 
+				\item El usuario no tuvo que haber sido registrado anteriormente
+				\item Deberá existir el catálogo para usuarios
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+		\begin{itemize}
+		\item El usuario podrá autenticarse
+		\item Acceso a las funciones correspondientes al usuario
+		\end{itemize}				
+		}
+		\UCitem{Autor}{Burciaga Ornelas Rodrigo Andrés}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Ingresa al sistema mediante el enlace a la aplicacion web
+	 \UCpaso[\UCactor] Selecciona agregar usuario de la interfaz \IUref{UI01}{Gestión Usuario}.
+	 \UCpaso[\UCsist]Muestra la interfaz \IUref{UI02}{Agregar Usuario}.
+	  \UCpaso[\UCactor] Administrador llena el formulario de registro
+	   \UCpaso[\UCsist] Verifica la  \BRref{RN33}{Datos del formulario completos}.[Trayectoria A]
+	    \UCpaso[\UCsist] Verifica la  \BRref{RN34}{Datos congruentes en cada campo}.[Trayectoria B]
+	    \UCpaso[\UCsist] Verifica la \BRref{RN35}{El usuario ha sido registrado anteriormente}.[Trayectoria C]
+	  \UCpaso[\UCsist]Envía la información del input CURP a la appi de RENAPO.[Trayectoria D]
+	  \UCpaso[\UCsist]Obtiene la información de la APPI de RENAPO. [Trayectoria E]
+	  \UCpaso[\UCsist]El sistema valida la información ingresada por el usuario comparando con la enviada por la APPI. [Trayectoria F]
+	    \UCpaso[\UCsist]Informa que el registro fue exitoso y envia un correo de confirmación al usuario.Se muestra en pantalla la \IUref{UI03}{Inserción Exitosa!}.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Campos sin llenar.}
+			\UCpaso[\UCsist] El sistema envia el mensaje \MSGref{MSG01}{Debe Llenar todos los campos marcados con *}
+
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{B}{Los datos ingresados no son correctos.}
+			\UCpaso[\UCsist] El sistema envia el mensaje \MSGref{MSG02}{Los datos ingresados en el campo señalado no son congruentes}
+		
+		\end{UCtrayectoriaA}	
+		
+		
+		\begin{UCtrayectoriaA}{C}{Usuario existente en la base.}
+			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG03}{Usuario Registrado anteriormente}
+
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{D}{La APPI no se encuentra disponible}
+			\UCpaso[\UCsist] El sistema guarda la información en la base de datos.
+			\UCpaso[\UCsist]Intenta enviar la información cada media hora hasta que este disponible.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{E}{No se pudieron obtener los datos}
+			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG04}{Los datos no se pudieron obtener de la appi de Renapo}
+
+		\end{UCtrayectoriaA}		
+		
+		
+		
+		\begin{UCtrayectoriaA}{E}{Los datos no coinciden}
+			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG05}{Los datos ingresados no son correctos}
+
+		\end{UCtrayectoriaA}
+		
+
+		\begin{UCtrayectoriaA}{F}{Los datos no coinciden}
+			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG06}{Los datos ingresados de la CURP no son correctos}
+
+		\end{UCtrayectoriaA}
+		
+		
+		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.
