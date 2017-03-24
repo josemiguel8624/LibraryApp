@@ -1,0 +1,65 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU04}{Registrar libro}{
+		Este caso de uso tiene como objetivo registar la información de un libro acorde a la norma MARC 21 para catalogar los libros.
+	}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Registrar los libros entrantes conforme a MARC 21 y guardarlos en una base de datos.}
+		\UCitem{Entradas}{
+			\begin{itemize}
+				\item Libro fisico.
+			\end{itemize}					
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Registro en la base de datos.
+			\end{itemize}					
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El Administrador debe de estar registrado. 
+				\item El sistema debe de estar conectado a la base de datos.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se registrará la informacion de un libro en al base de datos.
+			\end{itemize}					
+		}
+		\UCitem{Autor}{
+				Manriquez Diego
+				Salas Abiran					
+		}
+\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Crear
+
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] El administrador seleccionara el boton \IUbutton{Registrar} de la pantalla \IUref{IU01}{Pantalla principal}.
+	\UCpaso[\UCsist] Despliega la pantalla \IUref{IU02}{Registrar libro}.
+	\UCpaso[\UCactor] El administrador introduce la informacion del libro en los campo requeridos.
+	\UCpaso[\UCactor] Selecciona el botón \IUbutton{Registrar} de la pantalla \IUref{IU02}{Registrar libro}.
+	\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN22}{Campos llenos libro} y se procede a verificar el libro en la base de datos.\Trayref{A}
+	\UCpaso[\UCsist] Verifica la informacion y compara el ISBN en la base de datos de acuerdo a la regla de negocio \BRref{RN23}{Registrar libro} .\Trayref{B}
+	\UCpaso[\UCsist] Se guarda la informacion en la base de datos de acuerdo a la regla de negocio \BRref{RN24}{Registro completo} .\Trayref{C}
+	\UCpaso[\UCsist] Se mostrará el mensaje [MSG1]. \IUref{IU03}{Registro exitoso}
+\end{UCtrayectoria}
+\begin{UCtrayectoriaA}{A}{Se introdujo un campo vacio}	
+			\UCpaso[\UCsist] Muestra mensaje [E2].
+			\UCpaso[\UCactor] Ingresa un nuevo valor valido.
+			\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN22}{Campos llenos libro} y se procede a verificar el libro en la base de datos.\Trayref{A}
+			\UCpaso[\UCsist] Se mostrará el mensaje [MSG1].
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU02}{Registrar libro}			
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{B}{Se introdujo un ISBN existente con una editorial diferente}	
+			\UCpaso[\UCsist] El sistema mostrará el mensaje [MSG8].
+			\UCpaso[\UCactor] Ingresa un nuevo valor valido.
+			\UCpaso[\UCsist] Verifica la informacion y compara el ISBN en la base de datos de acuerdo a la regla de negocio \BRref{RN23}{Registrar libro} .\Trayref{B}
+			\UCpaso[\UCsist] Se mostrará el mensaje [MSG1].
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU02}{Registrar libro}	
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{C}{Fallo de conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje [E1].
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Pantalla principal}	
+\end{UCtrayectoriaA}
