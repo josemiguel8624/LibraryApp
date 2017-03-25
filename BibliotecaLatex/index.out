@@ -17,45 +17,61 @@
 \BOOKMARK [2][-]{subsection.2.2.4}{UI01 Gesti\363n de Usuario}{section.2.2}% 17
 \BOOKMARK [2][-]{subsection.2.2.5}{UI02 Agregar Usuario}{section.2.2}% 18
 \BOOKMARK [2][-]{subsection.2.2.6}{UI03 Inserci\363n Exitosa}{section.2.2}% 19
-\BOOKMARK [1][-]{section.2.3}{CU05s Consultar libros}{chapter.2}% 20
-\BOOKMARK [2][-]{subsection.2.3.1}{Descripci\363n completa}{section.2.3}% 21
-\BOOKMARK [2][-]{subsection.2.3.2}{Atributos importantes}{section.2.3}% 22
-\BOOKMARK [2][-]{subsection.2.3.3}{Trayectorias del Caso de Uso}{section.2.3}% 23
-\BOOKMARK [2][-]{subsection.2.3.4}{IU51 Pantalla de Consulta de libros}{section.2.3}% 24
-\BOOKMARK [2][-]{subsection.2.3.5}{IU52 Pantalla de vista de consulta de libros}{section.2.3}% 25
-\BOOKMARK [1][-]{section.2.4}{CU06 Registrar Estado de Libros}{chapter.2}% 26
-\BOOKMARK [2][-]{subsection.2.4.1}{Descripci\363n completa}{section.2.4}% 27
-\BOOKMARK [2][-]{subsection.2.4.2}{Atributos importantes}{section.2.4}% 28
-\BOOKMARK [2][-]{subsection.2.4.3}{Trayectorias del Caso de Uso}{section.2.4}% 29
-\BOOKMARK [2][-]{subsection.2.4.4}{IU6 Pantalla de Inicio}{section.2.4}% 30
-\BOOKMARK [1][-]{section.2.5}{CU07 Prestamo de Libros a domicilio}{chapter.2}% 31
-\BOOKMARK [2][-]{subsection.2.5.1}{Descripci\363n completa}{section.2.5}% 32
-\BOOKMARK [2][-]{subsection.2.5.2}{Atributos importantes}{section.2.5}% 33
-\BOOKMARK [2][-]{subsection.2.5.3}{Trayectorias del Caso de Uso}{section.2.5}% 34
-\BOOKMARK [2][-]{subsection.2.5.4}{IU01 Pantalla de Inicio}{section.2.5}% 35
-\BOOKMARK [2][-]{subsection.2.5.5}{UI02 Pantalla de prestamo a domicilio}{section.2.5}% 36
-\BOOKMARK [2][-]{subsection.2.5.6}{IU03 Prestamo satisfacotrio}{section.2.5}% 37
-\BOOKMARK [2][-]{subsection.2.5.7}{UI04 Error}{section.2.5}% 38
-\BOOKMARK [1][-]{section.2.6}{CU08 Pr\351stamo interbibliotecario}{chapter.2}% 39
-\BOOKMARK [2][-]{subsection.2.6.1}{Descripci\363n completa}{section.2.6}% 40
-\BOOKMARK [2][-]{subsection.2.6.2}{Atributos importantes}{section.2.6}% 41
-\BOOKMARK [2][-]{subsection.2.6.3}{Trayectorias del Caso de Uso}{section.2.6}% 42
-\BOOKMARK [2][-]{subsection.2.6.4}{IU8.1 Pantalla de Inicio}{section.2.6}% 43
-\BOOKMARK [2][-]{subsection.2.6.5}{IU8.2 Pantalla de prestamo}{section.2.6}% 44
-\BOOKMARK [1][-]{section.2.7}{CU12 Apartar Libro}{chapter.2}% 45
-\BOOKMARK [2][-]{subsection.2.7.1}{Descripci\363n completa}{section.2.7}% 46
-\BOOKMARK [2][-]{subsection.2.7.2}{Atributos importantes}{section.2.7}% 47
-\BOOKMARK [2][-]{subsection.2.7.3}{Trayectorias del Caso de Uso}{section.2.7}% 48
-\BOOKMARK [2][-]{subsection.2.7.4}{IU01 Pantalla de Inicio}{section.2.7}% 49
-\BOOKMARK [2][-]{subsection.2.7.5}{IU02 Pantalla Apartar Libro}{section.2.7}% 50
-\BOOKMARK [2][-]{subsection.2.7.6}{IU03 Pantalla de Formulario para Apartar Libro}{section.2.7}% 51
-\BOOKMARK [1][-]{section.2.8}{CU10 Renovar pr\351stamo de libro}{chapter.2}% 52
-\BOOKMARK [2][-]{subsection.2.8.1}{Descripci\363n completa}{section.2.8}% 53
-\BOOKMARK [2][-]{subsection.2.8.2}{Atributos importantes}{section.2.8}% 54
-\BOOKMARK [2][-]{subsection.2.8.3}{Trayectorias del Caso de Uso}{section.2.8}% 55
-\BOOKMARK [2][-]{subsection.2.8.4}{IU01 Pantalla de Inicio}{section.2.8}% 56
-\BOOKMARK [1][-]{section.2.9}{CU14 Generar Multas}{chapter.2}% 57
-\BOOKMARK [2][-]{subsection.2.9.1}{Descripci\363n completa}{section.2.9}% 58
-\BOOKMARK [2][-]{subsection.2.9.2}{Atributos importantes}{section.2.9}% 59
-\BOOKMARK [2][-]{subsection.2.9.3}{Trayectorias del Caso de Uso}{section.2.9}% 60
-\BOOKMARK [1][-]{section.2.10}{Catalogo de Mensajes}{chapter.2}% 61
+\BOOKMARK [2][-]{subsection.2.2.7}{IU01 Pantalla principal}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.8}{IU02 Crear rol}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.9}{IU03 Modificar rol}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.10}{IU04 Eliminar rol}{section.2.2}% 23
+\BOOKMARK [2][-]{subsection.2.2.11}{IU05 Consultar rol}{section.2.2}% 24
+\BOOKMARK [1][-]{section.2.3}{CU04 Registrar libro}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.3.1}{Descripci\363n completa}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.2}{Atributos importantes}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.3}{Trayectorias del Caso de Uso}{section.2.3}% 28
+\BOOKMARK [2][-]{subsection.2.3.4}{IU4.1 Pantalla de registro}{section.2.3}% 29
+\BOOKMARK [2][-]{subsection.2.3.5}{IU4.2 Registrar libro}{section.2.3}% 30
+\BOOKMARK [1][-]{section.2.4}{CU05 Consultar libros}{chapter.2}% 31
+\BOOKMARK [2][-]{subsection.2.4.1}{Descripci\363n completa}{section.2.4}% 32
+\BOOKMARK [2][-]{subsection.2.4.2}{Atributos importantes}{section.2.4}% 33
+\BOOKMARK [2][-]{subsection.2.4.3}{Trayectorias del Caso de Uso}{section.2.4}% 34
+\BOOKMARK [2][-]{subsection.2.4.4}{IU51 Pantalla de Consulta de libros}{section.2.4}% 35
+\BOOKMARK [2][-]{subsection.2.4.5}{IU52 Pantalla de vista de consulta de libros}{section.2.4}% 36
+\BOOKMARK [1][-]{section.2.5}{CU06 Registrar Estado de Libros}{chapter.2}% 37
+\BOOKMARK [2][-]{subsection.2.5.1}{Descripci\363n completa}{section.2.5}% 38
+\BOOKMARK [2][-]{subsection.2.5.2}{Atributos importantes}{section.2.5}% 39
+\BOOKMARK [2][-]{subsection.2.5.3}{Trayectorias del Caso de Uso}{section.2.5}% 40
+\BOOKMARK [2][-]{subsection.2.5.4}{IU6 Pantalla de Inicio}{section.2.5}% 41
+\BOOKMARK [1][-]{section.2.6}{CU07 Prestamo de Libros a domicilio}{chapter.2}% 42
+\BOOKMARK [2][-]{subsection.2.6.1}{Descripci\363n completa}{section.2.6}% 43
+\BOOKMARK [2][-]{subsection.2.6.2}{Atributos importantes}{section.2.6}% 44
+\BOOKMARK [2][-]{subsection.2.6.3}{Trayectorias del Caso de Uso}{section.2.6}% 45
+\BOOKMARK [2][-]{subsection.2.6.4}{IU01 Pantalla de Inicio}{section.2.6}% 46
+\BOOKMARK [2][-]{subsection.2.6.5}{UI02 Pantalla de prestamo a domicilio}{section.2.6}% 47
+\BOOKMARK [2][-]{subsection.2.6.6}{IU03 Prestamo satisfacotrio}{section.2.6}% 48
+\BOOKMARK [2][-]{subsection.2.6.7}{UI04 Error}{section.2.6}% 49
+\BOOKMARK [1][-]{section.2.7}{CU08 Pr\351stamo interbibliotecario}{chapter.2}% 50
+\BOOKMARK [2][-]{subsection.2.7.1}{Descripci\363n completa}{section.2.7}% 51
+\BOOKMARK [2][-]{subsection.2.7.2}{Atributos importantes}{section.2.7}% 52
+\BOOKMARK [2][-]{subsection.2.7.3}{Trayectorias del Caso de Uso}{section.2.7}% 53
+\BOOKMARK [2][-]{subsection.2.7.4}{IU8.1 Pantalla de Inicio}{section.2.7}% 54
+\BOOKMARK [2][-]{subsection.2.7.5}{IU8.2 Pantalla de prestamo}{section.2.7}% 55
+\BOOKMARK [1][-]{section.2.8}{CU10 Renovar pr\351stamo de libro}{chapter.2}% 56
+\BOOKMARK [2][-]{subsection.2.8.1}{Descripci\363n completa}{section.2.8}% 57
+\BOOKMARK [2][-]{subsection.2.8.2}{Atributos importantes}{section.2.8}% 58
+\BOOKMARK [2][-]{subsection.2.8.3}{Trayectorias del Caso de Uso}{section.2.8}% 59
+\BOOKMARK [2][-]{subsection.2.8.4}{IU01 Pantalla de Inicio}{section.2.8}% 60
+\BOOKMARK [1][-]{section.2.9}{CU12 Apartar Libro}{chapter.2}% 61
+\BOOKMARK [2][-]{subsection.2.9.1}{Descripci\363n completa}{section.2.9}% 62
+\BOOKMARK [2][-]{subsection.2.9.2}{Atributos importantes}{section.2.9}% 63
+\BOOKMARK [2][-]{subsection.2.9.3}{Trayectorias del Caso de Uso}{section.2.9}% 64
+\BOOKMARK [2][-]{subsection.2.9.4}{IU01 Pantalla de Inicio}{section.2.9}% 65
+\BOOKMARK [2][-]{subsection.2.9.5}{IU02 Pantalla Apartar Libro}{section.2.9}% 66
+\BOOKMARK [2][-]{subsection.2.9.6}{IU03 Pantalla de Formulario para Apartar Libro}{section.2.9}% 67
+\BOOKMARK [1][-]{section.2.10}{CU14 Generar Multas}{chapter.2}% 68
+\BOOKMARK [2][-]{subsection.2.10.1}{Descripci\363n completa}{section.2.10}% 69
+\BOOKMARK [2][-]{subsection.2.10.2}{Atributos importantes}{section.2.10}% 70
+\BOOKMARK [2][-]{subsection.2.10.3}{Trayectorias del Caso de Uso}{section.2.10}% 71
+\BOOKMARK [1][-]{section.2.11}{CU16 Registrar empleado}{chapter.2}% 72
+\BOOKMARK [2][-]{subsection.2.11.1}{Descripci\363n completa}{section.2.11}% 73
+\BOOKMARK [2][-]{subsection.2.11.2}{Atributos importantes}{section.2.11}% 74
+\BOOKMARK [2][-]{subsection.2.11.3}{Trayectorias del Caso de Uso}{section.2.11}% 75
+\BOOKMARK [2][-]{subsection.2.11.4}{IU16 Pantalla de Registro de Empleados}{section.2.11}% 76
+\BOOKMARK [1][-]{section.2.12}{Catalogo de Mensajes}{chapter.2}% 77
