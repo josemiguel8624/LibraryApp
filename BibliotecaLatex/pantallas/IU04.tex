@@ -1,12 +1,43 @@
 \newpage
-\subsection{IU01 Pantalla principal}
+\subsection{IU4.1 Pantalla de registro}
 
-\IUfig[.7]{CU04/CU04GUI01}{IU01}{Pantalla principal}
+\subsubsection{Objetivo}
+	Pantalla de registro, es la pantalla principal.  
 
-\subsection{IU02 Registrar libro}
+\subsubsection{Diseño}
+	En esta pantalla muestra el botón \IUbutton{Registro}.  \\\\
+	El administrador dará en el botón \IUbutton{Registro}
 
-\IUfig[.7]{CU04/CU04GUI02}{IU02}{Registra libro}
+\IUfig[.7]{CU04/CU04GUI01}{IU04.1}{Pantalla registrar}
 
-\subsection{IU03 Registro exitoso}
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Generara la pantalla \IUref{IU04.2}{Registra libro}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item El Administrador dara clic en el boton \IUbutton{Registrar}
+	\end{Citemize}
 
-\IUfig[.7]{CU04/CU04GUI03}{IU03}{Registro exitoso}
+\subsection{IU4.2 Registrar libro}
+
+\subsubsection{Objetivo}
+	Pantalla de registro, en esta pantalla se recibirán los datos de el libro.
+
+\subsubsection{Diseño}
+	En esta pantalla aparecen el formulario a llenar con los datos del libro a registrar.
+	El administrador ingresara la informacion necesaria para el registro.
+	El administrado dará clic en el \IUbutton{Registrar}
+
+\IUfig[.7]{CU04/CU04GUI02}{IU04.2}{Registra libro}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Se efectuara el registro y dará el mensaje \MSGref{MSG01}{Operación realizada exitosa mente} 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Informacion de el libro a registrar.
+	\end{Citemize}
