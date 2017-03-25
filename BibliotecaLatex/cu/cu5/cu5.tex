@@ -1,22 +1,23 @@
 % Copie este bloque por cada caso de uso:
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
-	\begin{UseCase}{CU05s}{Consultar libros}{
-		En este caso de uso se describirá el comportamiento y funcionamiento del sistema para buscar un libro dentro de una base de datos. La consulta se realizará a tráves del nombre del libro y arrojará como resultado todos los libros que coincidan con ese nombre, mostrando en pantalla la información relacionada al libro.
+	\begin{UseCase}{CU05}{Consultar libros}{
+		En este caso de uso se describirá el comportamiento y funcionamiento del sistema para buscar un libro dentro de una base de datos. La consulta se realizará a tráves del nombre del libro, autor, categoría, número de páginas, fecha de publicacion o editorial y arrojará como resultado todos los libros que coincidan con los campos establecidos, mostrando en pantalla la información relacionada al libro.
 	}
-		\UCitem{Versión}{0.1}
-		\UCitem{Actor}{Administrador, Estudiante}
-		\UCitem{Propósito}{Poder visualizar en pantalla los libros que existan en la base de datos con el nombre solicitado }
-		\UCitem{Entradas}{Nombre del libro}
+		\UCitem{Versión}{1.1}
+		\UCitem{Actor}{Usuario}
+		\UCitem{Propósito}{Poder visualizar en pantalla los libros que existan en la base de datos con el campo de busqueda solicitado }
+		\UCitem{Entradas}{Nombre, autor, categoría, numero de páginas, fecha de publicación o editorial del libro}
 		\UCitem{Salidas}{Informacion correspondiente a el libro que se desea buscar}
 		\UCitem{Precondiciones}{ 
-			\begin{itemize}
-				\item El administrador debe haber ingresado al sistema. 
+			\begin{itemize} 
 				\item Tiene que existir datos de los libros en la BD.
 			\end{itemize}
 		}
 		\UCitem{Postcondiciones}{Ninguna. Es una consulta.}
 		\UCitem{Autor}{Torres Segura Ricardo, Vega Camacho Enrique}
+		\UCitem{Revisado por}{ }
+		\UCitem{Estado}{ }
 	\end{UseCase}
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
@@ -26,26 +27,77 @@
 		%\UCpaso[\UCactor] Se conecta a la BD \Trayref{A}.
 		%\UCpaso[\UCsist] Referenciar a una regla de negocio. Business Rule \BRref{RN01}{Nombre}
 		%\UCpaso[\UCactor] Referenciar a un mensaje \MSGref{MSG01}{Un salón solo tiene asignado una entrevista a la vez}
-		\UCpaso[\UCactor] El Usuario llena el campo disponible con el nombre del libro y hace clic en el el boton \IUbutton{Buscar} de la \IUref{UI51}{Pantalla Consulta de libros}.
-		\UCpaso[\UCsist] El sistema valida que el campo no esté vacío. \Trayref{A}
-		\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{B}
-		\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el nombre solicitado. \Trayref{C}
-		\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
+		\UCpaso[\UCactor] El usuario selecciona de la lista mostrada en la \IUref{UI51}{Pantalla Consulta de libros}, un filtro de búsqueda.
+		\UCpaso[\UCactor] El Usuario ingresa el campo de busqueda del libro y hace clic en el el boton \IUbutton{Buscar} de la \IUref{UI51}{Pantalla Consulta de libros}.\Trayref{A}\Trayref{B}\Trayref{C}\Trayref{D}\Trayref{E}\Trayref{F}
 	\end{UCtrayectoria}
-			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa A.
-		\begin{UCtrayectoriaA}{A}{La cadena para generar la búsqueda es invalida.}
-			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Termina el caso de uso.
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa A.
+		\begin{UCtrayectoriaA}{A}{El filtro de búsqueda seleccionado es por: Nombre}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
 		\end{UCtrayectoriaA}
+
 		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa B.
-		\begin{UCtrayectoriaA}{B}{No se puede conectar a la base de datos.}
-			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Termina el caso de uso.
+		\begin{UCtrayectoriaA}{B}{El filtro de búsqueda seleccionado es por: Autor}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío y que no tenga numeros o caracteres especiales. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
 		\end{UCtrayectoriaA}
+
 		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa C.
-		\begin{UCtrayectoriaA}{C}{No se encuentró la palabra de búsqueda.}
+		\begin{UCtrayectoriaA}{C}{El filtro de búsqueda seleccionado es por: Categoría}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
+		\end{UCtrayectoriaA}
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa D.
+		\begin{UCtrayectoriaA}{D}{El filtro de búsqueda seleccionado es por: Numero de páginas}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío y que solamente contenga números. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
+		\end{UCtrayectoriaA}
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa E.
+		\begin{UCtrayectoriaA}{E}{El filtro de búsqueda seleccionado es por: Fecha de publicación}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío y que el formato de la fecha sea dd/mm/aaaa, donde dd es el día, mm es el numero del mes y aaaa es el año. Ejemplo: 24/05/1996. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
+		\end{UCtrayectoriaA}
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa F.
+		\begin{UCtrayectoriaA}{F}{El filtro de búsqueda seleccionado es por: Editorial}
+			\UCpaso[\UCsist] El sistema valida que el campo no esté vacío. \Trayref{G}
+			\UCpaso[\UCsist] El sistema se conecta a la base de datos \Trayref{H}
+			\UCpaso[\UCsist] El sistema hace una búsqueda a la base de datos para encontrar los libros con el campo de busqueda solicitado. \Trayref{I}
+			\UCpaso[\UCsist] El sistema muestra en la intefaz \IUref{UI52}{Pantalla de vista de consulta de libros} los resultados obtenidos, incluyendo el estado del libro.
+		\end{UCtrayectoriaA}
+
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa e.
+		\begin{UCtrayectoriaA}{G}{La cadena para generar la búsqueda es invalida.}
+			\UCpaso[\UCsist] Muestra el mensaje  \MSGref{MASG6}{Cofirma que los datos ingresados sean correctos.}
 			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Termina el caso de uso.
+			\UCpaso[\UCsist] Muestra la interfaz \IUref{UI51}{Pantalla Consulta de libros}
+		\end{UCtrayectoriaA}
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa H.
+		\begin{UCtrayectoriaA}{H}{No se puede conectar a la base de datos.}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{E1}{Error al conectar a la BD.} 
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Muestra la interfaz \IUref{UI51}{Pantalla Consulta de libros}
+		\end{UCtrayectoriaA}
+
+		%-------------------------------------- COMIENZA descripción Trayectoria Alternativa I.
+		\begin{UCtrayectoriaA}{I}{No se encuentró la palabra de búsqueda.}
+			\UCpaso[\UCsist] Muestra el mensaje MSG No se obtuvo ningun resultado en la búsqeda.
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Muestra la interfaz \IUref{UI51}{Pantalla Consulta de libros}
 		\end{UCtrayectoriaA}
 		
 %-------------------------------------- TERMINA descripción del caso de uso.
