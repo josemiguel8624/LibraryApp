@@ -1,0 +1,31 @@
+\newpage
+\subsection{IU16 Pantalla de Registro de Empleados}
+
+\subsubsection{Objetivo}
+	Pantalla de Registro de Empleados, en esta interfaz se deberá introducir la información para agregar un nuevo empleado a la base de datos.  
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al clickear en registro de empleado en el menú superior.  \\\\
+
+\IUfig[.7]{CU16RegistrarEmpleado/RegistroEmpleado.png}{UI16.1}{Pantalla de Registro de Empleado.}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Registrar}: Manda los datos para que sean validados y posteriormente registrados en la base de datos. 
+\end{itemize}
+
+
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Nombre: Cadena de caracteres del o los nombres del empledao, ésta puede incluir letras y espacios. 
+		\item Apellido Paterno: Cadena de caracteres del apellido paterno del empledao, ésta puede incluir letras y espacios. 
+		\item Apellido Materno: Cadena de caracteres del apellido materno del empledao, ésta puede incluir letras y espacios. 
+		\item RFC: Cadena de caracteres del RFC del empledao, ésta debe tener 4 letras, 2 números de año, 2 números de 01-12, 2 números 01-31, 3 dígitos letras o números para la homoclave. 
+		\item CURP: Cadena de caracteres del CURP del empledao, ésta debe tener 4 letras, 2 números de año, 2 números de 01-12, 2 números 01-31,1 letra de género, 2 letras estado y 4 dígitos letras y números.. 
+		\item Teléfono: Cadena de caracteres del teléfono principal del empledao, ésta debe incluir sólo números. 
+		\item Email: Cadena de caracteres del email del empledao, ésta debe tener el formato correcto de un email. 
+		\item Tipo de Empleado: Caja de selección con los diferentes tipos de empleado existentes en el sistema.
+		\item Duración contrato: Entero que nos dice el número de meses que dura el contrato del empleado a registrar.
+		\item Dirección: Cadena de caracteres de la dirección del empledao, ésta puede incluir números, letras, espacios y puntos. 
+	\end{Citemize}
