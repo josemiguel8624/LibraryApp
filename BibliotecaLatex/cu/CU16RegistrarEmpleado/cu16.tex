@@ -1,0 +1,133 @@
+% \IUref{IUAdmSucur}{Administrador}
+% \IUref{IUConsDA}{Registrar empleado}
+% Version 1
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU16}{Registrar empleado}{
+		Permitir al administrador dar de alta a un empleado en el sistema.
+	}
+		\UCitem{Versión}{2.0}
+		\UCitem{Actor}{Administrador.}
+		\UCitem{Propósito}{Que el Administrador pueda dar de alta a un nuevo empleado en el sistema.}
+		\UCitem{Entradas}{Nombre, apellido paterno, apellido materno, CURP, RFC, telefono, email, tipo de empleado, duracion del contrato y dirección}
+		\UCitem{Origen}{Teclado}
+		\UCitem{Salidas}{Mensaje de exito de que se registro un nuevo empleado.}
+		\UCitem{Destino}{Pantalla, guardar un registro en la bitácora.}
+		\UCitem{Precondiciones}{
+			\begin{itemize}
+				\item El empleado no debe de estar registrado.
+				\item El empleado debe de contar con su RFC.
+			\end{itemize}
+			}
+		\UCitem{Postcondiciones}{}
+		\UCitem{Errores}{}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Observaciones}{}
+		\UCitem{Autor}{
+		\begin{itemize}
+			\item Durán Martínez Josué
+			\item Miguel Ángel Castañeda Sánchez.
+		\end{itemize}
+		}
+		\UCitem{Revisor}{Miguel Ángel Castañeda Sánchez.}
+	\end{UseCase}
+	
+	
+%%------------Trayectoria Principal-----------------%%		
+	
+	\begin{UCtrayectoria}{Principal}
+	
+		\UCpaso[\UCactor] Ingresa a la \IUref{UI16.1}{Pantalla Registrar empleado} dando clik en el botón \IUbutton{Registrar empleado}. 
+		
+		\UCpaso Despliega la \IUref{UI16.1}{Pantalla Registrar empleado}.
+
+		\UCpaso[\UCactor] Llena todos los campos que son: 
+			\begin{itemize}
+				\item Nombre.
+				\item Apellido paterno.
+				\item Apellido materno.
+				\item RFC.
+				\item CURP.
+				\item Telefono.
+				\item Email.
+				\item Tipo de empleado.
+				\item Duración del contrato.
+				\item Dirección.
+			\end{itemize} 
+		\label{CU16RegistrarEmpleado}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Registrar}.\label{CU16ConectarBaseDatos}
+
+		\UCpaso Se conecta a la base de datos. \Trayref{D}.
+
+		\UCpaso Verifica los campos de los datos con base a la \BRref{RN36}{Ningún campo nulo.} \Trayref{A}.
+
+		\UCpaso Valida que los datos ingresados cumplan los formatos con base a las Reglas de Negocio: 
+				
+			\begin{itemize}
+				\item	\BRref{RN37}{Formato del nombre} 
+				\item	\BRref{RN38}{Formato del RFC} 
+				\item	\BRref{RN39}{Formato del CURP} 
+				\item	\BRref{RN40}{Formato del telefono} 
+				\item	\BRref{RN45}{Formato del email} 
+				\item	\BRref{RN41}{Formato de la dirección} 
+				\item	\BRref{RN44}{Formato del contrato} 
+			\end{itemize} 
+		\Trayref{B}.
+
+		\UCpaso Valida que el empleado no halla sido registrado previamente con base a \BRref{RN35}{Empleado registrado} \Trayref{C}.
+
+		\UCpaso El sistema guardara un registro en la bitacora en donde almacenara la fecha del servidor y guardara  al nuevo empleado.
+
+		\UCpaso Muestra el Mensaje \MSGref{MASG1}{Operación realizada exitosamente.}
+		
+
+	\end{UCtrayectoria}
+
+
+
+%%------------Trayectorias Alternativas-----------------%%	
+
+%%------------Trayectoria A-----------------%%
+		
+		
+		\begin{UCtrayectoriaA}{A.}{El Administrador no ha llenado todos los campos}
+			\UCpaso Muestra el Mensaje \MSGref{E3}{Datos incompletos. Favor de completar todos los campos de entrada.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU16RegistrarEmpleado} del \UCref{CU16}.
+			
+		\end{UCtrayectoriaA}
+
+
+%%------------Trayectoria B-----------------%%
+		\begin{UCtrayectoriaA}{B.}{El Administrador ha ingresado los datos de manera incorrecta}
+
+			\UCpaso Muestra el Mensaje \MSGref{MASG6}{Confirma que los datos ingresados sean correctos.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU16RegistrarEmpleado} del \UCref{CU16}.
+
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria C-----------------%%
+		\begin{UCtrayectoriaA}{C.}{El empleado ya esta registrado}
+
+			\UCpaso Muestra el Mensaje \MSGref{E5}{Registro ya existente en el catalogo.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU16RegistrarEmpleado} del \UCref{CU16}.
+
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria D-----------------%%
+		\begin{UCtrayectoriaA}{D.}{Error al conectar a la base de datos}
+
+			\UCpaso Muestra el Mensaje \MSGref{E1}{Error al conectar a la BD.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU16ConectarBaseDatos} del \UCref{CU16}.
+
+		\end{UCtrayectoriaA}		
+
+%-------------------------------------- TERMINA descripción del caso de uso.
