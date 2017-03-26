@@ -2,38 +2,35 @@
 \subsection{IU8.1 Pantalla de Inicio}
 
 \subsubsection{Objetivo}
-	Pantalla de Inicio, es la pantalla principal.  
+	Pantalla de Inicio, es la pantalla principal del sistema, desde aquí esta la opción de préstamo interbibliotecario.  
 
 \subsubsection{Diseño}
-	En esta pantalla muestra el botón \IUbutton{préstamo}.  \\\\
-	El administrado dará en el botón \IUbutton{préstamo}
+	En esta pantalla muestra el botón \IUbutton{préstamo interbibliotecario}.  \\\\
 
-\IUfig[.7]{CU8/UI01}{UI01}{Pantalla de Inicio.}
+\IUfig[.7]{CU8/UI01.PNG}{UI08.1}{Pantalla de Inicio.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
-		\item generara la pantalla \IUref{UI02}{Pantalla de préstamo}. 
+		\item generara la pantalla \IUref{UI08.2}{Pantalla de préstamo interbibliotecario}. 
 	\end{Citemize}
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
-		\item Ninguna
+		\item El administrador dará clic en el botón \IUbutton{Préstamo interbibliotecario}
 	\end{Citemize}
 
 
 
 
-\subsection{IU8.2 Pantalla de prestamo}
+\subsection{IU8.2 Pantalla de préstamo interbibliotecario}
 
 \subsubsection{Objetivo}
-	Pantalla de préstamo, en esta pantalla se recibirán los datos para el préstamo
+	Pantalla de préstamo, en esta pantalla se recibirán los datos de ISBN del libro y el nombre de la biblioteca para efectuar el préstamo interbibliotecario
 
 \subsubsection{Diseño}
-	Esta pantalla aparece cuando presionas el botón \IUbutton{Préstamo}  \\\\
-	El administrador ingresara el nombre del libro y el nombre de la biblioteca
-	El administrado dará en el \IUbutton{préstamo}
+	Esta pantalla aparece cuando presionas el botón \IUbutton{Préstamo interbibliotecario} de la pantalla \IUref{UI08.1} contiene un formulario y pide ISBN de libro y el nombre de la biblioteca también contiene un botón con la etiqueta prestar  \\\\
 
-\IUfig[.7]{CU8/UI02}{UI02}{Pantalla de Préstamo.}
+\IUfig[.7]{CU8/UI02}{UI08.2}{Pantalla de Préstamo interbibliotecario.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
@@ -42,7 +39,7 @@
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
-		\item Ninguna.
+		\item El administrador ingresara el ISBN del libro y el nombre de la biblioteca
 	\end{Citemize}
 
 
