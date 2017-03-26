@@ -1,0 +1,37 @@
+%%caso de uso 17 creacion de roles
+\begin{UseCase}{CU17}{Crear nuevo rol}{
+		El administrador da de alta un nuevo rol para poder ser asignado a uno o varios trabajadores.
+}
+	\UCitem{Versión}{1.0}
+	\UCitem{Actor}{Administrador.}
+	\UCitem{Propósito}{El usuario puede agregar nuevos roles al sistema para que cada trabajador tenga asignado su rol específico.}
+	\UCitem{Entradas}{Crear}
+	\UCitem{Salidas}{Se crea un nuevo registro de rol en la base de datos del sistema.}
+	\UCitem{Precondiciones}{Existe el usuario Administrador dado de alta en la base de datos.}
+	\UCitem{Postcondiciones}{El sistema redirige al usuario a la pantalla gestionar roles.}
+	\UCitem{Autores}{Guarneros Santana Víctor Hugo y Mújica Márquez Víctor Edgar.}
+	\UCitem{Status}{En aprobación}
+	\UCitem{Responsable de revisión}{Esteban Martínez}
+\end{UseCase}
+
+
+%%trayectoria principal
+\begin{UCtrayectoria}{Crear rol}
+	\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Crear} de la pantalla \IUref{IU02}{Directorio de Roles}
+	\UCpaso[\UCsist] Despliega la pantalla \IUref{IU17}{Crear rol}
+	\UCpaso[\UCactor] El administrador asigna el nombre al nuevo rol
+	\UCpaso[\UCactor] Selecciona el botón \IUbutton{Crear} de la pantalla \IUref{IU17}{Crear rol}
+	\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN01}{Duplicidad de roles} y crea el nuevo rol, \Trayref{A}
+	\UCpaso[\UCsist] Muestra mensaje %\MSGref{MSG1}{Operación exitosa}
+	Operación exitosa
+	\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU02}{Directorio de Roles}
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Registro ya existente}
+	\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG03}{Registro ya existente}.
+	\UCpaso[\UCactor] Ingresa un nuevo valor valido.
+	\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN01}{Duplicidad de roles} y crea el nuevo rol, \Trayref{A}
+	\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG01}{Operación exitosa}
+	\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU01}{Directorio de Roles}
+\end{UCtrayectoriaA}

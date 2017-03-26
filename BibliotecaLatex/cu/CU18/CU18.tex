@@ -1,0 +1,25 @@
+%%caso de uso 18 Consultar roles
+\begin{UseCase}{CU18}{Consultar rol}{
+		El administrador consultará los roles que existen en la base de datos de acuerdo a los cargos de los trabajadores.
+}
+	\UCitem{Versión}{1.0}
+	\UCitem{Actor}{Administrador.}
+	\UCitem{Propósito}{El usuario puede consular los roles dados de alta en el sistema en una tabla que muestra cada rol con su respectivo identificador.}
+	\UCitem{Entradas}{Consulta}
+	\UCitem{Salidas}{Se crea una tabla dinámica en la pantalla que muestra los roles esixtentes.}
+	\UCitem{Precondiciones}{Existe el usuario Administrador dado de alta en la base de datos.}
+	\UCitem{Postcondiciones}{El administrador da clic en el botón regresar y el sistema lo redirecciona a la pantalla de Directorio de Roles}
+	\UCitem{Autores}{Guarneros Santana Víctor Hugo y Mújica Márquez Víctor Edgar.}
+	\UCitem{Status}{En aprobación}
+	\UCitem{Responsable de revisión}{Esteban Martínez}
+\end{UseCase}
+
+
+%%trayectoria principal
+\begin{UCtrayectoria}{Consultar Rol}
+	\UCpaso[\UCactor] El Administrador selecciona el botón \IUbutton{Consulta} de la pantalla \IUref{IU02}{Directorio de Roles}
+	\UCpaso[\UCsist] Despliega la pantalla \IUref{IU18}{Consultar rol}
+	\UCpaso[\UCactor]  El Administrador selecciona el botón \IUbutton{Regresar} de la pantalla \IUref{IU18}{Consultar rol}.
+	\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU02}{Directorio de Roles}
+\end{UCtrayectoria}
+
