@@ -1,0 +1,75 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU15}{Consultar inventario}{
+		El usuario si lo desea podra consultar al hacer clic en un botón del menú, los datos de los libros que se encuentren registrados dentro del catalogo de inventario de la biblioteca. 
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item Recoder Jiménez Bryan
+				\item Castillo Huitron Sachiel
+			\end{itemize}	 
+		}
+		\UCitem{Revisa}{Hernandez }
+		\UCitem{Estado}{En revisión}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Consultar los datos de los libros que se tengan registrados dentro del inventario de la biblioteca. }
+		\UCitem{Entradas}{Ninguna.}
+		\UCitem{Salidas}{
+			Listado de los datos de libros registrados en el inventario. 
+			\begin{itemize}
+				\item ID: Cadena de caracteres; referencian al identificador único para cada libro. 
+				\item Titulo: Cadena de caracteres; 
+				\item Nombre del Autor: Cadena de caracterer: Ap. Paterno Ap. Materno, Nombre(s)
+				\item Ciudad: Cadena de caracteres; 
+				\item País: Cadena de caracteres; 
+				\item Editorial: Cadena de caracteres; 
+				\item Edición: Cadena de caracteres; 
+				\item Año: Tipo de dato Date;
+				\item Tema: Cadena de caracteres; Corresponde al área del libro. 
+				\item Estado del libro: Cadena de caracteres; La condición en la que se encuentra el libro físicamente. 
+				\item Ubicación:  Cadena de caracteres; Hace referencia al estante asignado en la biblioteca. 
+			\end{itemize}		
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador debe ser logueado previamente en el sistema. 
+				\item Tiene que existir datos de libros registrados en la BD.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Ninguna.}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Da clic en el botón \IUbutton{Consultar Inventario} de la sección \IUref{IU1501}{Menú} .
+		\UCpaso[\UCsist] Verifica que el administrador este registrado de acuero a la \BRref{RN01}{Unicamente administrador consulta inventario de libros.} . \Trayref{A}.
+		\UCpaso[\UCsist] Se conecta a la BD. \Trayref{B}
+		\UCpaso[\UCsist] Verifica que existan libros registrados en la BD \Trayref{C}
+		\UCpaso[\UCsist] Muestra en la pantalla \IUref{IU1502}{Consultar Inventario} una tabla con los datos de los libros. 
+		\UCpaso[\UCactor] Visualiza los datos en pantalla. \Trayref{D}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa A.
+		\begin{UCtrayectoriaA}{A}{El usuario no esta logueado como administrador \MSGref{MSGX}{Debe iniciar sesión como administrador}}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa B.
+		\begin{UCtrayectoriaA}{B}{\MSGref{[E1]}{Error en la conexión con la base de datos}}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa C.
+		\begin{UCtrayectoriaA}{C}{\MSGref{MSGX}{No hay datos de libros registrados.}}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa D.
+		\begin{UCtrayectoriaA}{D}{Regresar a Home.}
+			\UCpaso[\UCactor] Da clic en \IUbutton{Regresar}
+			\UCpaso[\UCsist] Redirecciona a la pantalla Home de la aplicación
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,45 @@
+\newpage
+\subsection{IU1502 Consultar Inventario }
+
+\subsubsection{Objetivo}
+	Mostrar el listado de los datos de los libros registrados dentro del catalógo de inventario de la biblioteca. 
+
+\subsubsection{Diseño}
+	Consiste en una tabla que acomoda todos los datos correspondientes a cada uno de los libros registrados dentro del catalogo. El usuario con las flechas en la cabecera de cada columna podrá acomodar los datos de forma ascendente o descendente. \\
+	Tambien contará con un botón para regresar al home de la aplicación. 
+
+\IUfig[.7]{CU15/UI02ConsultarInventario}{UI1502}{Pantalla de Consultar inventario.}
+
+\subsubsection{Salidas}
+	Listado de los datos de libros registrados en el inventario. 
+			\begin{itemize}
+				\item ID: Cadena de caracteres; referencian al identificador único para cada libro. 
+				\item Titulo: Cadena de caracteres; 
+				\item Nombre del Autor: Cadena de caracterer: Ap. Paterno Ap. Materno, Nombre(s)
+				\item Ciudad: Cadena de caracteres; 
+				\item País: Cadena de caracteres; 
+				\item Editorial: Cadena de caracteres; 
+				\item Edición: Cadena de caracteres; 
+				\item Año: Tipo de dato Date;
+				\item Tema: Cadena de caracteres; Corresponde al área del libro. 
+				\item Estado del libro: Cadena de caracteres; La condición en la que se encuentra el libro físicamente. 
+				\item Ubicación:  Cadena de caracteres; Hace referencia al estante asignado en la biblioteca. 
+			\end{itemize}		
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Ninguna. 
+	\end{Citemize}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Regresar}: Redirecciona a la pantalla home de la aplicación.
+	\item \IUbutton{flechas up/down}: Boton ubicado en la cabecera de cada columna: Acomoda los datos de forma ascendente o descendente de la columna seleccionada. 
+\end{itemize}
+
+\subsubsection{Mensajes}
+	\begin{Citemize}
+		\item \MSGref{[E1]}{Error en la conexión con la base de datos}
+		\item \MSGref{MSGX}{Debe iniciar sesión como administrador}
+		\item \MSGref{MSGX}{No hay datos de libros registrados.}
+	\end{Citemize}
