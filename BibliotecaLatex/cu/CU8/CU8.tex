@@ -1,0 +1,48 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU08}{Préstamo interbibliotecario}{
+		Este caso de uso tiene como objetivo prestar un libro a otra biblioteca para satisfacer la necesidad de libros mediante el llenado de un formulario 
+		
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Prestar un libro de la biblioteca a otra biblioteca, se llenara un formulario donde se introducirá la biblioteca a la que se le prestara el libro y el ISBN libro, se verificara si el libro se puede prestar, y si se tiene convenio con la biblioteca.}
+		\UCitem{Entradas}{ISBN del libro y nombre del la biblioteca}
+		\UCitem{Salidas}{un mensaje del préstamo donde se especificara el libro que se presta, biblioteca a la que se le presta, fecha actual y fecha de devolución}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El libro debe estar disponible para préstamo. 
+				\item conexión a la base de datos.
+				\item Se debe tener convenio con la biblioteca
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{El libro estará en la base de datos como prestado}
+		\UCitem{Autor}{Rodriguez Ceravates Arturo y Monserrat Ceron Rodriguez .}
+		\UCitem{Reviso}{Abidal y Diego}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Presionara el botón:  \IUbutton{Préstamo interbibliotecario} de la pantalla \IUref{UI08.1}{Pantalla de inicio}.
+		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI08.2}{pantalla de préstamo interbibliotecario}.
+		\UCpaso[\UCactor]Ingresara los datos y presionara el botón: \IUbutton{Prestar} se verifican reglas de negocio  \BRref{RN08}{Estado de libro para préstamo} y \BRref{RN46}{Convenio con biblioteca}\Trayref{A} \Trayref{B}\Trayref{C}.
+		\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG01}{Operación realizada exitosa mente}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Se ingreso mal alguno de los campos}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E3}{Datos introducidos incorrectamente.}
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+
+%-------------------------------------		
+		\begin{UCtrayectoriaA}{B}{El libro no esta disponible para el préstamo}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{El libro no está disponible.}
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{C}{LA biblioteca no tiene convenio}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{La biblioteca no tiene convenio.}
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+TERMINA descripción del caso de uso.
