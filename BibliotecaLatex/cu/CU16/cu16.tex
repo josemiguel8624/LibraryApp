@@ -8,32 +8,24 @@
 
 %\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
 	\begin{UseCase}{CU16}{Registrar empleado}{
-		Permitir al administrador dar de alta a un empleado en el sistema.
+		El administrador podrá registrar en el sistema a un nuevo empleado, con la finalidad de tener guardada la información de los trabajadores de la biblioteca para consulta y control de la misma. Lo hará introduciendo los datos del nuevo empleado: nombre completo, RCF, CURP, teléfono, email, dirección, el tipo de empleado y la duración de su contrato.
 	}
 		\UCitem{Versión}{2.0}
+		\UCitem{Estado}{En revisión}
 		\UCitem{Actor}{Administrador.}
-		\UCitem{Propósito}{Que el Administrador pueda dar de alta a un nuevo empleado en el sistema.}
+		\UCitem{Propósito}{Almacenar en la base de datos los datos de todos los empleados de la biblioteca.}
 		\UCitem{Entradas}{Nombre, apellido paterno, apellido materno, CURP, RFC, telefono, email, tipo de empleado, duracion del contrato y dirección}
-		\UCitem{Origen}{Teclado}
-		\UCitem{Salidas}{Mensaje de exito de que se registro un nuevo empleado.}
-		\UCitem{Destino}{Pantalla, guardar un registro en la bitácora.}
+		\UCitem{Salidas}{Registro en la base de datos junto con el mensaje \MSGref{MASG1}{Operación realizada exitosamente.}, mensaje \MSGref{E3}{Datos incompletos. Favor de completar todos los campos de entrada.}, mensaje \MSGref{MASG6}{Confirma que los datos ingresados sean correctos.}, mensaje \MSGref{E5}{Registro ya existente en el catalogo.} y mensaje \MSGref{E1}{Error al conectar a la BD.}}
 		\UCitem{Precondiciones}{
 			\begin{itemize}
 				\item El empleado no debe de estar registrado.
 				\item El empleado debe de contar con su RFC.
 			\end{itemize}
 			}
-		\UCitem{Postcondiciones}{}
-		\UCitem{Errores}{}
+		\UCitem{Postcondiciones}{Nuevo empleado registrado en el sistema.}
 		\UCitem{Tipo}{Caso de uso primario.}
-		\UCitem{Observaciones}{}
-		\UCitem{Autor}{
-		\begin{itemize}
-			\item Durán Martínez Josué
-			\item Miguel Ángel Castañeda Sánchez.
-		\end{itemize}
-		}
-		\UCitem{Revisor}{Miguel Ángel Castañeda Sánchez.}
+		\UCitem{Autor}{Durán Martínez Josué y Miguel Ángel Castañeda Sánchez.}
+		\UCitem{Revisor}{Arturo Rodriguez Cervantes y Monserrat Cerón Rodriguez.}
 	\end{UseCase}
 	
 	
