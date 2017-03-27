@@ -188,17 +188,43 @@
 	\BRitem[Descripción:]Es posible renovar siempre y cuando el material no haya sido apartado por otro usuario a través del sistema.
 \end{BussinesRule}
 
+
 \begin{BussinesRule}{RN30}{Disponibilidad de un libro.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
-	\BRitem[Descripción:]Cuando se realiza el proceso de entrega, la disponibilidad del libro cambia a “Disponible”. Cuando se realiza el proceso de préstamo la disponibilidad del libro en “EN USO”.
+	\BRitem[Descripción:]La Disponibilidad y el estado físico  determinan es “Estado Actual “ el cual se encuentra el libro.
+Disponibilidad:
+
+		\begin{itemize} 
+			\item En Uso : Hace referencia a  que se está utilizando en la biblioteca para consulta
+			\item Disponible : El libro se encuentra disponible para su préstamo
+			\item No disponible: El libro se encuentra en préstamo.
+		\end{itemize}
+Estado Físico: Son las condiciones físicas del libro en las que se encuentra.
+	\begin{itemize} 
+			\item Sucio
+			\item Con Marcas 
+			\item Arrugado
+			\item Sin Pasta
+			\item Hojas Faltantes
+			\item Etc.
+		\end{itemize}
+
+	
 \end{BussinesRule}
 
 \begin{BussinesRule}{RN31}{Estado de un libro.} 
 	\BRitem[Tipo:] Restricción (validación).
 	%\BRitem[Autor:] Cortés Pérez Edy
-	\BRitem[Descripción:]Todos los libros deben poseer un estado que describa su disponibilidad en la biblioteca establecido en una fecha y hora concreta.
+	\BRitem[Descripción:]La disponibilidad de un libro cambia con base a la siguientes reglas (Ultimo Estado -)  Estado Actual) :
+\begin{itemize} 
+			\item Disponible -)  En Uso | No Disponible
+			\item En Uso -) Disponible | No Disponible
+			\item No Disponible -) Disponible
+		\end{itemize}
 \end{BussinesRule}
+
+
 
 \begin{BussinesRule}{RN32}{Número de Intentos para Registrar Estado.} 
 	\BRitem[Tipo:] Restricción (validación).
