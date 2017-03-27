@@ -1,8 +1,9 @@
 % Copie este bloque por cada caso de uso:
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
-\begin{UseCase}{CU04}{Registrar libro}{Se describirá el comportamiento y funcionamiento del sistema para registrar un libro
-en una base de datos. El registro se realizará ingresando la información completa del libro acorde al protocolo de identificación MARC 21.}
+\begin{UseCase}{CU04}{Registrar libro}{Se describirá el comportamiento y funcionamiento del sistema para almacenar la informacion de un libro
+en una base de datos conforme a la norma MARC 21 para poder tener un catalogo de libros.
+}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador}
 		\UCitem{Propósito}{Registrar los libros entrantes conforme a MARC 21 y guardarlos en una base de datos.}
@@ -26,9 +27,7 @@ en una base de datos. El registro se realizará ingresando la información compl
 			\end{itemize}					
 		}
 		\UCitem{Salidas}{
-			\begin{itemize}
-				\item Se registra la informacion del libro.
-			\end{itemize}					
+		Registro en la base de datos junto con el mensaje \MSGref{MSG1}{Operación realizada exitosamente.}, mensaje \MSGref{E3}{Datos incompletos. Favor de completar todos los campos de entrada.} y mensaje \MSGref{E1}{Error al conectar a la BD.}
 		}
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
@@ -37,14 +36,18 @@ en una base de datos. El registro se realizará ingresando la información compl
 			\end{itemize}
 		}
 		\UCitem{Postcondiciones}{
-			\begin{itemize}
-				\item Se actualiza en la base de datos la lista de libros con los que cuenta la biblioteca.
-			\end{itemize}					
+			Se actualiza en la base de datos la lista de libros con los que cuenta la biblioteca.					
 		}
 		\UCitem{Autor}{
 			\begin{itemize}
 				\item Manriquez Molina Diego
 				\item Salas Hernández Abiran Natanael
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item nombre1
+				\item nombre2
 			\end{itemize}					
 		}
 \end{UseCase}
@@ -61,20 +64,20 @@ en una base de datos. El registro se realizará ingresando la información compl
 	\UCpaso[\UCsist] Se mostrará el mensaje \MSGref{MSG01}{Operación realizada exitosamente}.
 \end{UCtrayectoria}
 \begin{UCtrayectoriaA}{A}{Se introdujo un campo vacio}	
-			\UCpaso[\UCsist] Muestra mensaje [E2].
+			\UCpaso[\UCsist] Muestra mensaje \MSGref{E3}{Datos incompletos. Favor de completar todos los campos de entrada.}.
 			\UCpaso[\UCactor] Ingresa un nuevo valor valido.
 			\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN22}{Campos llenos libro} y se procede a verificar el libro en la base de datos.\Trayref{A}
 			\UCpaso[\UCsist] Se mostrará el mensaje \MSGref{MSG01}{Operación realizada exitosamente}.
 			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU04.2}{Registrar libro}			
 \end{UCtrayectoriaA}
 \begin{UCtrayectoriaA}{B}{Se introdujo un ISBN existente con una editorial diferente}	
-			\UCpaso[\UCsist] El sistema mostrará el mensaje [MSG8].
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSG8}{El ISBN no corresponde a la edicion del libro.}.
 			\UCpaso[\UCactor] Ingresa un nuevo valor valido.
 			\UCpaso[\UCsist] Verifica la informacion y compara el ISBN en la base de datos de acuerdo a la regla de negocio \BRref{RN23}{Registrar libro} .\Trayref{B}
 			\UCpaso[\UCsist] Se mostrará el mensaje \MSGref{MSG01}{Operación realizada exitosamente}
 			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU04.2}{Registrar libro}	
 \end{UCtrayectoriaA}
 \begin{UCtrayectoriaA}{C}{Fallo de conexion en la base de datos}
-			\UCpaso[\UCsist] El sistema mostrará el mensaje [E1].
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{E1}{Error al conectar a la BD.}.
 			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU04.1}{Pantalla registrar}	
 \end{UCtrayectoriaA}
