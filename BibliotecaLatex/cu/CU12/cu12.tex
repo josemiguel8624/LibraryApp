@@ -33,32 +33,30 @@
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] El usuario se dirige a la opción de \IUbutton{Buscar Libro} que aparece en la \IUref{UI1201}{Pantalla de Inicio}.
 		\UCpaso[\UCsist] El sistema llama al caso de uso \UCref{5}.
-		\UCpaso[\UCsist] El sistema verifica si el libro no esta disponible conforme a la regla de negocio \BRref{20}{Libro Disponible para Apartado}\Trayref{A}.
+		\UCpaso[\UCsist] El sistema verifica si el libro no esta disponible conforme a la regla de negocio \BRref{RN20}{Libro Disponible para Apartado}\Trayref{A}.
 		\UCpaso[\UCactor] El usuario da clic en el boton Apartar Libro que aparece en la \IUref{UI1202}{Libro no Disponible}.
 		\UCpaso[\UCsist] El sistema despliega la ventana \IUref{UI1203}{Formulario Apartar Libro} mostrando la interfaz de usuario.
 		\UCpaso[\UCactor] El usuario llena los campos: Clave del Usuario (id).
 		\UCpaso[\UCactor] El usuario da clic en el botón de Apartar en la parte inferior derecha de la \IUref{UI1203}{Formulario Apartar Libro}.
-		\UCpaso[\UCsist] El sistema validará los datos conforme a las reglas de negocio \BRref{18}{Apartado Libro}\BRref{19}{Apartado para Usuario}\Trayref{B}\Trayref{C}.
+		\UCpaso[\UCsist] El sistema validará los datos conforme a las reglas de negocio \BRref{RN18}{Apartado Libro} \BRref{RN19}{Apartado para Usuario}\Trayref{B}\Trayref{C}.
 		\UCpaso[\UCsist] El sistema llena la tabla de la entidad LibrosApartados en la base de datos \Trayref{D}, donde se guardarán los registros nuevos de los libros apartados. 
 		\UCpaso[\UCsist] El sistema envia un correo con los datos de la orden de apartado y los datos del libro \Trayref{E}.		
 		\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG1}{Operación Exitosa},
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{A}{El libro se encuentra disponible}
-			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG5}{Libro Disponible}. Notificando la violación de la \BRref{20}{Libro Disponible para Apartado}.
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG5}{Libro Disponible}. Notificando la violación de la \BRref{RN20}{Libro Disponible para Apartado}.
 			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
 		\end{UCtrayectoriaA}		
 		\begin{UCtrayectoriaA}{B}{El libro ya fue apartado}
-			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG3}{Libro Apartado}. Notificando la violación de la \BRref{18}{Apartado Libro}.
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{MSG3}{Libro Apartado}. Notificando la violación de la \BRref{RN18}{Apartado Libro}.
 			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
 		\end{UCtrayectoriaA}
 		
 		\begin{UCtrayectoriaA}{C}{El usuario no se encuentra registrado}
-			\UCpaso[\UCsist] El sistema muestra el \MSGref{E4}{Usuario sin Registrar}. Notificando la violación de la \BRref{19}{Apartado para Usuario}.
+			\UCpaso[\UCsist] El sistema muestra el \MSGref{E4}{Usuario sin Registrar}. Notificando la violación de la \BRref{RN19}{Apartado para Usuario}.
 			\UCpaso[\UCactor] Oprime el botón \IUbutton{Ok}.
 		\end{UCtrayectoriaA}
-		
-		
 		
 		\begin{UCtrayectoriaA}{D}{No se realizo exitosamente la conexión a la base de datos}
 			\UCpaso[\UCsist] El sistema muestra el \MSGref{E1}{Sin conexión a la BD}. Notificando que no se pudo realizar la conexión a la base de datos.
