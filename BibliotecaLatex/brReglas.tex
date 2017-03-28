@@ -379,5 +379,36 @@ Su CURP será: BEML920313HCMLNS09.
 	\BRitem[Descripción:] Para poder realizar un prestamo se debe tener convenio con la biblioteca.\\
 	\BRitem[Tipo:] Restricción (validación).
 \end{BussinesRule}
+
+\begin{BussinesRule}{RN47}{Formato del ISBN del libro.}
+	%\BRitem[Autor:] miguel angel castañeda
+	\BRitem[Descripción:] El ISBN esta compuesto por:
+		\begin{itemize} 
+			\item Elemento prefijo – actualmente sólo pueden ser 978 o 979. Siempre tiene 3 dígitos de longitud.
+			\item Elemento de grupo de registro –identifica a un determinado país, una región geográfica o un área lingüística que participan en el sistema ISBN. Este elemento puede tener entre 1 y 5 dígitos de longitud
+			\item Elemento del titular – identifica a un determinado editor o a un sello editorial. Puede tener hasta 7 dígitos de longitud. 
+			\item Elemento de publicación – identifica una determinada edición y formato de un determinado título. Puede ser de hasta 6 dígitos de longitud. 
+			\item Dígito de control – es siempre el último y único dígito que valida matemáticamente al resto del número. 
+		\end{itemize}
+Ejemplo \\
+	978-92-95055-02-5
+	\BRitem[Tipo:] Restricción(validación)
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+
+\begin{BussinesRule}{RN48}{Formato de la fecha.}
+	%\BRitem[Autor:] miguel angel castañeda
+	\BRitem[Descripción:] La fecha tiene el siguiente formato :
+		\begin{itemize} 
+			\item Dia(DD)/ 
+			\item Mes(MM)/
+			\item Año (AAAA)
+		\end{itemize}
+Ejemplo \\
+	16/05/2017
+	\BRitem[Tipo:] Restricción(validación)
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
 %---------------------------------------------------------
 
