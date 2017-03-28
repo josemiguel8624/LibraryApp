@@ -1,42 +1,47 @@
 % Copie este bloque por cada caso de uso:
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
-	\begin{UseCase}{CU07}{Prestamo de Libros a domicilio}{
-		Este caso de uso tiene como objetivo que los clientes puedan pedir el prestamo de un libro fuera de la biblioteca.
+	\begin{UseCase}{CU07}{Prestar libros a domicilio}{
+	Autorización que se otorga a los usuarios para llevar fuera de la biblioteca los materiales con los que se cuentan en disposición de prestamo, mediante el llenado de un formulario donde se introducirá  el identificador del usuario que solicita este tramite y también el identificador del libro que se desea pedir en prestamo para que así el sistema autorize o no la solicitud.
+
 	}
-		\UCitem{Versión}{0.1}
+		\UCitem{Versión}{1.1}
+		\UCitem{Autor}{Mora Guardado Daniel y Cortes Frias Diego Antonio.}
+		\UCitem{Revisó}{Miguel Tejeda y Erubey Martinez.}
+		\UCitem{Estado}{Pendiente}
 		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Se llenará un formulario donde se introducirá el identificador del usuario y el libro que se desea pedir a préstamo. El sistema verificará que el usuario esté debidamente registrado al sistema y que sea apto para pedir libros en préstamo y también se verificará si el libro es apto para ser prestado.}
+		\UCitem{Propósito}{Autorizar el prestamo de un libro para que el usuario sea capaz de llevar el libro fuera biblioteca. }
 		\UCitem{Entradas}{
 						\begin{itemize}
-							\item ID Usuario.
-							\item Nombre del libro.
+							\item Identificador del usuario.
+							\item Identificador del libro.
 						\end{itemize}
 					}
 		\UCitem{Salidas}{Se redireccionará al usuario a una pantalla donde muestre los resultados de su peticion.}
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
 				\item El administrador debe haber ingresado al sistema. 
-				\item El usuario debe contar con un ID.
+				\item El libro debe estar disponible para prestamo y se debe de contar con su identificador.
+				\item El usuario debe de estar dado de alta en el sistema y contar con un identificador.
 			\end{itemize}
 		}
-		\UCitem{Postcondiciones}{Se actualiza en la DB la lista de libros con los que el usuario cuenta en prestamo.}
-		\UCitem{Autor}{Mora Guardado Daniel y Cortes Frias Diego Antonio.}
+		\UCitem{Postcondiciones}{Se actualiza en la base de datos  la lista de libros con los que el usuario cuenta en prestamo y cambiará el estado de libro a prestado. }
+
 	\end{UseCase}
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
-		\UCpaso[\UCactor] Dará click en  \IUbutton{Pretsamo de Libros} de la interfaz \IUref{UI01}{Pantalla de Inicio}  .
-		\UCpaso[\UCactor] Llenará el formulario de la interfaz \IUref{UI02}{Pantalla de prestamo a domicilio} \BRitem Se llenara con el ID del usuario y el 				Nombre del libro que el usuario quiere como pretsamo  \Trayref{A}.
-		\UCpaso[\UCactor] Dará click en  \IUbutton{Realizar tramite} 
+		\UCpaso[\UCactor] Da click en  \IUbutton{Pretsamo de Libros} de la interfaz \IUref{UI01}{Pantalla de Inicio}  .
+		\UCpaso[\UCactor] Llena el formulario de la interfaz \IUref{UI02}{Pantalla de prestamo a domicilio} \BRitem Se llena con el identificador del usuario y el identificador del libro que el usuario quiere como pretsamo  \Trayref{A}.
+		\UCpaso[\UCactor] Da click en  \IUbutton{Realizar tramite} 
 		\UCpaso[\UCsist] Se conecta a la BD \Trayref{B}.
-		\UCpaso[\UCsist] Verificará la cuenta del usuario \Trayref{C} \Trayref{D} \Trayref{E} \Trayref{F}. .
-		\UCpaso[\UCsist] Verificará la disponibilidad del libro \Trayref{G}.
+		\UCpaso[\UCsist] Verifica la cuenta del usuario \Trayref{C} \Trayref{D} \Trayref{E} \Trayref{F}. .
+		\UCpaso[\UCsist] Verifica la disponibilidad del libro \Trayref{G}.
 		\UCpaso[\UCsist] Se muestra en \IUref{UI03}{Prestamo satisfacotrio} un mensaje con la fecha de devolucion del libro. 
-		\UCpaso[\UCactor] Dará click en  \IUbutton{Entendido} de  \IUref{UI03}{Prestamo satisfacotrio} y se redireccionara a  \IUref{UI01}{Pantalla de Inicio} .
+		\UCpaso[\UCactor] Da click en  \IUbutton{Entendido} de  \IUref{UI03}{Prestamo satisfacotrio} y se redireccionara a  \IUref{UI01}{Pantalla de Inicio} .
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{A}{No se llenan todos los campos del formulario de la \IUref{UI02}{Pantalla de prestamo a domicilio}  }
-			\UCpaso[\UCsist] Se vuelve a cargar la  \IUref{UI02}{Pantalla de prestamo a domicilio} con el mensaje \MSGref{E3}{Datos incompletos} en letrar rojas en la parte superior del formulario.
+			\UCpaso[\UCsist] Vuelve a cargar la  \IUref{UI02}{Pantalla de prestamo a domicilio} con el mensaje \MSGref{E3}{Datos incompletos} en letrar rojas en la parte superior del formulario.
 			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
 		\end{UCtrayectoriaA}
 
@@ -44,44 +49,44 @@
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{B}{No se pudó hacer la conexión a la base de datos.  }
 			\UCpaso[\UCsist] Se muestra  \IUref{UI04}{Error}  con el mensaje \MSGref{E1}{Fallo de conexion}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio}  
 		\end{UCtrayectoriaA}
 
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{C}{Se viola la \BRref{Rn4}{Usuario no registrado}  }
 			\UCpaso[\UCsist] Se muestra  \IUref{UI04}{Error}   con el mensaje \MSGref{E4}{Usuario no registrado}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio}  
 		\end{UCtrayectoriaA}
 
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{D}{Se viola la \BRref{Rn5}{Limite de prestamos}  }
 			\UCpaso[\UCsist] Se muestra \IUref{UI04}{Error}   con el mensaje \MSGref{MSG7}{Limite de prestamos}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio}   
 		\end{UCtrayectoriaA}
 
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{E}{Se viola la \BRref{Rn6}{Sancion de prestamos}  }
 			\UCpaso[\UCsist] Se muestra  \IUref{UI04}{Error}  con el mensaje \MSGref{MSG2}{Sancion}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio}   
 		\end{UCtrayectoriaA}
 
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{F}{Se viola la \BRref{Rn7}{Usuario bloqueado}  }
 			\UCpaso[\UCsist] Se muestra  \IUref{UI04}{Error}   con el mensaje \MSGref{MSG4}{Usuario bloqueado}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio}  
 		\end{UCtrayectoriaA}
 
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 
 		\begin{UCtrayectoriaA}{G}{Se viola la \BRref{Rn8}{Estado del libro para prestamo}  }
-			\UCpaso[\UCsist] Se muestra  \IUref{UI04}{Error}  con el mensaje \MSGref{MSG3}{Libro no disponible}
-			\UCpaso[\UCactor] Dará click en  \IUbutton{Aceptar}.
-			\UCpaso[\UCsist] Redireccionara a  \IUref{UI01}{Pantalla de Inicio}  
+			\UCpaso[\UCactor] Da click en  \IUbutton{Aceptar}.
+			\UCpaso[\UCsist] Redirecciona a  \IUref{UI01}{Pantalla de Inicio} 
+
 		\end{UCtrayectoriaA}
 
 
