@@ -31,11 +31,11 @@
 \BOOKMARK [2][-]{subsection.2.5.3}{Trayectorias del Caso de Uso}{section.2.5}% 31
 \BOOKMARK [2][-]{subsection.2.5.4}{IU51 Pantalla de Consulta de libros}{section.2.5}% 32
 \BOOKMARK [2][-]{subsection.2.5.5}{IU52 Pantalla de vista de consulta de libros}{section.2.5}% 33
-\BOOKMARK [1][-]{section.2.6}{CU06 Registrar Estado de Libros}{chapter.2}% 34
+\BOOKMARK [1][-]{section.2.6}{CU06 Registrar Cambio de Estado de un Libro}{chapter.2}% 34
 \BOOKMARK [2][-]{subsection.2.6.1}{Descripci\363n completa}{section.2.6}% 35
 \BOOKMARK [2][-]{subsection.2.6.2}{Atributos importantes}{section.2.6}% 36
 \BOOKMARK [2][-]{subsection.2.6.3}{Trayectorias del Caso de Uso}{section.2.6}% 37
-\BOOKMARK [2][-]{subsection.2.6.4}{IU6 Pantalla de Inicio}{section.2.6}% 38
+\BOOKMARK [2][-]{subsection.2.6.4}{IU6 Pantalla Cambio de Estado de un Libro}{section.2.6}% 38
 \BOOKMARK [1][-]{section.2.7}{CU07 Prestamo de Libros a domicilio}{chapter.2}% 39
 \BOOKMARK [2][-]{subsection.2.7.1}{Descripci\363n completa}{section.2.7}% 40
 \BOOKMARK [2][-]{subsection.2.7.2}{Atributos importantes}{section.2.7}% 41
@@ -83,29 +83,29 @@
 \BOOKMARK [2][-]{subsection.2.14.3}{Trayectorias del Caso de Uso}{section.2.14}% 83
 \BOOKMARK [2][-]{subsection.2.14.4}{IU1501 Men\372 }{section.2.14}% 84
 \BOOKMARK [2][-]{subsection.2.14.5}{IU1502 Consultar Inventario }{section.2.14}% 85
-\BOOKMARK [1][-]{section.2.15}{CU17 Crear nuevo rol}{chapter.2}% 86
+\BOOKMARK [1][-]{section.2.15}{CU16 Registrar empleado}{chapter.2}% 86
 \BOOKMARK [2][-]{subsection.2.15.1}{Descripci\363n completa}{section.2.15}% 87
 \BOOKMARK [2][-]{subsection.2.15.2}{Atributos importantes}{section.2.15}% 88
 \BOOKMARK [2][-]{subsection.2.15.3}{Trayectorias del Caso de Uso}{section.2.15}% 89
-\BOOKMARK [2][-]{subsection.2.15.4}{IU17 Crear Rol}{section.2.15}% 90
-\BOOKMARK [1][-]{section.2.16}{CU18 Consultar rol}{chapter.2}% 91
+\BOOKMARK [2][-]{subsection.2.15.4}{IU16 Pantalla de Registro de Empleados}{section.2.15}% 90
+\BOOKMARK [1][-]{section.2.16}{CU17 Crear nuevo rol}{chapter.2}% 91
 \BOOKMARK [2][-]{subsection.2.16.1}{Descripci\363n completa}{section.2.16}% 92
 \BOOKMARK [2][-]{subsection.2.16.2}{Atributos importantes}{section.2.16}% 93
 \BOOKMARK [2][-]{subsection.2.16.3}{Trayectorias del Caso de Uso}{section.2.16}% 94
-\BOOKMARK [2][-]{subsection.2.16.4}{IU18 Consultar Rol}{section.2.16}% 95
-\BOOKMARK [1][-]{section.2.17}{CU19 Modificar rol}{chapter.2}% 96
+\BOOKMARK [2][-]{subsection.2.16.4}{IU17 Crear Rol}{section.2.16}% 95
+\BOOKMARK [1][-]{section.2.17}{CU18 Consultar rol}{chapter.2}% 96
 \BOOKMARK [2][-]{subsection.2.17.1}{Descripci\363n completa}{section.2.17}% 97
 \BOOKMARK [2][-]{subsection.2.17.2}{Atributos importantes}{section.2.17}% 98
 \BOOKMARK [2][-]{subsection.2.17.3}{Trayectorias del Caso de Uso}{section.2.17}% 99
-\BOOKMARK [2][-]{subsection.2.17.4}{IU19 Modificar rol}{section.2.17}% 100
-\BOOKMARK [1][-]{section.2.18}{CU20 Eliminar rol}{chapter.2}% 101
+\BOOKMARK [2][-]{subsection.2.17.4}{IU18 Consultar Rol}{section.2.17}% 100
+\BOOKMARK [1][-]{section.2.18}{CU19 Modificar rol}{chapter.2}% 101
 \BOOKMARK [2][-]{subsection.2.18.1}{Descripci\363n completa}{section.2.18}% 102
 \BOOKMARK [2][-]{subsection.2.18.2}{Atributos importantes}{section.2.18}% 103
 \BOOKMARK [2][-]{subsection.2.18.3}{Trayectorias del Caso de Uso}{section.2.18}% 104
-\BOOKMARK [2][-]{subsection.2.18.4}{IU20 Eliminar Rol}{section.2.18}% 105
-\BOOKMARK [1][-]{section.2.19}{CU16 Registrar empleado}{chapter.2}% 106
+\BOOKMARK [2][-]{subsection.2.18.4}{IU19 Modificar rol}{section.2.18}% 105
+\BOOKMARK [1][-]{section.2.19}{CU20 Eliminar rol}{chapter.2}% 106
 \BOOKMARK [2][-]{subsection.2.19.1}{Descripci\363n completa}{section.2.19}% 107
 \BOOKMARK [2][-]{subsection.2.19.2}{Atributos importantes}{section.2.19}% 108
 \BOOKMARK [2][-]{subsection.2.19.3}{Trayectorias del Caso de Uso}{section.2.19}% 109
-\BOOKMARK [2][-]{subsection.2.19.4}{IU16 Pantalla de Registro de Empleados}{section.2.19}% 110
+\BOOKMARK [2][-]{subsection.2.19.4}{IU20 Eliminar Rol}{section.2.19}% 110
 \BOOKMARK [1][-]{section.2.20}{Catalogo de Mensajes}{chapter.2}% 111

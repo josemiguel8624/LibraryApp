@@ -1,74 +1,74 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Modelo de negocios}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Reglas de Negocio}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Modelo de comportamiento}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}CU01 Gesti\IeC {\'o}n de roles}{8}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Descripci\IeC {\'o}n completa}{8}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Atributos importantes}{8}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Trayectorias del Caso de Uso}{8}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}IU01 Pantalla principal}{9}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}IU02 Directorio de Roles}{9}{subsection.2.1.5}
-\contentsline {section}{\numberline {2.2}CU02 Generar cuentas de usuario}{10}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Descripci\IeC {\'o}n completa}{10}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Atributos importantes}{10}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Trayectorias del Caso de Uso}{11}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}UI01 Gesti\IeC {\'o}n de Usuario}{13}{subsection.2.2.4}
-\contentsline {subsubsection}{Objetivo}{13}{section*.2}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{13}{section*.3}
-\contentsline {subsection}{\numberline {2.2.5}UI02 Agregar Usuario}{14}{subsection.2.2.5}
-\contentsline {subsubsection}{Objetivo}{14}{section*.4}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{14}{section*.5}
-\contentsline {subsection}{\numberline {2.2.6}UI03 Inserci\IeC {\'o}n Exitosa}{15}{subsection.2.2.6}
-\contentsline {subsubsection}{Objetivo}{15}{section*.6}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{15}{section*.7}
-\contentsline {section}{\numberline {2.3}CU03 Generar Credencial}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Descripci\IeC {\'o}n completa}{16}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Atributos importantes}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Trayectorias del Caso de Uso}{16}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}IU01 Pantalla de Inicio}{18}{subsection.2.3.4}
-\contentsline {subsubsection}{Objetivo}{18}{section*.8}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{18}{section*.9}
-\contentsline {subsubsection}{Salidas}{18}{section*.10}
-\contentsline {subsubsection}{Entradas}{18}{section*.11}
-\contentsline {subsubsection}{Comandos}{18}{section*.12}
-\contentsline {subsubsection}{Mensajes}{19}{section*.13}
-\contentsline {section}{\numberline {2.4}CU04 Registrar libro}{20}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Descripci\IeC {\'o}n completa}{20}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Atributos importantes}{20}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Trayectorias del Caso de Uso}{21}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}IU4.1 Pantalla de registro}{23}{subsection.2.4.4}
-\contentsline {subsubsection}{Objetivo}{23}{section*.14}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{23}{section*.15}
-\contentsline {subsubsection}{Salidas}{23}{section*.16}
-\contentsline {subsubsection}{Entradas}{23}{section*.17}
-\contentsline {subsection}{\numberline {2.4.5}IU4.2 Registrar libro}{23}{subsection.2.4.5}
-\contentsline {subsubsection}{Objetivo}{23}{section*.18}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{23}{section*.19}
-\contentsline {subsubsection}{Salidas}{24}{section*.20}
-\contentsline {subsubsection}{Entradas}{24}{section*.21}
-\contentsline {section}{\numberline {2.5}CU05 Consultar libros}{25}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Descripci\IeC {\'o}n completa}{25}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Atributos importantes}{25}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Trayectorias del Caso de Uso}{25}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}IU51 Pantalla de Consulta de libros}{28}{subsection.2.5.4}
-\contentsline {subsubsection}{Objetivo}{28}{section*.22}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{28}{section*.23}
-\contentsline {subsubsection}{Salidas}{28}{section*.24}
-\contentsline {subsubsection}{Entradas}{28}{section*.25}
-\contentsline {subsubsection}{Comandos}{28}{section*.26}
-\contentsline {subsubsection}{Mensajes}{28}{section*.27}
-\contentsline {subsection}{\numberline {2.5.5}IU52 Pantalla de vista de consulta de libros}{30}{subsection.2.5.5}
-\contentsline {subsubsection}{Objetivo}{30}{section*.28}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{30}{section*.29}
-\contentsline {subsubsection}{Salidas}{30}{section*.30}
-\contentsline {subsubsection}{Entradas}{30}{section*.31}
-\contentsline {subsubsection}{Comandos}{30}{section*.32}
-\contentsline {subsubsection}{Mensajes}{30}{section*.33}
-\contentsline {section}{\numberline {2.6}CU06 Registrar Estado de Libros}{31}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Descripci\IeC {\'o}n completa}{31}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Atributos importantes}{31}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Trayectorias del Caso de Uso}{31}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}IU6 Pantalla de Inicio}{34}{subsection.2.6.4}
+\contentsline {chapter}{\numberline {2}Modelo de comportamiento}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}CU01 Gesti\IeC {\'o}n de roles}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Descripci\IeC {\'o}n completa}{9}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Atributos importantes}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Trayectorias del Caso de Uso}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}IU01 Pantalla principal}{10}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}IU02 Directorio de Roles}{10}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}CU02 Generar cuentas de usuario}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Descripci\IeC {\'o}n completa}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Atributos importantes}{11}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Trayectorias del Caso de Uso}{12}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}UI01 Gesti\IeC {\'o}n de Usuario}{14}{subsection.2.2.4}
+\contentsline {subsubsection}{Objetivo}{14}{section*.2}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{14}{section*.3}
+\contentsline {subsection}{\numberline {2.2.5}UI02 Agregar Usuario}{15}{subsection.2.2.5}
+\contentsline {subsubsection}{Objetivo}{15}{section*.4}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{15}{section*.5}
+\contentsline {subsection}{\numberline {2.2.6}UI03 Inserci\IeC {\'o}n Exitosa}{16}{subsection.2.2.6}
+\contentsline {subsubsection}{Objetivo}{16}{section*.6}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{16}{section*.7}
+\contentsline {section}{\numberline {2.3}CU03 Generar Credencial}{17}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Descripci\IeC {\'o}n completa}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Atributos importantes}{17}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Trayectorias del Caso de Uso}{17}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}IU01 Pantalla de Inicio}{19}{subsection.2.3.4}
+\contentsline {subsubsection}{Objetivo}{19}{section*.8}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{19}{section*.9}
+\contentsline {subsubsection}{Salidas}{19}{section*.10}
+\contentsline {subsubsection}{Entradas}{19}{section*.11}
+\contentsline {subsubsection}{Comandos}{19}{section*.12}
+\contentsline {subsubsection}{Mensajes}{20}{section*.13}
+\contentsline {section}{\numberline {2.4}CU04 Registrar libro}{21}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Descripci\IeC {\'o}n completa}{21}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Atributos importantes}{21}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Trayectorias del Caso de Uso}{22}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}IU4.1 Pantalla de registro}{24}{subsection.2.4.4}
+\contentsline {subsubsection}{Objetivo}{24}{section*.14}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{24}{section*.15}
+\contentsline {subsubsection}{Salidas}{24}{section*.16}
+\contentsline {subsubsection}{Entradas}{24}{section*.17}
+\contentsline {subsection}{\numberline {2.4.5}IU4.2 Registrar libro}{24}{subsection.2.4.5}
+\contentsline {subsubsection}{Objetivo}{24}{section*.18}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{24}{section*.19}
+\contentsline {subsubsection}{Salidas}{25}{section*.20}
+\contentsline {subsubsection}{Entradas}{25}{section*.21}
+\contentsline {section}{\numberline {2.5}CU05 Consultar libros}{26}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Descripci\IeC {\'o}n completa}{26}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Atributos importantes}{26}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Trayectorias del Caso de Uso}{26}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}IU51 Pantalla de Consulta de libros}{29}{subsection.2.5.4}
+\contentsline {subsubsection}{Objetivo}{29}{section*.22}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{29}{section*.23}
+\contentsline {subsubsection}{Salidas}{29}{section*.24}
+\contentsline {subsubsection}{Entradas}{29}{section*.25}
+\contentsline {subsubsection}{Comandos}{29}{section*.26}
+\contentsline {subsubsection}{Mensajes}{29}{section*.27}
+\contentsline {subsection}{\numberline {2.5.5}IU52 Pantalla de vista de consulta de libros}{31}{subsection.2.5.5}
+\contentsline {subsubsection}{Objetivo}{31}{section*.28}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{31}{section*.29}
+\contentsline {subsubsection}{Salidas}{31}{section*.30}
+\contentsline {subsubsection}{Entradas}{31}{section*.31}
+\contentsline {subsubsection}{Comandos}{31}{section*.32}
+\contentsline {subsubsection}{Mensajes}{31}{section*.33}
+\contentsline {section}{\numberline {2.6}CU06 Registrar Cambio de Estado de un Libro}{32}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Descripci\IeC {\'o}n completa}{32}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Atributos importantes}{32}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Trayectorias del Caso de Uso}{32}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}IU6 Pantalla Cambio de Estado de un Libro}{34}{subsection.2.6.4}
 \contentsline {subsubsection}{Objetivo}{34}{section*.34}
 \contentsline {subsubsection}{Dise\IeC {\~n}o}{34}{section*.35}
 \contentsline {subsubsection}{Salidas}{34}{section*.36}
@@ -155,73 +155,73 @@
 \contentsline {subsection}{\numberline {2.12.1}Descripci\IeC {\'o}n completa}{60}{subsection.2.12.1}
 \contentsline {subsection}{\numberline {2.12.2}Atributos importantes}{60}{subsection.2.12.2}
 \contentsline {subsection}{\numberline {2.12.3}Trayectorias del Caso de Uso}{60}{subsection.2.12.3}
-\contentsline {subsection}{\numberline {2.12.4}IU01 Pantalla de Inicio}{62}{subsection.2.12.4}
-\contentsline {subsubsection}{Objetivo}{62}{section*.86}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{62}{section*.87}
-\contentsline {subsubsection}{Salidas}{62}{section*.88}
-\contentsline {subsubsection}{Entradas}{62}{section*.89}
-\contentsline {subsubsection}{Comandos}{62}{section*.90}
-\contentsline {subsubsection}{Mensajes}{62}{section*.91}
-\contentsline {subsection}{\numberline {2.12.5}IU02 Pantalla Apartar Libro}{63}{subsection.2.12.5}
-\contentsline {subsubsection}{Objetivo}{63}{section*.92}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{63}{section*.93}
-\contentsline {subsubsection}{Salidas}{63}{section*.94}
-\contentsline {subsubsection}{Entradas}{63}{section*.95}
-\contentsline {subsubsection}{Comandos}{63}{section*.96}
-\contentsline {subsubsection}{Mensajes}{63}{section*.97}
-\contentsline {subsection}{\numberline {2.12.6}IU03 Pantalla de Formulario para Apartar Libro}{64}{subsection.2.12.6}
-\contentsline {subsubsection}{Objetivo}{64}{section*.98}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{64}{section*.99}
-\contentsline {subsubsection}{Salidas}{64}{section*.100}
-\contentsline {subsubsection}{Entradas}{64}{section*.101}
-\contentsline {subsubsection}{Comandos}{64}{section*.102}
-\contentsline {subsubsection}{Mensajes}{64}{section*.103}
-\contentsline {section}{\numberline {2.13}CU14 Generar Multas}{66}{section.2.13}
-\contentsline {subsection}{\numberline {2.13.1}Descripci\IeC {\'o}n completa}{66}{subsection.2.13.1}
-\contentsline {subsection}{\numberline {2.13.2}Atributos importantes}{66}{subsection.2.13.2}
-\contentsline {subsection}{\numberline {2.13.3}Trayectorias del Caso de Uso}{66}{subsection.2.13.3}
-\contentsline {section}{\numberline {2.14}CU15 Consultar inventario}{68}{section.2.14}
-\contentsline {subsection}{\numberline {2.14.1}Descripci\IeC {\'o}n completa}{68}{subsection.2.14.1}
-\contentsline {subsection}{\numberline {2.14.2}Atributos importantes}{68}{subsection.2.14.2}
-\contentsline {subsection}{\numberline {2.14.3}Trayectorias del Caso de Uso}{69}{subsection.2.14.3}
-\contentsline {subsection}{\numberline {2.14.4}IU1501 Men\IeC {\'u} }{70}{subsection.2.14.4}
-\contentsline {subsubsection}{Objetivo}{70}{section*.104}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{70}{section*.105}
-\contentsline {subsubsection}{Comandos}{70}{section*.106}
-\contentsline {subsection}{\numberline {2.14.5}IU1502 Consultar Inventario }{71}{subsection.2.14.5}
-\contentsline {subsubsection}{Objetivo}{71}{section*.107}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{71}{section*.108}
-\contentsline {subsubsection}{Salidas}{71}{section*.109}
-\contentsline {subsubsection}{Entradas}{72}{section*.110}
-\contentsline {subsubsection}{Comandos}{72}{section*.111}
-\contentsline {subsubsection}{Mensajes}{72}{section*.112}
-\contentsline {section}{\numberline {2.15}CU17 Crear nuevo rol}{73}{section.2.15}
-\contentsline {subsection}{\numberline {2.15.1}Descripci\IeC {\'o}n completa}{73}{subsection.2.15.1}
-\contentsline {subsection}{\numberline {2.15.2}Atributos importantes}{73}{subsection.2.15.2}
-\contentsline {subsection}{\numberline {2.15.3}Trayectorias del Caso de Uso}{73}{subsection.2.15.3}
-\contentsline {subsection}{\numberline {2.15.4}IU17 Crear Rol}{74}{subsection.2.15.4}
-\contentsline {section}{\numberline {2.16}CU18 Consultar rol}{75}{section.2.16}
-\contentsline {subsection}{\numberline {2.16.1}Descripci\IeC {\'o}n completa}{75}{subsection.2.16.1}
-\contentsline {subsection}{\numberline {2.16.2}Atributos importantes}{75}{subsection.2.16.2}
-\contentsline {subsection}{\numberline {2.16.3}Trayectorias del Caso de Uso}{75}{subsection.2.16.3}
-\contentsline {subsection}{\numberline {2.16.4}IU18 Consultar Rol}{76}{subsection.2.16.4}
-\contentsline {section}{\numberline {2.17}CU19 Modificar rol}{77}{section.2.17}
-\contentsline {subsection}{\numberline {2.17.1}Descripci\IeC {\'o}n completa}{77}{subsection.2.17.1}
-\contentsline {subsection}{\numberline {2.17.2}Atributos importantes}{77}{subsection.2.17.2}
-\contentsline {subsection}{\numberline {2.17.3}Trayectorias del Caso de Uso}{77}{subsection.2.17.3}
-\contentsline {subsection}{\numberline {2.17.4}IU19 Modificar rol}{78}{subsection.2.17.4}
-\contentsline {section}{\numberline {2.18}CU20 Eliminar rol}{79}{section.2.18}
-\contentsline {subsection}{\numberline {2.18.1}Descripci\IeC {\'o}n completa}{79}{subsection.2.18.1}
-\contentsline {subsection}{\numberline {2.18.2}Atributos importantes}{79}{subsection.2.18.2}
-\contentsline {subsection}{\numberline {2.18.3}Trayectorias del Caso de Uso}{79}{subsection.2.18.3}
-\contentsline {subsection}{\numberline {2.18.4}IU20 Eliminar Rol}{80}{subsection.2.18.4}
-\contentsline {section}{\numberline {2.19}CU16 Registrar empleado}{81}{section.2.19}
-\contentsline {subsection}{\numberline {2.19.1}Descripci\IeC {\'o}n completa}{81}{subsection.2.19.1}
-\contentsline {subsection}{\numberline {2.19.2}Atributos importantes}{81}{subsection.2.19.2}
-\contentsline {subsection}{\numberline {2.19.3}Trayectorias del Caso de Uso}{81}{subsection.2.19.3}
-\contentsline {subsection}{\numberline {2.19.4}IU16 Pantalla de Registro de Empleados}{84}{subsection.2.19.4}
-\contentsline {subsubsection}{Objetivo}{84}{section*.113}
-\contentsline {subsubsection}{Dise\IeC {\~n}o}{84}{section*.114}
-\contentsline {subsubsection}{Comandos}{84}{section*.115}
-\contentsline {subsubsection}{Entradas}{84}{section*.116}
-\contentsline {section}{\numberline {2.20}Catalogo de Mensajes}{86}{section.2.20}
+\contentsline {subsection}{\numberline {2.12.4}IU01 Pantalla de Inicio}{63}{subsection.2.12.4}
+\contentsline {subsubsection}{Objetivo}{63}{section*.86}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{63}{section*.87}
+\contentsline {subsubsection}{Salidas}{63}{section*.88}
+\contentsline {subsubsection}{Entradas}{63}{section*.89}
+\contentsline {subsubsection}{Comandos}{63}{section*.90}
+\contentsline {subsubsection}{Mensajes}{63}{section*.91}
+\contentsline {subsection}{\numberline {2.12.5}IU02 Pantalla Apartar Libro}{64}{subsection.2.12.5}
+\contentsline {subsubsection}{Objetivo}{64}{section*.92}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{64}{section*.93}
+\contentsline {subsubsection}{Salidas}{64}{section*.94}
+\contentsline {subsubsection}{Entradas}{64}{section*.95}
+\contentsline {subsubsection}{Comandos}{64}{section*.96}
+\contentsline {subsubsection}{Mensajes}{64}{section*.97}
+\contentsline {subsection}{\numberline {2.12.6}IU03 Pantalla de Formulario para Apartar Libro}{65}{subsection.2.12.6}
+\contentsline {subsubsection}{Objetivo}{65}{section*.98}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{65}{section*.99}
+\contentsline {subsubsection}{Salidas}{65}{section*.100}
+\contentsline {subsubsection}{Entradas}{65}{section*.101}
+\contentsline {subsubsection}{Comandos}{65}{section*.102}
+\contentsline {subsubsection}{Mensajes}{65}{section*.103}
+\contentsline {section}{\numberline {2.13}CU14 Generar Multas}{67}{section.2.13}
+\contentsline {subsection}{\numberline {2.13.1}Descripci\IeC {\'o}n completa}{67}{subsection.2.13.1}
+\contentsline {subsection}{\numberline {2.13.2}Atributos importantes}{67}{subsection.2.13.2}
+\contentsline {subsection}{\numberline {2.13.3}Trayectorias del Caso de Uso}{67}{subsection.2.13.3}
+\contentsline {section}{\numberline {2.14}CU15 Consultar inventario}{69}{section.2.14}
+\contentsline {subsection}{\numberline {2.14.1}Descripci\IeC {\'o}n completa}{69}{subsection.2.14.1}
+\contentsline {subsection}{\numberline {2.14.2}Atributos importantes}{69}{subsection.2.14.2}
+\contentsline {subsection}{\numberline {2.14.3}Trayectorias del Caso de Uso}{70}{subsection.2.14.3}
+\contentsline {subsection}{\numberline {2.14.4}IU1501 Men\IeC {\'u} }{71}{subsection.2.14.4}
+\contentsline {subsubsection}{Objetivo}{71}{section*.104}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{71}{section*.105}
+\contentsline {subsubsection}{Comandos}{71}{section*.106}
+\contentsline {subsection}{\numberline {2.14.5}IU1502 Consultar Inventario }{72}{subsection.2.14.5}
+\contentsline {subsubsection}{Objetivo}{72}{section*.107}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{72}{section*.108}
+\contentsline {subsubsection}{Salidas}{72}{section*.109}
+\contentsline {subsubsection}{Entradas}{73}{section*.110}
+\contentsline {subsubsection}{Comandos}{73}{section*.111}
+\contentsline {subsubsection}{Mensajes}{73}{section*.112}
+\contentsline {section}{\numberline {2.15}CU16 Registrar empleado}{74}{section.2.15}
+\contentsline {subsection}{\numberline {2.15.1}Descripci\IeC {\'o}n completa}{74}{subsection.2.15.1}
+\contentsline {subsection}{\numberline {2.15.2}Atributos importantes}{74}{subsection.2.15.2}
+\contentsline {subsection}{\numberline {2.15.3}Trayectorias del Caso de Uso}{74}{subsection.2.15.3}
+\contentsline {subsection}{\numberline {2.15.4}IU16 Pantalla de Registro de Empleados}{77}{subsection.2.15.4}
+\contentsline {subsubsection}{Objetivo}{77}{section*.113}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{77}{section*.114}
+\contentsline {subsubsection}{Comandos}{77}{section*.115}
+\contentsline {subsubsection}{Entradas}{77}{section*.116}
+\contentsline {section}{\numberline {2.16}CU17 Crear nuevo rol}{79}{section.2.16}
+\contentsline {subsection}{\numberline {2.16.1}Descripci\IeC {\'o}n completa}{79}{subsection.2.16.1}
+\contentsline {subsection}{\numberline {2.16.2}Atributos importantes}{79}{subsection.2.16.2}
+\contentsline {subsection}{\numberline {2.16.3}Trayectorias del Caso de Uso}{79}{subsection.2.16.3}
+\contentsline {subsection}{\numberline {2.16.4}IU17 Crear Rol}{81}{subsection.2.16.4}
+\contentsline {section}{\numberline {2.17}CU18 Consultar rol}{82}{section.2.17}
+\contentsline {subsection}{\numberline {2.17.1}Descripci\IeC {\'o}n completa}{82}{subsection.2.17.1}
+\contentsline {subsection}{\numberline {2.17.2}Atributos importantes}{82}{subsection.2.17.2}
+\contentsline {subsection}{\numberline {2.17.3}Trayectorias del Caso de Uso}{82}{subsection.2.17.3}
+\contentsline {subsection}{\numberline {2.17.4}IU18 Consultar Rol}{83}{subsection.2.17.4}
+\contentsline {section}{\numberline {2.18}CU19 Modificar rol}{84}{section.2.18}
+\contentsline {subsection}{\numberline {2.18.1}Descripci\IeC {\'o}n completa}{84}{subsection.2.18.1}
+\contentsline {subsection}{\numberline {2.18.2}Atributos importantes}{84}{subsection.2.18.2}
+\contentsline {subsection}{\numberline {2.18.3}Trayectorias del Caso de Uso}{84}{subsection.2.18.3}
+\contentsline {subsection}{\numberline {2.18.4}IU19 Modificar rol}{85}{subsection.2.18.4}
+\contentsline {section}{\numberline {2.19}CU20 Eliminar rol}{86}{section.2.19}
+\contentsline {subsection}{\numberline {2.19.1}Descripci\IeC {\'o}n completa}{86}{subsection.2.19.1}
+\contentsline {subsection}{\numberline {2.19.2}Atributos importantes}{86}{subsection.2.19.2}
+\contentsline {subsection}{\numberline {2.19.3}Trayectorias del Caso de Uso}{86}{subsection.2.19.3}
+\contentsline {subsection}{\numberline {2.19.4}IU20 Eliminar Rol}{87}{subsection.2.19.4}
+\contentsline {section}{\numberline {2.20}Catalogo de Mensajes}{88}{section.2.20}

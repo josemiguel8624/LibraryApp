@@ -2,11 +2,13 @@
 \begin{UseCase}{CU19}{Modificar rol}{
 		El administrador podrá modificar el rol deseado de entre los que existen en la base de datos de acuerdo a los cargos de los trabajadores.
 }
-	\UCitem{Versión}{1.0}
+	\UCitem{Versión}{1.1}
 	\UCitem{Actor}{Administrador.}
 	\UCitem{Propósito}{El usuario puede modificar los roles dados de alta en el sistema ingresando el nombre actual y el nombre por el que desea cambiarlo.}
-	\UCitem{Entradas}{Modificar, nombre actual, nombre nuevo}
-	\UCitem{Salidas}{El sistema redirecciona al usuario a la pantalla Directorio de Roles.}
+	\UCitem{Entradas}{Nombre actual del rol, nombre nuevo del rol}
+	\UCitem{Salidas}{Rol acutalizado y mensaje
+		MSGref{MSG01}{Operación exitosa}
+		}
 	\UCitem{Precondiciones}{Existe el usuario Administrador dado de alta en la base de datos y al menos un registro más de otro rol.}
 	\UCitem{Postcondiciones}{Un registro es modificado en la tabla Rol de la base de datos del sistema.}
 	\UCitem{Autores}{Guarneros Santana Víctor Hugo y Mújica Márquez Víctor Edgar.}

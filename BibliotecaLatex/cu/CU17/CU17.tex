@@ -2,13 +2,13 @@
 \begin{UseCase}{CU17}{Crear nuevo rol}{
 		El administrador da de alta un nuevo rol para poder ser asignado a uno o varios trabajadores.
 }
-	\UCitem{Versión}{1.0}
+	\UCitem{Versión}{1.1}
 	\UCitem{Actor}{Administrador.}
 	\UCitem{Propósito}{El usuario puede agregar nuevos roles al sistema para que cada trabajador tenga asignado su rol específico.}
-	\UCitem{Entradas}{Crear}
-	\UCitem{Salidas}{Se crea un nuevo registro de rol en la base de datos del sistema.}
+	\UCitem{Entradas}{Nombre de Rol}
+	\UCitem{Salidas}{Se crea un nuevo registro de rol en la base de datos del sistema y se muestra el mensaje \MSGref{MSG01}{Operación exitosa}.}
 	\UCitem{Precondiciones}{Existe el usuario Administrador dado de alta en la base de datos.}
-	\UCitem{Postcondiciones}{El sistema redirige al usuario a la pantalla gestionar roles.}
+	\UCitem{Postcondiciones}{El sistema redirige al usuario a la pantalla gestionar roles y se genera un nuevo registro en la base de datos.}
 	\UCitem{Autores}{Guarneros Santana Víctor Hugo y Mújica Márquez Víctor Edgar.}
 	\UCitem{Status}{En revisión}
 	\UCitem{Responsable de revisión}{Esteban Martínez}
