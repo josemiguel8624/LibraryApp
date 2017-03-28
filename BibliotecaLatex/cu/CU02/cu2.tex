@@ -2,11 +2,11 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU02}{Generar cuentas de usuario}{
-		En este caso de uso tiene como objetivo generar las cuentas de los nuevos usuarios al sistema.
+	   Se le pedirá al administrador de las cuentas de usuario que ingrese los datos solicitados, a partir de éste momento se comenzará con la  validación de los mismos; una vez realizado esto, se almacenará la instancia de usuario final en la base de datos "Se generará su cuenta" para poder acceder a los servicios ofrecidos en la biblioteca, los usuarios finales serán de varios tipos dependiendo del rol que se le asigne.
 	}
-		\UCitem{Versión}{0.1}
-		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Generar nuevas cuentas de usuarios para que puedan acceder a los servicios ofrecidos por la biblioteca (consultar procesos de negocio). }
+		\UCitem{Versión}{0.2}
+		\UCitem{Actor}{Administrador de Cuentas de Usuario}
+		\UCitem{Propósito}{Generar nuevas a los usuarios finales, para que puedan acceder a los servicios ofrecidos por la biblioteca (consultar procesos de negocio). Se hace énfasis, los servicios a los que se tendrá acceso por usuario dependerán en función del rol asignado a cada cuenta de usuario.}
 		\UCitem{Entradas}{
 		\begin{itemize}
 		\item Una instancia de la clase Usuario
@@ -16,7 +16,7 @@
 		   \item apellidoMa[String]
 		   \item email[String]
 		   \item calle[String]
-		   \item no[int]
+		   \item numCalle[String]
 		   \item cp[int]
 		   \item curp[String]
 		   \item telefono[String]
@@ -27,8 +27,8 @@
 		}
 		\UCitem{Salidas}{
 		\begin{itemize}
-		\item Se enviará un correo al usuario con sus datos de registro y su idUsuario
-		\item Actualizará la capa de modelo
+		\item Se enviará un correo al usuario con sus datos de registro y su idUsuario que se generará automaticamente
+		\item Actualizará la capa de modelo ''insertar en la base de datos el registro''	
 		\end{itemize}				
 		}
 		\UCitem{Precondiciones}{ 
@@ -40,66 +40,90 @@
 		}
 		\UCitem{Postcondiciones}{
 		\begin{itemize}
-		\item El usuario podrá autenticarse
-		\item Acceso a las funciones correspondientes al usuario
+		\item El usuario podrá hacer uso de su cuenta para acceder a los servicios de la biblioteca.
+		\item Control de cada usuario registrado.
 		\end{itemize}				
 		}
-		\UCitem{Autor}{Burciaga Ornelas Rodrigo Andrés}
+		\UCitem{Autor(es)}{
+		\begin{itemize}
+		 \item Burciaga Ornelas Rodrigo Andrés
+		 \item López Eder Guillermo
+		\end{itemize}		 		 
+		}
+		\UCitem{Status}{En Revisión}
+		\UCitem{Revisó}{
+		\begin{itemize}
+		\item Recoder Jiménez Bryan 
+		\item Castillo Huitrón Sachiel 
+		\end{itemize}				
+		}
 	\end{UseCase}
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 	\UCpaso[\UCactor] Ingresa al sistema mediante el enlace a la aplicacion web
 	 \UCpaso[\UCactor] Selecciona agregar usuario de la interfaz \IUref{UI01}{Gestión Usuario}.
 	 \UCpaso[\UCsist]Muestra la interfaz \IUref{UI02}{Agregar Usuario}.
-	  \UCpaso[\UCactor] Administrador llena el formulario de registro
-	   \UCpaso[\UCsist] Verifica la  \BRref{RN33}{Datos del formulario completos}.[Trayectoria A]
-	    \UCpaso[\UCsist] Verifica la  \BRref{RN34}{Datos congruentes en cada campo}.[Trayectoria B]
-	    \UCpaso[\UCsist] Verifica la \BRref{RN35}{El usuario ha sido registrado anteriormente}.[Trayectoria C]
-	  \UCpaso[\UCsist]Envía la información del input CURP a la appi de RENAPO.[Trayectoria D]
-	  \UCpaso[\UCsist]Obtiene la información de la APPI de RENAPO. [Trayectoria E]
-	  \UCpaso[\UCsist]El sistema valida la información ingresada por el usuario comparando con la enviada por la APPI. [Trayectoria F]
-	    \UCpaso[\UCsist]Informa que el registro fue exitoso y envia un correo de confirmación al usuario.Se muestra en pantalla la \IUref{UI03}{Inserción Exitosa!}.
+	  \UCpaso[\UCactor] Llena el formulario de registro
+	   \UCpaso[\UCsist] Verifica la  \BRref{RN42}{Campos llenos usuario}.[Trayectoria A]
+	    \UCpaso[\UCsist] Verifica la \BRref{RN39}{Formato del CURP}.[Trayectoria B]
+	    \UCpaso[\UCsist] Se conecta a la base de datos. [Trayectoria C]
+	    \UCpaso[\UCsist] Verifica la \BRref{RN43}{El usuario ha sido registrado anteriormente}.[Trayectoria D]
+	    \UCpaso[\UCsist] Guarda toda la información ingresada en una instancia de usuario final.
+	  \UCpaso[\UCsist]Envía la información del campo curp a la API de RENAPO.[Trayectoria E]
+	  \UCpaso[\UCsist]Obtiene la información de la API de RENAPO. [Trayectoria F]
+	  \UCpaso[\UCsist]El sistema valida la información ingresada por el usuario comparando con la enviada por la API. [Trayectoria G]
+	    \UCpaso[\UCsist]Informa que el registro fue exitoso, guarda la instancia del usuario en la base de datos y envia un correo de confirmación al usuario(El id del usuario es generado automáticamente por la base de datos auto\_increment).Se muestra en pantalla la \IUref{UI03}{Inserción Exitosa!}.
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{A}{Campos sin llenar.}
-			\UCpaso[\UCsist] El sistema envia el mensaje \MSGref{MSG01}{Debe Llenar todos los campos marcados con *}
-
+			\UCpaso[\UCsist] Enviara el  mensaje en pantalla \MSGref{MSG01}{Datos incompletos. Favor de completar todos los campos de entrada marcados con un *}
+			\UCpaso[\UCsist] Regresa al paso 4 de la trayectoria principal conservando los datos de los campos que si fueron llenados con algún valor.
 		\end{UCtrayectoriaA}
 		
-		\begin{UCtrayectoriaA}{B}{Los datos ingresados no son correctos.}
-			\UCpaso[\UCsist] El sistema envia el mensaje \MSGref{MSG02}{Los datos ingresados en el campo señalado no son congruentes}
 		
+		\begin{UCtrayectoriaA}{B}{Los datos ingresados en el campo CURP no son correctos.}
+			\UCpaso[\UCsist] Enviara el mensaje en pantalla \MSGref{MSG02}{Los datos ingresados en el campo CURP no son congruentes}
+			\UCpaso[\UCsist] Señala mediante un mensaje en pantalla el tipo de formato que se debe seguir para validar el campo CURP.
+			\UCpaso[\UCsist] Regresa al paso 4 de la trayectoria principal conservando los datos de los campos que si fueron llenados con algún valor y borrando el dato introducido en el campo CURP.		
 		\end{UCtrayectoriaA}	
 		
 		
-		\begin{UCtrayectoriaA}{C}{Usuario existente en la base.}
-			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG03}{Usuario Registrado anteriormente}
-
-		\end{UCtrayectoriaA}
-		
-		
-		\begin{UCtrayectoriaA}{D}{La APPI no se encuentra disponible}
-			\UCpaso[\UCsist] El sistema guarda la información en la base de datos.
-			\UCpaso[\UCsist]Intenta enviar la información cada media hora hasta que este disponible.
-		\end{UCtrayectoriaA}
-		
-		\begin{UCtrayectoriaA}{E}{No se pudieron obtener los datos}
-			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG04}{Los datos no se pudieron obtener de la appi de Renapo}
-
+		\begin{UCtrayectoriaA}{C}{No se pudo conectar a la base de datos.}
+			\UCpaso[\UCsist] Enviara un mensaje en pantalla   \MSGref{MSG03}{Problemas para acceder a la base de datos, intentelo más tarde}.
+			\UCpaso[\UCsist] Envía un correo al administrador del sistema informando del error.
+			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal.
 		\end{UCtrayectoriaA}		
 		
 		
 		
-		\begin{UCtrayectoriaA}{E}{Los datos no coinciden}
-			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG05}{Los datos ingresados no son correctos}
+		\begin{UCtrayectoriaA}{D}{Usuario existente en la base.}
+			\UCpaso[\UCsist] Enviara el mensaje en pantalla  \MSGref{MSG04}{Usuario Registrado anteriormente, intenta con otro usuario}
+			\UCpaso[\UCsist] Se regresa al paso 4 de la trayectoria principal eliminando todos los datos que han sido introducidos anteriormente.
+		\end{UCtrayectoriaA}
+		
+		
+		\begin{UCtrayectoriaA}{E}{La API no se encuentra disponible}
+			\UCpaso[\UCsist] Guardará la información de la instancia en la base de datos.
+			\UCpaso[\UCsist]Intentará enviar la información cada media hora hasta que este disponible la API de Renapo.
+			\UCpaso[\UCsist] Enviara un mensaje en pantalla \MSGref{MSG05} {Validando datos, posteriormente se le informará el estado de su registro}
+			\UCpaso[\UCsist] Se regresará al paso 2 de la trayectoria principal
+			\UCpaso[\UCsist]  Enviará un correo al usuario y al administrador del sistema en caso de no poder establecer la comunicación con la API.
+			\UCpaso[\UCsist] Se continuará al paso 11 en caso de éxito al establecer la comunicación con la API.
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{F}{No se pudieron obtener los datos de la API}
+			\UCpaso[\UCsist] Enviará el mensaje en pantalla  \MSGref{MSG06}{No se pudieron obtener los datos de la API de Renapo}
+			\UCpaso[\UCsist] Se regresará al paso 2 de la trayectoria principal
+		\end{UCtrayectoriaA}		
+		
+		
+		
+		\begin{UCtrayectoriaA}{G}{Los datos no coinciden}
+			\UCpaso[\UCsist] Enviará el mensaje  \MSGref{MSG06}{Los datos ingresados en CURP no son correctos}
+			\UCpaso[\UCsist] Se regresará al paso 4 de la trayectoria principal conservando todos los datos a excepción de la CURP.
 
 		\end{UCtrayectoriaA}
 		
-
-		\begin{UCtrayectoriaA}{F}{Los datos no coinciden}
-			\UCpaso[\UCsist] El sistema envia el mensaje  \MSGref{MSG06}{Los datos ingresados de la CURP no son correctos}
-
-		\end{UCtrayectoriaA}
 		
 		
 		
