@@ -1,0 +1,35 @@
+\newpage
+\subsection{IU13A Pantalla de Registro de Multa}
+
+\subsubsection{Objetivo}
+	Permitir al actor interactuar con el sistema para poder registrar una sanción 
+
+\subsubsection{Diseño}
+	Esta pantalla aparece despueés de hacer la pertición para registrar una multa
+
+\IUfig[.7]{CU13/RegistrarMulta}{IU13A}{RegistrarMulta}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+	        \item Información de multa:
+	        \begin{itemize}
+	        	\item Nombre del usuario: Cadena de texto
+	        	\item Tipo de multa: Cadena de texto
+		       	\item Descripción: Cadena de texto
+		   		\item Monto: Cadena de texto
+	    		\item Multas atrasadas: Cadena de texto
+	       	\end{itemize}
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+		\begin{itemize}
+        	\item Nombre de usuario: Cadena de caracteres [Requerido]
+        	\item Tipo de multa: Cadena de caracteres [Requerido]
+        		\begin{itemize}
+        			\item Pérdida de ejemplar
+        			\item Devolución de ejemplar a destiempo
+        			\item Maltrato de ejemplar (Romper, rayar, pintar, deshojar)
+        			\item Sustitución de ejemplar
+        		\end{itemize} 
+	        \item Descripción: Cadena de texto
+        \end{itemize}  
