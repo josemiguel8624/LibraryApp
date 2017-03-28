@@ -54,3 +54,76 @@
 
 
 %-------------------------------------- TERMINA descripción del caso de uso.
+
+
+
+
+%------------------------------------Correciones CU3-Generar Crendencial
+
+%El actor llena los campos del Fomulario registro de crendencial con RNXX "Formato de los campos".[Trayectoria D]
+%
+%El actor da click en el boton generar credencial. 
+%
+%El sistema valida que todos los campos del fomulario esten llenos con base a la RN36 "campos no nulos" 
+%[Trayectoria A]
+%
+%El sistema se conecta a la Base de Datos [Trayectoria B]
+%
+%El sistema valida la creacion de la crendecial con base a la RN2 "Generar crendencial".[Trayectoria C]
+%//La RN3 "Adeudos" no le veo sentido, ya que un usuario para tener adeudos necesita sacar libros de la biblioteca, y para %hacer eso necesita primero tener una credencial para sacar libros de la biblioteca.
+%
+%El sistema sistema guardara un registro en la bitacora en donde se almacena la creación de credencial.
+%
+%El sistema envia al usuario el mensaje MSG01 Operacion realizada exitosamente.
+%
+%
+%
+%Trayectoria A
+%condicion: el administrador no ha llenado todos campos
+%
+%El sistema muestra el mensaje E3 Datos incompletos. Favor de completar todos los campo de entrada.
+%El actor oprime el botón aceptar
+%El sistema continua en el paso 1 del caso 16
+%
+%
+%Trayectoria B
+%Condicion: El administrador ha ingresado los datos de manera incorrecta
+%
+%El sistema envia el mensaje MASG6 Confirma que todos los datos ingresados sean correctos
+%El administrador oprime el boton aceptar
+%El sistema continua en el paso 1 del caso 16
+%
+%
+%Trayectoria C
+%Condicion: El usuario esta dado de alta en el sistema
+%
+%El sistema envia el mnesaje "Usuario no esta dado de alta en el sistema"
+%El actor oprime el boton aceptar
+%El sistema continua en el paso 1 del caso 16
+%
+%
+%Trayectoria D
+%condicion: el administrador no lleno los formatos de manera correcta
+%
+%El sistema muestra el mensaje EXX formato incorrecto. Favor de llenar los campos con el formato correcto.
+%El actor oprime el botón aceptar
+%El sistema continua en el paso 1 del caso 16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
