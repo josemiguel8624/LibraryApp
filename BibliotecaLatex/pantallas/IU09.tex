@@ -8,38 +8,39 @@
 	Esta pantalla aparece al iniciar el sistema.  \\\\
 	Si en la base de datos no algún registro de citas agendadas, la parte de consultar estará inhabilitada. 
 
-\IUfig[.7]{CU09/UI01PantallaVerifica}{UI01}{Pantalla de verificacion.}
+\IUfig[.7]{CU09/UI01PantallaVerifica}{UI0109}{Pantalla de verificacion.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
-		\item Ninguna. 
+		\item Redireccionamiento a la pantalla de información  
 	\end{Citemize}
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
 		\item Nombre del usuario 
+		\item ISBN del libro a devolver
 	\end{Citemize}
 
 \subsection{IU02 Pantalla de Informacion}
 
 \subsubsection{Objetivo}
-	Pantalla de informacion, en esta Interfaz se muestra la infomacion de los libros en prestamo del usuario  
+	Pantalla de informacion, en esta Interfaz se muestra la infomación del usuario y el libro que se va a devolver  
 
 \subsubsection{Diseño}
 	Esta pantalla aparece al validar al usuario.  \\\\
 	Se mostraran los datos correspondientes de dicho usuario
 
 
-\IUfig[.7]{CU09/UI02PantallaInfo}{UI02}{Pantalla de informacion.}
+\IUfig[.7]{CU09/UI02PantallaInfo}{UI0209}{Pantalla de informacion.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
-		\item Tabla con la informacion de los libros prestados. 
+		\item Tabla con la informacion correspondiente: Nombre del libro, ISBN del libro, Fecha en la que se devuelve el libro, fecha limite de devolución. 
 	\end{Citemize}
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
-		\item Ninguna 
+		\item Clic en el botón \IUbutton{OK} de la pantalla anterior
 	\end{Citemize}
 
 
@@ -58,7 +59,7 @@
 	Se mostraran un mensaje de exito
 
 
-\IUfig[.7]{CU09/UI03PantallaExito}{UI03}{Pantalla de Exito.}
+\IUfig[.7]{CU09/UI03PantallaExito}{UI0309}{Pantalla de Exito.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
@@ -67,7 +68,7 @@
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
-		\item Ninguna 
+		\item Clic en el botón \IUbutton{Registrar devolución} de la pantalla anterior. 
 	\end{Citemize}
 
 
