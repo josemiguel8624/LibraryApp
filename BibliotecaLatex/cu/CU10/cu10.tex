@@ -2,30 +2,38 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU10}{Renovar préstamo de libro}{
-		Este caso de uso tiene como objetivo describir la parte del sistema que se encarga de extender el tiempo y fecha límite que tiene un usuario para realizar la devolución de un libro que pidió prestado con anterioridad en la biblioteca.
+		Tiene como objetivo describir la parte del sistema que se encarga de extender el tiempo y fecha límite que tiene un usuario para realizar la devolución de un libro que pidió prestado con anterioridad en la biblioteca.
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Bibliotecario, Usuario}
-		\UCitem{Propósito}{Solicitar un tiempo extra para que el usuario pueda tener en su posesión un libro que se le ha prestado.}
+		\UCitem{Propósito}{Hacer cumplir el derecho que tiene un usuario para extender el plazo de un préstamo previamente concedido, verificando que el solicitante no haya superado los periodos permitidos de renovación, que el libro no esté apartado por otro usuario y que solicite la renovación antes de la fecha límite de devolución de dicho préstamo.}
 		\UCitem{Entradas}{
 		Se necesitan de los siguientes datos
 					\begin{itemize}
-				\item Nombre del Usuario 
-				\item Contraseña
+				\item Fecha de préstamo 
+				\item Fecha de devolución
+				\item Periodos de renovación anteriores
+				\item Estado actual del libro
 			\end{itemize}}
-		\UCitem{Salidas}{Nueva fecha de devolución}
+		\UCitem{Salidas}{Actualización de la fecha de devolución}
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
 				\item Interna: Que el usuario haya iniciado sesión.
 				\item Interna: Que el libro ya esté en estado de préstamo para el mismo usuario.
 				\item Interna: Que el libro no esté apartado
-
+				\item interna: Que la fecha del prestamo anterior aun no este vencida
 			\end{itemize}
 		}
-		\UCitem{Postcondiciones}{Extensión del plazo o fecha límite para entregar el libro.}
+		\UCitem{Postcondiciones}{Se almacena en la base de datos la renovacion de prestamo del libro.}
 		\UCitem{Autor}{\begin{itemize}
 				\item Nava Campos Jose Andres
 				\item Olvera Neria Yamile Giselle
+
+			\end{itemize}
+			}
+		\UCitem{Revisó}{\begin{itemize}
+				\item Luis E Perea
+				\item Daniel Mora
 
 			\end{itemize}
 			}
@@ -42,7 +50,7 @@
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{A}{La solicitud de renovación de préstamo ha superado el número de periodos posibles.}
-			\UCpaso[\UCsist]El sistema muestra una notificación de error en la renovación de préstamo \MSGref{MSG11}{Fallo el registro}
+			\UCpaso[\UCsist]El sistema muestra una notificación de error en la renovación de préstamo \MSGref{MSG11}{Fallo el registro, debido a que ha superado el numero de renovaciones posibles(2) para el libro seleccionado}
 			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
 			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
 		\end{UCtrayectoriaA}
@@ -60,7 +68,7 @@
 		\end{UCtrayectoriaA}
 		
 				\begin{UCtrayectoriaA}{D}{El libro ya ha sido apartado por otro usuario para su préstamo }
-			\UCpaso[\UCsist]El sistema muestra una notificación error en la renovación  \MSGref{MSG11}{Fallo el registro}
+			\UCpaso[\UCsist]El sistema muestra una notificación error en la renovación  \MSGref{MSG11}{Fallo el registro debido a que el libro seleccionado ya ha sido solicitado por otro usuario}
 			\UCpaso[\UCactor] El usuario da clic en el botón \IUbutton{OK} confirmando el mensaje. 
 			\UCpaso[\UCsist] Se regresa al paso 2 de la trayectoria principal 
 		\end{UCtrayectoriaA}
