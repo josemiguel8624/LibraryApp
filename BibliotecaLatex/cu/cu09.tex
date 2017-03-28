@@ -1,0 +1,82 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU09}{Registrar Devolución de libro}{
+		El bibliotecario registrará la devolución de un libro que fue previamente prestado con base a al ISBN del libro(Identificador del libro) e identificador del usuario al que se le fue prestado dicho libro, al mismo tiempo se actualizará y verificará el estado del libro devuelto refiriendose a la disponibilidad y al estado fisico.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario, Usuario}
+		\UCitem{Propósito}{Registrar y verificar en el sistema la devolución de un libro, identificando tanto el libro como el usuario que lo devuelve. Al terminar, la biblioteca se queda con el libro devuelto. }
+		\UCitem{Entradas}{
+		Se necesitan de los siguientes datos
+					\begin{itemize}
+				\item ISBN del libro 
+								\item Identificador del usuario que devuelve el libro
+				\item Fecha en la que se devuelve el libro
+			\end{itemize}}
+		\UCitem{Salidas}{
+								\begin{itemize}
+				\item Se actuliza el estado de disponibilidad del libro
+				\item Se actualiza los libros que el usuario adeuda
+				\item Si es el caso se aplicará una multa
+			\end{itemize}
+		
+		}
+				\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Interna: Que exista al menos un Bibliotecario en la base de datos 
+				\item Interna: Que exista al menos un Usuario registrado en la base de datos
+				\item Interna: Que exista al menos 2 libros registrados y prestados con su respectiva fecha limite para devolver el libro
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{El estado de disponibilidad del libro queda actualizado, al igual que los libros del usuario tiene pendientes de devolver dentro de la base de datos.}
+		\UCitem{Autor}{Esteban Pablo Martínez Ibáñez}
+		\UCitem{Status}{En revisión}
+			\UCitem{Responsable de revisión}{BAUTISTA ROSALES MAURICIO}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] El usuario se identifica y solicita devolver un libro en prestamos al bibliotecario.  
+		\UCpaso[\UCactor] El bibliotecario ingresará el nombre del usuario que devuelve el libro de acuerdo con el formato de la regla de negocio \BRref{RN37}{Formato del nombre}, el ISBN del libro que se va a devolver de acuerdo a la regla de negocio \BRref{RN47}{Formato del ISBN} y la fecha en la que el libro es entregado \BRref{RN48}{Formato de la fecha.}\Trayref{A}\Trayref{B}\Trayref{C} \IUref{UI0109}{Pantalla de verificación} 
+		\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{Verificar}.
+				\UCpaso[\UCsist] Obtiene los datos ingresados y muestra la información correspondiente como: el usuario, libro a devolver, fecha en la que se devuelve, fecha limite a devolver dicho libro y la seccion del estado fisico en el que se devuelve el libro \IUref{UI0209}{Pantalla de información}.
+\UCpaso[\UCactor] El bibliotecario seleeccionará la casilla indicando las condiciones fisicas del libro devuelto.						
+						\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{Registrar Devolución} .
+		\UCpaso[\UCsist] Se verificara la fecha en la que el usuario devuelve con la fecha limite para devolver el libro con base en la \BRref{RN10}{Devolucion en fecha} y las condiciones en las que se encuentra dicho libro. \Trayref{D}
+				\UCpaso[\UCsist] Se actualiza el registro del estado del libro asi como su Disponibilidad.  \IUref{UI0309}{Pantalla de información} \Trayref{E}
+	\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{OK}.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+				\begin{UCtrayectoriaA}{A}{El bibliotecario ingresa el nombre con el formato incorrecto}
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando que los datos ingresados no son correctos. \MSGref{MASG6}{Ingrese los datos correctamente}
+			\UCpaso[\UCactor] El bibliotecario volvera a ingresar el nombre de manera correcta conforme a la Regla de negocio \BRref{RN37}{Formato del nombre} 
+			\UCpaso[\UCsist]Continuar en el paso 4 de la trayectoria Principal
+		\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{B}{El bibliotecario ingresa el ISBN con el formato incorrecto}
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando que los datos ingresados no son correctos. \MSGref{MASG6}{Ingrese los datos correctamente}
+			\UCpaso[\UCactor] El bibliotecario volvera a ingresar el ISBN del libro de manera correcta conforme a la Regla de negocio \BRref{RN47}{Formato del ISBN} 
+			\UCpaso[\UCsist]Continuar en el paso 4 de la trayectoria Principal
+		\end{UCtrayectoriaA}
+		
+\begin{UCtrayectoriaA}{C}{El bibliotecario ingresa la fecha con el formato incorrecto}
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando que los datos ingresados no son correctos. \MSGref{MASG6}{Ingrese los datos correctamente}
+			\UCpaso[\UCactor] El bibliotecario volvera a ingresar la fecha de devolución del libro de manera correcta conforme a la Regla de negocio \BRref{RN48}{Formato de la fecha}
+			\UCpaso[\UCsist]Continuar en el paso 4 de la trayectoria Principal 
+		\end{UCtrayectoriaA}
+
+
+
+
+		\begin{UCtrayectoriaA}{D}{El usuario devuelve un libro depues de la fecha especificada}
+			\UCpaso[\UCactor] El bibliotecario verifica la fecha de devolución.
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando que la fecha de devolución ha vencido. \MSGref{MSG10}{Se ha vencido la fecha de entrega}
+			\UCpaso[\UCsist] Se Seguira el proceso correspondiente con respecto al caso de uso 14 CU14 para aplicar una multa correspondiente
+		\end{UCtrayectoriaA}
+
+
+		\begin{UCtrayectoriaA}{E}{El sistema no registra la devoucion del libro}
+			\UCpaso[\UCsist] Se mostrará un mensaje de advertencia notificando el problema. \MSGref{MSG11}{El registro no se realizó, intentelo de nuevo}
+			\UCpaso[\UCactor]El bibliotecario repite el paso 6 de la trayectoria Principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------- TERMINA descripción del caso de uso.
