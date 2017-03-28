@@ -1,0 +1,127 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU13}{Registrar Multas}{
+	Las multas de los usuarios se registrarán para obligar al usuario a cumplir con la sanción
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario}
+		\UCitem{Propósito}{La multa será registrada correspondiendo al usuario sancionado}
+		\UCitem{Entradas}{
+						\begin{itemize}
+        					\item Nombre de usuario: Cadena de caracteres [Requerido]
+        					\item Fecha de registro de multa: Fecha con formato yyyy/mm/dd [Requerido]
+        					\item Hora de registro de multa: Hora con formato hh:mm, 24 horas [Requerido]
+        					\item Tipo de multa: Cadena de caracteres [Requerido]
+	        				\item Descripción: Cadena de texto
+        					\begin{itemize}
+        						\item Pérdida de ejemplar
+        						\item Devolución de ejemplar a destiempo
+        						\item Maltrato de ejemplar (Romper, rayar, pintar, deshojar)
+        						\item Sustitución de ejemplar
+        					\end{itemize} 
+        				\end{itemize} 
+		}
+		\UCitem{Salidas}{
+				\begin{itemize}
+	        		\item Comprobante de multa: Archivo PDF que contiene:
+	        		\begin{itemize}
+	        			\item Información de multas:
+	        			\begin{itemize}
+	        				\item Nombre del usuario: Cadena de texto
+	        				\item Fecha de multa: Fecha en formato dd/mm/yyyy
+	        				\item Hora de multa: Hora con formato hh:mm
+			        		\item Tipo de multa: Cadena de texto
+	    		    		\item Descripción: Cadena de texto
+	        				\item Sanción o Monto: Cadena de texto
+			        		\item Multas atrasadas: Cadena de texto
+	    		    		\item Fecha de límite de cumplimiento: Fecha en formato dd/mm/yyyy
+	        			\end{itemize}
+	     		   \end{itemize}
+	        	   \item Mensaje de confirmación
+	        	   \begin{itemize}
+	        			\item Información de multa:
+	        			\begin{itemize}
+	        				\item Nombre del usuario: Cadena de texto
+	        				\item Tipo de multa: Cadena de texto
+		        			\item Descripción: Cadena de texto
+		        			\item Monto: Cadena de texto
+	    	    			\item Multas atrasadas: Cadena de texto
+	        			\end{itemize}
+	        		\end{itemize}
+	    		\end{itemize}		
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+            		\item El usuario debe estar registrado en el sistema
+            		\item El usuario debe ser acreedor a una multa, \BRref{RN33}{Registro de multa}
+            		\item El usuario no debe encontrarse en estado bloqueado
+       		 \end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+	    			\item El estado del usuario cambia de no-multado o multado a multado o bloqueado. 
+	    	\end{itemize}			
+		}
+		\UCitem{Autor}{Martínez Vilchis Juan Moisés y Perea Mejía Luis.}
+	\end{UseCase}
+%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Solicita registrar una multa haciendo click sobre el botón \IUbutton{Registrar Multa} siempre y cuando se cumpla la regla \BRref{RN33}{Registro de multa}
+		\UCpaso [\UCactor] Muestra la pantalla \IUref{UI13A}{RegistrarMulta}
+		\UCpaso Solicita los datos de entrada
+		\UCpaso[\UCactor] Proporciona el tipo de multa seleccionándolo desde la lista que se muestra.
+		\UCpaso[\UCactor] Proporciona la descripción de la multa ingres\'andolo desde el teclado
+		\UCpaso[\UCactor] Confirma operación haciendo click sobre el botón \IUbutton{Continuar}
+		\UCpaso Verifica que se hayan completado datos requeridos.\Trayref{A}
+		\UCpaso Obtiene la fecha y la hora.
+		\UCpaso Obtiene los datos del usuario acreedor a la multa.
+		\UCpaso Verifica que los datos completados tengan el formato correcto \Trayref{B}
+		\UCpaso Guarda la información de la multa correspondiente con el estado de Pendiente	
+		\UCpaso Cambia el estado del usuario a Multado \Trayref{C}
+		\UCpaso Confirma operación mostrando mensaje de confirmación, datos de multa  en la pantalla \IUref{UI13B}{Confirmacion}, y se envía un archivo PDF del comprobante  al correo electrónico del usuario \Trayref{D}
+		\UCpaso[\UCactor] Confirma operación haciendo click sobre el botón OK.	
+\end{UCtrayectoria}
+
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Faltan datos,
+Cuando se haya violado la regla \BRref{RN15}{Campos llenos usuario}}
+	\UCpaso Informa al actor mostrando el error \MSGref{E3}{Datos incompletos} 
+	\UCpaso Continúa trayectoria desde paso 2 
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{El usuario no esta registrado,
+Cuando se haya violado la regla \BRref{RN34}{Datos para el registro de multa}}
+	\UCpaso Informa al actor mostrando el error \MSGref{E4}{Registro no encontrado}
+	\UCpaso Continúa trayectoria desde paso 2 
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Cambio de estado,
+Cuando se haya violado la regla \BRref{RN07}{Usuario bloqueado}}
+	\UCpaso Cambia el estado del usuario a Bloqueado mostrando el mensaje  \MSGref{MSG4}{El usuario se encuentra bloqueado}
+	\UCpaso Continúa trayectoria desde paso 13 
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Error de conexión,
+Cuando se haya violado la regla \BRref{RN24}{Registro completo}}
+	\UCpaso Mantiene el envío en un estado de espera para enviarlo cuando exista una conexión mostrando el error \MSGref{E1}{Error en la conexión con la base de datos}
+	\UCpaso Continúa trayectoria desde paso 14 
+\end{UCtrayectoriaA}
+
+
+%-------------------------------------- TERMINA descripción del caso de uso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
