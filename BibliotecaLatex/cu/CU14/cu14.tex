@@ -29,13 +29,24 @@
 			\end{itemize}					
 		}
 		\UCitem{Autor}{
-				Miguel Tejeda
-				Erubey Martínez					
+				José Miguel Tejeda Martínez
+				Erubey Martínez	de los Santos				
+		}
+		\UCitem{Revisores}{
+				López Orozco Diego Efraín
+				Jiménez Chávez Luis Gerardo		
+		}
+		\UCitem{Madurez}{
+				Media
+		}
+		\UCitem{Prioridad}{
+				Alta
 		}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
 	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio RN-11, RN-12, RN-13, RN-14. \Trayref{A}
-	\UCpaso[\UCsist] El sistema lee el costo del libro de a cuerdo al identificador proporcionado. \Trayref{B}
+	\UCpaso[\UCsist] El sistema obtiene el costo del libro de acuerdo al identificador proporcionado. \Trayref{B}
+	\UCpaso[\UCsist] El sistema obtiene las fechas de préstamo y de devolución establecidas en la emisión anterior. \Trayref{B}
 	\UCpaso[\UCsist] El sistema lee las fechas de préstamo y de devolución establecidas en la emisión anterior \Trayref{B}
 	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
 	1. "Pérdida de libro". Se considerará el costo total obtenido en el paso 2. \BRitem
