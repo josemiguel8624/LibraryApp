@@ -1,40 +1,51 @@
-	\begin{UseCase}{CU11}{Donacion de Libros}{
-		En este caso de uso tiene como objetivo poder hacer el registro de los libros que son donados a la librería X, ya sea por medio de otras librerías o usuarios que acudan a la librería.
+	\begin{UseCase}{CU11}{Donación de Libros}{
+		Se tiene como objetivo poder hacer el registro de los libros que son donados a la biblioteca, ya sea por medio de otras bibliotecas o usuarios.
 }
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Registrar libros donados}
-		\UCitem{Entradas}{Los datos del registro que son: Titulo, Autor, Editorial, Genero, Idioma, Año, Número de Páginas, Edición, ISBN, EAN, Nombre del donante, teléfono, mail de este, el estado del libro.}
+		\UCitem{Propósito}{Llevar un registro de los libros donados a nosotros, el estado en que se encuentran y la biblioteca o persona que los donó}
+		\UCitem{Entradas}{Los datos del registro que son: Titulo, Autor, Editorial, Genero, Idioma, Año, Número de Páginas, Edición, ISBN, EAN, nombre del donador, mail del donador y estado del libro}
 		\UCitem{Salidas}{
 		\begin{itemize}
 		\item Mensaje de Registro Exitoso
 		\end{itemize}
 		}
-		\UCitem{Precondiciones}{El administrador debe de entrar al sistema. }
+		\UCitem{Precondiciones}{El administrador debe de entrar al sistema y el sistema conectado a la BD}
 		\UCitem{Postcondiciones}{Ninguna. }
 		\UCitem{Autor}{Cortés Pérez Edy, Marín García Fernando. }
+		\UCitem{Revisado por}{Enrique Vega}
+		\UCitem{Estado}{En revisión}
 	\end{UseCase}
 
 	\begin{UCtrayectoria}{Principal}
-		\UCpaso [\UCactor]Pulsa el botón \IUbutton{Donaciones}, UI01 Pantalla inicio
-		\UCpaso Muestra la IU02 Registro de Donaciones
-		\UCpaso [\UCactor] Ingresara el dato ISBN del libro y pulsara el botón \IUbutton{Verificar}
-		\UCpaso Buscara el ISBN en la base de datos, si el datos coincide con alguno previamente registrado de la base de datos el sistema llenara de forma automatica el formulario con los datos generales del libro que estén en la base de datos (Paso 6 trayectoria principal), si no, el sistema no hará nada (Paso 5 de la trayectoria principal)
-		\UCpaso [\UCactor] Ingresa los datos que se piden en el formulario para el registro de la donación, referentes al libro
+		\UCpaso [\UCactor]Pulsa el botón \IUbutton{Donaciones} en pantalla de inicio
+		\UCpaso Muestra la \IUref{IU11}{Registro de donaciones}
+		\UCpaso [\UCactor] Ingresara el dato ISBN del libro y pulsara el botón \IUbutton{Verificar} \Trayref{A}
+		\UCpaso Buscará el ISBN en la base de datos, si los datos coincide con alguno previamente registrado de la base de datos, el sistema llenara de forma automática el formulario con los datos generales del libro (Paso 6 trayectoria principal), si no, el sistema continúa en el paso 5 de la trayectoria principal.
+		\UCpaso [\UCactor] Llama a \UCref{CU05} para registrar los datos del libro donado
 		\UCpaso [\UCactor] Ingresa los datos referentes al estado del libro, en el cual detallara el estado actual del libro
-		\UCpaso [\UCactor] Ingresa el nombre del donador del libro, especificando si es una persona o librería el que hizo la donación, e-mail y teléfono 
-		\UCpaso Verifica los datos ingresados referentes a las RN-16 \Trayref{A} y RN-17\Trayref{B}
-		\UCpaso Muestra en pantalla el mensaje MSG1
+		\UCpaso [\UCactor] Ingresa el nombre del donador del libro, especificando si es una persona o librería el que hizo la donación,su mail y teléfono 
+		\UCpaso Verifica los datos ingresados referentes a las \BRref{RN16} y \BRref{RN17} \Trayref{B} \ Trayref{C}
+		\UCpaso Muestra en la pantalla el mensaje \MSGref{MSG1}{Operación realizada exitosamente}
+		%\UCpaso Muestra en la pantallla el mensaje \MSGref{MSG01}
+		%\UCpaso Verifica los datos ingresados referentes a las% \BRref{RN16} %y \BRref{RN17} \Trayref{B} \Trayref{C}
+		%\UCpaso Muestra en pantalla el mensaje \MSGref{MSG1}
 	\end{UCtrayectoria}
 		
-		\begin{UCtrayectoriaA}{A}{Los datos del libro son incorrectos}
-			\UCpaso Muestra en pantalla el mensaje [E2]
+		\begin{UCtrayectoriaA}{A}{Imposible conectarse a la base de datos}
+			\UCpaso Muestra en pantalla el mensaje \MSGref{E1}
 			\UCpaso[\UCactor] Pulsa el botón \IUbutton{OK}
 			\UCpaso Regresa al paso 5 de la \Trayref{Principal}
 		\end{UCtrayectoriaA}
 		
-		\begin{UCtrayectoriaA}{B}{Los datos del donandor son incorrectos}
-			\UCpaso Muestra en pantalla el mensaje [E2]
+		\begin{UCtrayectoriaA}{B}{Los datos del libro son incorrectos}
+			\UCpaso Muestra en pantalla el mensaje \MSGref{E3}
+			\UCpaso[\UCactor] Pulsa el botón \IUbutton{OK}
+			\UCpaso Regresa al paso 5 de la \Trayref{Principal}
+		\end{UCtrayectoriaA}
+		
+		\begin{UCtrayectoriaA}{C}{Los datos del donandor son incorrectos}
+			\UCpaso Muestra en pantalla el mensaje \MSGref{E3}
 			\UCpaso [\UCactor] Pulsa el botón \IUbutton{OK}
 			\UCpaso Regresa al paso 7 de la \Trayref{Principal}
 		\end{UCtrayectoriaA}
