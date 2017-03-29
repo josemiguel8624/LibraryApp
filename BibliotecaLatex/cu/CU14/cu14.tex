@@ -1,5 +1,5 @@
 \begin{UseCase}{CU14}{Generar Multas}{
-		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca.
+		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca, las cuales corresponden a: pérdida, devolución a desatiempo, maltrato o sustitución de un libro.
 	}
 		\UCitem{Versión}{1.0}
 		\UCitem{Actor}{Administrador}
@@ -13,7 +13,7 @@
 		}
 		\UCitem{Salidas}{
 			\begin{itemize}
-				\item Documento de penalización con el monto de la multa correspondiente.
+				\item Documento de penalización con los siguientes datos: nombre de usuario, nombre de libro, tipo de multa y cantidad acreedora.
 			\end{itemize}					
 		}
 		\UCitem{Precondiciones}{ 
@@ -59,8 +59,9 @@
 		}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio \BRref{RN11}{RN11}, \BRref{RN12}{RN12}, \BRref{RN13}{RN13}, \BRref{RN14}{RN14}.
-	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}. \Trayref{A}
+	\UCpaso[\UCactor] El administrador introduce el tipo de multa que busca aplicar al usuario.
+	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}. 
+	\UCpaso[\UCsist]  El sistema verifica el tipo de multa introducido, de acuerdo a las reglas de negocio \BRref{RN11}{RN11}, \BRref{RN12}{RN12}, \BRref{RN13}{RN13}, \BRref{RN14}{RN14}.\Trayref{A}
 	\UCpaso[\UCsist] El sistema obtiene el costo del libro de a cuerdo al identificador proporcionado y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema obtiene las fechas de préstamo y de devolución establecidas en la emisión anterior y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
