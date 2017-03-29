@@ -1,5 +1,5 @@
 \begin{UseCase}{CU14}{Generar Multas}{
-		En este caso de uso tiene como objetivo generar las multas a las cuales los usuarios serán 			 acreedores, por no cumplir con las normas que se establecierón y que ellos aceptarón, cuando crearón su credencial para poder obtener los ejemplares de la biblioteca. Estas se les generaran solo si no cumples con las reglas establecidas.
+		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca.
 	}
 		\UCitem{Versión}{1.0}
 		\UCitem{Actor}{Administrador}
@@ -13,7 +13,7 @@
 		}
 		\UCitem{Salidas}{
 			\begin{itemize}
-				\item Monto de multa aplicable.
+				\item Documento de penalización con el monto de la multa correspondiente.
 			\end{itemize}					
 		}
 		\UCitem{Precondiciones}{ 
@@ -29,12 +29,37 @@
 			\end{itemize}					
 		}
 		\UCitem{Autor}{
-				Miguel Tejeda
-				Erubey Martínez					
+			\begin{itemize}
+				\item José Miguel Tejeda Martínez
+				\item Erubey Martínez de los Santos					
+			\end{itemize}	
+		}
+		\UCitem{Revisores}{
+			\begin{itemize}
+				\item López Orozco Diego Efraín
+				\item Jiménez Chávez Luis Gerardo					
+			\end{itemize}	
+		}
+		\UCitem{Madurez}{
+			\begin{itemize}
+				\item Media
+			\end{itemize}	
+		}
+		
+		\UCitem{Prioridad}{
+			\begin{itemize}
+				\item Alta
+			\end{itemize}	
+		}
+		
+		\UCitem{Estado}{
+			\begin{itemize}
+				\item Pendiente
+			\end{itemize}	
 		}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio RN-11, RN-12, RN-13, RN-14.
+	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio \BRref{RN11}{RN11}, \BRref{RN12}{RN12}, \BRref{RN13}{RN13}, \BRref{RN14}{RN14}.
 	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}. \Trayref{A}
 	\UCpaso[\UCsist] El sistema obtiene el costo del libro de a cuerdo al identificador proporcionado y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema obtiene las fechas de préstamo y de devolución establecidas en la emisión anterior y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
