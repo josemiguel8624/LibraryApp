@@ -1,0 +1,53 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU21}{Pedir libro a biblioteca}{
+		El administrador podrá pedir prestado un libro a otra biblioteca, esto con la finalidad de satisfacer la demanda de libros por parte de los usuarios. Lo hará seleccionando un tipo de búsqueda e introduciendo el datos: libro, autor,numero de paginas, fecha de
+publicación, editorial o biblioteca a la cual le pedirá el préstamo y seleccionara el libro que pedirá prestado.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Pedir un libro a otra biblioteca, mediante los datos del formulario.}
+		\UCitem{Entradas}{Nombre, autor, numero de paginas, fecha de publicacion, editorial del libro o biblioteca}
+		\UCitem{Salidas}{una tabla con todos los libros que se encontrar con esa busqueda y las bibliotecas que tiene esos libros disponibles así como cuantos ejemplares.Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{E3}{Datos introducidos incorrectamente.}Mensaje\MSGref{MSG03}{La biblioteca no tiene convenio.}}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item conexión a la base de datos.
+				\item Se debe tener convenio con la biblioteca
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se le mandara un mensaje a la biblioteca donde se especifique el libro que deseamos que se nos sea prestado}
+		\UCitem{Autor}{Rodriguez Cervantes Arturo y Monserrat Ceron Rodriguez .}
+		\UCitem{Revisó}{Diego Manriquez Molina y Abiran Natanael Salas Hernandez}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Del \ref{CU08} presionara el botón:  \IUbutton{Pedir libro a biblioteca} de la pantalla \IUref{UI08.2}{Pantalla de prestamo interbibliotecario}.
+		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI21.1}{pantalla de pedir libro a biblioteca}.
+		\UCpaso[\UCactor]seleccionara un método de búsqueda e ingresara el datos y presionara el botón: \IUbutton{Buscar} se verifican reglas de negocio \BRref{RN46}{Convenio con biblioteca} \BRref{RN42}{Datos completos}\Trayref{A} \Trayref{B}\Trayref{C}.
+		\UCpaso[\UCsist] Mostrara la pantalla \IUref{UI21.2}{pantalla resultados}
+		\UCpaso[\UCactor]seleccionara que ejemplar desea solicitar y presionara el botón \IUbutton{Solicitar préstamo}
+		\UCpaso[\UCsist] Dará el mensaje \MSGref{MSG01}{Operación realizada exitosa mente}
+		\UCpaso[\UCactor] presionara el botón \IUbutton{OK}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Se ingreso mal alguno de los campos}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E3}{Datos introducidos incorrectamente.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+
+%-------------------------------------		
+		\begin{UCtrayectoriaA}{B}{No se encontró resultado de búsqueda}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E4}{El libro no está disponible.}
+			\UCpaso[\UCactor]Presionara el botón \IUbutton{OK}			
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{C}{LA biblioteca no tiene convenio}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{La biblioteca no tiene convenio.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+TERMINA descripción del caso de uso.
