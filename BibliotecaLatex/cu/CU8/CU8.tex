@@ -2,21 +2,19 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU08}{Préstamo interbibliotecario}{
-		El administrador podrá prestar un libro a otra biblioteca, esto con la finalidad de satisfacer la demanda de libros de otras bibliotecas prestando nuestros libros. Lo hará con un formulario,introduciendo los datos: ISBN del libro y las biblioteca que solicita el préstamo
+		Muestra al administrador la opción de préstamo interbibliotecario y este desplegara las opciones de Pedir libro a biblioteca y Prestar libro a biblioteca, al seleccionar alguna mandara a su respectiva pantalla
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Prestar un libro a otra biblioteca, se llenara un formulario donde se introducirá la biblioteca a la que se le prestara el libro y el ISBN libro, se verificara si el libro se puede prestar, y si se tiene convenio con la biblioteca.}
-		\UCitem{Entradas}{ISBN del libro y nombre del la biblioteca}
-		\UCitem{Salidas}{Resitro en la base de datos junto con los mensajes .Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{E3}{Datos introducidos incorrectamente.}Mensaje\MSGref{MSG03}{El libro no está disponible.}Mensaje\MSGref{MSG03}{La biblioteca no tiene convenio.}}
+		\UCitem{Propósito}{Dar a elegir la opción que el administrador desea hacer, solicitar un libro o responder a peticiones de libros.}
+		\UCitem{Entradas}{Presionar botón préstamo interbibliotecario}
+		\UCitem{Salidas}{Patalla correspondiente al botón presionado }
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
-				\item El libro debe estar disponible para préstamo. 
-				\item conexión a la base de datos.
-				\item Se debe tener convenio con la biblioteca
+				\item El administrador debe estar dado de alta en el sistema
 			\end{itemize}
 		}
-		\UCitem{Postcondiciones}{El libro estará en la base de datos como prestado}
+		\UCitem{Postcondiciones}{El sistema mostrara las pantallas que corresponde al botón}
 		\UCitem{Autor}{Rodriguez Ceravates Arturo y Monserrat Ceron Rodriguez .}
 		\UCitem{Revisó}{Diego Manriquez Molina y Abiran Natanael Salas Hernandez}
 	\end{UseCase}
@@ -24,27 +22,8 @@
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] Presionara el botón:  \IUbutton{Préstamo interbibliotecario} de la pantalla \IUref{UI08.1}{Pantalla de inicio}.
 		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI08.2}{pantalla de préstamo interbibliotecario}.
-		\UCpaso[\UCactor]Ingresara los datos y presionara el botón: \IUbutton{Prestar} se verifican reglas de negocio  \BRref{RN08}{Estado de libro para préstamo} y \BRref{RN46}{Convenio con biblioteca}\Trayref{A} \Trayref{B}\Trayref{C}.
-		\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG01}{Operación realizada exitosa mente} Junto con el nombre el libro, la biblioteca, fecha actual y fecha de devolución
+		\UCpaso[\UCactor]Seleccionara  una opción de préstamo interbibliotecario dando clic en alguno de los botones: \IUbutton{Pedir libro a biblioteca} \IUbutton{Préstamo de libro a Biblioteca}
+		\UCpaso[\UCsist] Mostrara a la pantalla correspondiente de cada botón Pedir libro a biblioteca \UCref{CU21} y Prestar libro a biblioteca \UCref{CU22}
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
-		\begin{UCtrayectoriaA}{A}{Se ingreso mal alguno de los campos}
-			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E3}{Datos introducidos incorrectamente.}
-			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
-			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
-		\end{UCtrayectoriaA}
-
-%-------------------------------------		
-		\begin{UCtrayectoriaA}{B}{El libro no esta disponible para el préstamo}
-			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{El libro no está disponible.}
-			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}			
-			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
-		\end{UCtrayectoriaA}
-		
-%-------------------------------------- 
-		\begin{UCtrayectoriaA}{C}{LA biblioteca no tiene convenio}
-			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{La biblioteca no tiene convenio.}
-			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
-			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
-		\end{UCtrayectoriaA}
 TERMINA descripción del caso de uso.

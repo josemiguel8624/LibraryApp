@@ -1,0 +1,50 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU08}{Prestar libro a biblioteca}{
+		El administrador podrá prestar un libro a otra biblioteca, esto con la finalidad de satisfacer la demanda de libros de otras bibliotecas prestando nuestros libros. Lo hará aceptando las solicitudes de préstamo de libro
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Prestar un libro a otra biblioteca, Se verificara la solicitud que se le hizo al sistema para prestar el libro y se aceptara o se rechazara la solicitud  se verificara si el libro se puede prestar, y si se tiene convenio con la biblioteca.}
+		\UCitem{Entradas}{la petición de préstamo con todos los datos del libro}
+		\UCitem{Salidas}{Registro en la base de datos junto con los mensajes .Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{MSG03}{El libro no está disponible.}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El libro debe estar disponible para préstamo. 
+				\item conexión a la base de datos.
+				\item Se debe tener convenio con la biblioteca
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{El libro estará en la base de datos como prestado}
+		\UCitem{Autor}{Rodriguez Ceravates Arturo y Monserrat Ceron Rodriguez .}
+		\UCitem{Revisó}{Diego Manriquez Molina y Abiran Natanael Salas Hernandez}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Del \ref{CU08} presionara el botón:  \IUbutton{Préstar libro a biblioteca} de la pantalla \IUref{UI08.2}{préstamo interbibliotecario}.
+		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI21.1}{prestar libro a biblioteca}. con todas las solicitudes de préstamo que hay
+		\UCpaso[\UCactor]presionara el botón: \IUbutton{Aceptar} se verifican reglas de negocio  \BRref{RN08}{Estado de libro para préstamo} y \BRref{RN46}{Convenio con biblioteca}\Trayref{A} \Trayref{B}\Trayref{C}.
+		\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG01}{Operación realizada exitosa mente}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Error al conectar a la BD}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E1}{Error al conectar a la base de datos.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+
+%-------------------------------------		
+		\begin{UCtrayectoriaA}{B}{El libro no esta disponible para el préstamo}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{El libro no está disponible.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}			
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{C}{LA biblioteca no tiene convenio}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{MSG03}{La biblioteca no tiene convenio.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+TERMINA descripción del caso de uso.
