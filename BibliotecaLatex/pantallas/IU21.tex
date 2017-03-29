@@ -1,0 +1,61 @@
+\newpage
+\subsection{IU21.1 Pedir libro a biblioteca búsqueda}
+
+\subsubsection{Objetivo}
+	Pantalla de préstamo bibliotecario, desde aquí se hará las consultas de libros por medio de parámetros que el administrador meta
+
+\subsubsection{Diseño}
+	Se muestras un serie se varias opciones de búsqueda, un imput donde se introduce la información, y un botón \IUbutton{buscar}.  \\\\
+
+\IUfig[.7]{CU21/UI01}{UI21.1}{Pedir libro a biblioteca búsqueda.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item generara la pantalla \IUref{UI21.2}{Pedir libro a biblioteca consulta}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item titulo del libro 
+		\item autor
+		\item numero de paginas
+		\item fecha de publicación
+		\item editorial
+		\item biblioteca
+		\item El administrador dará clic en el botón \IUbutton{Búsqueda}
+	\end{Citemize}
+
+
+\subsection{IU21.2 Pedir libro a biblioteca consulta}
+
+\subsubsection{Objetivo}
+	Pantalla donde se muestra los resultados de la consulta de la pantalla \IUref{UI21.2}{Pedir libro a biblioteca consulta}
+
+\subsubsection{Diseño}
+	Esta pantalla aparece cuando presionas el botón \IUbutton{Buscar} de la pantalla \IUref{UI21.1}{Pedir libro} Contiene una tabla donde se muestran los resultados de la consulta la tabla tiene: titulo, autor, editorial, año de publicación, paginas. biblioteca que tiene el libro, ejemplares y una casilla para marcar y solicitar el libro  \\\\
+
+\IUfig[.7]{CU21/UI02}{UI21.2}{Pedir libro a biblioteca consulta.}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item se envia la solicitud de préstamo y dará el mensaje \MSGref{MSG1}{Operación realizada exitosa mente}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item El administrador marcara las casillas de los libros que desee pedir prestados
+	\end{Citemize}
+
+
+%\subsubsection{Comandos}
+%\begin{itemize}
+%	\item \IUbutton{Generar}: Activa el algoritmo que genera las citas de entrevista de acuerdo a la disponibilidad de horarios y entrevistadores. 
+%	\item \IUbutton{Consultar}: Muestra la interfaz \IUref{UI02}{Pantalla de Consulta}.
+%\end{itemize}
+
+%\subsubsection{Mensajes}
+%	\begin{Citemize}
+%		\item {\bf [E1]} Error al conectar a la BD.
+%		\item {\bf [E2]} Error al generar las citas de entrevista.
+%		\item {\bf MSG1} No se ha encontrado registros de entrevistas agendadas previamente. Para consultar primero genere entrevistas. 
+%	\end{Citemize}
