@@ -2,16 +2,15 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU13}{Registrar Multas}{
-	Las multas de los usuarios se registrarán para obligar al usuario a cumplir con la sanción
+	Las multas de los usuarios se registrarán para obligar al usuario a cumplir con la sanción.
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Bibliotecario}
-		\UCitem{Propósito}{La multa será registrada correspondiendo al usuario sancionado}
+		\UCitem{Propósito}{La multa se registrará al usuario, mostrando el tipo de multa,la fecha en la que fue registrada,monto de la multa y las multas registradas con anterioridad. }
 		\UCitem{Entradas}{
 						\begin{itemize}
         					\item Nombre de usuario: Cadena de caracteres [Requerido]
         					\item Fecha de registro de multa: Fecha con formato yyyy/mm/dd [Requerido]
-        					\item Hora de registro de multa: Hora con formato hh:mm, 24 horas [Requerido]
         					\item Tipo de multa: Cadena de caracteres [Requerido]
 	        				\item Descripción: Cadena de texto
         					\begin{itemize}
@@ -30,7 +29,6 @@
 	        			\begin{itemize}
 	        				\item Nombre del usuario: Cadena de texto
 	        				\item Fecha de multa: Fecha en formato dd/mm/yyyy
-	        				\item Hora de multa: Hora con formato hh:mm
 			        		\item Tipo de multa: Cadena de texto
 	    		    		\item Descripción: Cadena de texto
 	        				\item Sanción o Monto: Cadena de texto
@@ -68,13 +66,12 @@
 %-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] Solicita registrar una multa haciendo click sobre el botón \IUbutton{Registrar Multa} siempre y cuando se cumpla la regla \BRref{RN33}{Registro de multa}
-		\UCpaso [\UCactor] Muestra la pantalla \IUref{UI13A}{RegistrarMulta}
-		\UCpaso Solicita los datos de entrada
+		\UCpaso Muestra la pantalla \IUref{UI13A}{RegistrarMulta}
 		\UCpaso[\UCactor] Proporciona el tipo de multa seleccionándolo desde la lista que se muestra.
 		\UCpaso[\UCactor] Proporciona la descripción de la multa ingres\'andolo desde el teclado
-		\UCpaso[\UCactor] Confirma operación haciendo click sobre el botón \IUbutton{Continuar}
+		\UCpaso[\UCactor] Confirma operación haciendo click sobre el botón \IUbutton{Continuar} en la pantalla\IUref{UI13A}{RegistrarMulta}
 		\UCpaso Verifica que se hayan completado datos requeridos.\Trayref{A}
-		\UCpaso Obtiene la fecha y la hora.
+		\UCpaso Obtiene la fecha.
 		\UCpaso Obtiene los datos del usuario acreedor a la multa.
 		\UCpaso Verifica que los datos completados tengan el formato correcto \Trayref{B}
 		\UCpaso Guarda la información de la multa correspondiente con el estado de Pendiente	
