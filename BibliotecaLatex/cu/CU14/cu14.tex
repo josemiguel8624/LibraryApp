@@ -1,5 +1,5 @@
 \begin{UseCase}{CU14}{Generar Multas}{
-		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca.
+		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca, las cuales corresponden a: pérdida, devolución a desatiempo, maltrato o sustitución de un libro.
 	}
 		\UCitem{Versión}{1.0}
 		\UCitem{Actor}{Administrador}
@@ -13,7 +13,7 @@
 		}
 		\UCitem{Salidas}{
 			\begin{itemize}
-				\item Documento de penalización con el monto de la multa correspondiente.
+				\item Documento de penalización, mostrando los siguientes datos: Nombre del usuario, nombre del libro, tipo de multa y cantidad acreedora.
 			\end{itemize}					
 		}
 		\UCitem{Precondiciones}{ 
@@ -59,16 +59,17 @@
 		}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio \BRref{RN11}{RN11}, \BRref{RN12}{RN12}, \BRref{RN13}{RN13}, \BRref{RN14}{RN14}.
-	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}. \Trayref{A}
+	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable. 
+	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}.
+	\UCpaso[\UCsist] El sistema verifica, de acuerdo a las reglas de negocio \BRref{RN11}{"Multa por pérdida"}, \BRref{RN12}{"Multa por devolución a desatiempo"}, \BRref{RN13}{"Multa por maltrato o daño físico"} y \BRref{RN14}{"Multa por sustitución"}, el tipo de multa introducida.\Trayref{A}
 	\UCpaso[\UCsist] El sistema obtiene el costo del libro de a cuerdo al identificador proporcionado y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema obtiene las fechas de préstamo y de devolución establecidas en la emisión anterior y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
 	1. "Pérdida de libro". Se considerará el costo total obtenido en el paso 2. \BRitem
-	2. "Devolución a destiempo". Se tomará la fecha de devolución del paso 3 y contarán los días dde diferencia entre la fecha actual. La cantidad de días multiplicará por 20. \BRitem
-	3. "Maltrato de libro". Se cosiderará el costo en el paso 2 y se multiplicara por 0.35 \BRitem
-	4. "Sustitución de libro". Se considerará el costo obtenido en el paso 2 y se multiplicará por 0.5.
-	\UCpaso[\UCsist] El sistema descargara el DOC-1, en el que devolverá la cantidad de multa correspondiente al paso anterior, la cual se asociará al usuario dado por el identificador de entrada. \Trayref{B} 
+	2. "Devolución a destiempo". Se tomará la fecha de devolución del paso 3 y contarán los días de diferencia entre la fecha actual. La cantidad acreedora es de 20 pesos por día desfasado. \BRitem
+	3. "Maltrato de libro". Se cosiderará el 35 porciento del costo en el paso 2. \BRitem
+	4. "Sustitución de libro". Se considerará el 50 porciento del costo obtenido en el paso.
+	\UCpaso[\UCsist] El sistema descargara el \IUref{Doc1}{DOC-1}., en el que devolverá la cantidad de multa correspondiente al paso anterior, la cual se asociará al usuario dado por el identificador de entrada. \Trayref{B} 
 	\UCpaso[\UCsist] Se mostrará el mensaje MSG1
 \end{UCtrayectoria}
 \begin{UCtrayectoriaA}{A}{Se introdujo un número de multa inexistente}	
