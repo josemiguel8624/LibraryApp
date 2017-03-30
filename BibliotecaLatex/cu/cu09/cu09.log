@@ -12,7 +12,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.4 	\begin{UseCase}
-                    {CU09}{Registrar DevoluciÃ³n de libro}{
+                    {CU09}{Registrar Devolución de libro}{
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -25,7 +25,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.4 	\begin{UseCase}{C
-                      U09}{Registrar DevoluciÃ³n de libro}{
+                      U09}{Registrar Devolución de libro}{
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -50,8 +50,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -84,8 +84,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -96,8 +96,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -258,8 +258,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -270,8 +270,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -343,7 +343,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.7 		\UCitem
-             {VersiÃ³n}{0.1}
+             {Versión}{0.1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -355,8 +355,8 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -398,7 +398,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 ! Undefined control sequence.
 l.9 		\UCitem
-             {PropÃ³sito}{Registrar y verificar en el sistema la devoluciÃ³n...
+             {Propósito}{Registrar y verificar en el sistema la devolución...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -409,8 +409,8 @@ Missing character: There is no P in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no p in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -455,8 +455,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -836,8 +836,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -1259,7 +1259,7 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.33 		\UCitem
-              {Autor}{Esteban Pablo MartÃ­nez IbÃ¡Ã±ez}
+              {Autor}{Esteban Pablo Martínez Ibáñez}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1287,22 +1287,22 @@ Missing character: There is no M in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ­ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no I in font nullfont!
 Missing character: There is no b in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ± in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no z in font nullfont!
 ! Undefined control sequence.
 l.34 		\UCitem
-              {Status}{En revisiÃ³n}
+              {Status}{En revisión}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1323,12 +1323,12 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 l.35 			\UCitem
-               {Responsable de revisiÃ³n}{BAUTISTA ROSALES MAURICIO}
+               {Responsable de revisión}{BAUTISTA ROSALES MAURICIO}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1354,8 +1354,8 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no B in font nullfont!
 Missing character: There is no A in font nullfont!
@@ -1509,7 +1509,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.40 		\UCpaso
-              [\UCactor] El bibliotecario ingresarÃ¡ el nombre del usuario q...
+              [\UCactor] El bibliotecario ingresará el nombre del usuario q...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1519,7 +1519,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.40 		\UCpaso[\UCactor
-                       ] El bibliotecario ingresarÃ¡ el nombre del usuario q...
+                       ] El bibliotecario ingresará el nombre del usuario q...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1550,8 +1550,8 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -1866,8 +1866,8 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 l.41 		\UCpaso
@@ -2003,8 +2003,8 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -2185,13 +2185,13 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.43 \UCpaso
-            [\UCactor] El bibliotecario seleeccionarÃ¡ la casilla indicando ...
+            [\UCactor] El bibliotecario seleeccionará la casilla indicando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2201,7 +2201,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.43 \UCpaso[\UCactor
-                     ] El bibliotecario seleeccionarÃ¡ la casilla indicando ...
+                     ] El bibliotecario seleeccionará la casilla indicando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2236,8 +2236,8 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
@@ -2347,7 +2347,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 l.44 ...ibliotecario dara click al Boton \IUbutton
-                                                  {Registrar DevoluciÃ³n} .
+                                                  {Registrar Devolución} .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2371,8 +2371,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
@@ -2683,11 +2683,11 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.46 ...f{UI03}{Pantalla de informaciÃ³n} \Trayref
+l.46 ...f{UI03}{Pantalla de información} \Trayref
                                                   {E}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2796,7 +2796,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 ! Undefined control sequence.
 l.51 			\UCpaso
-               [\UCsist] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+               [\UCsist] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2806,7 +2806,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.51 			\UCpaso[\UCsist
-                       ] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+                       ] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2823,8 +2823,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -3225,7 +3225,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 ! Undefined control sequence.
 l.57 			\UCpaso
-               [\UCsist] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+               [\UCsist] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3235,7 +3235,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.57 			\UCpaso[\UCsist
-                       ] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+                       ] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3252,8 +3252,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -3659,7 +3659,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 ! Undefined control sequence.
 l.63 			\UCpaso
-               [\UCsist] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+               [\UCsist] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3669,7 +3669,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.63 			\UCpaso[\UCsist
-                       ] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+                       ] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3686,8 +3686,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -3867,8 +3867,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -4109,7 +4109,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no a in font nullfont!
 ! Undefined control sequence.
 l.72 			\UCpaso
-               [\UCactor] El bibliotecario verifica la fecha de devoluciÃ³n.
+               [\UCactor] El bibliotecario verifica la fecha de devolución.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4119,7 +4119,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.72 			\UCpaso[\UCactor
-                        ] El bibliotecario verifica la fecha de devoluciÃ³n.
+                        ] El bibliotecario verifica la fecha de devolución.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4167,13 +4167,13 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.73 			\UCpaso
-               [\UCsist] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+               [\UCsist] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4183,7 +4183,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.73 			\UCpaso[\UCsist
-                       ] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+                       ] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4200,8 +4200,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -4255,8 +4255,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -4269,7 +4269,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.73 ...a fecha de devoluciÃ³n ha vencido. \MSGref
+l.73 ...a fecha de devolución ha vencido. \MSGref
                                                   {MSG10}{Se ha vencido la f...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4510,7 +4510,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 ! Undefined control sequence.
 l.79 			\UCpaso
-               [\UCsist] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+               [\UCsist] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4520,7 +4520,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 l.79 			\UCpaso[\UCsist
-                       ] Se mostrarÃ¡ un mensaje de advertencia notificando ...
+                       ] Se mostrará un mensaje de advertencia notificando ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4537,8 +4537,8 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ¡ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no m in font nullfont!
@@ -4617,8 +4617,8 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no z in font nullfont!
-Missing character: There is no Ã in font nullfont!
-Missing character: There is no ³ in font nullfont!
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
