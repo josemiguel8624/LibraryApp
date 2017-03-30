@@ -48,9 +48,9 @@
 	\begin{UCtrayectoria}{Principal}
 	\UCpaso[\UCactor] Selecciona el botón:  \IUbutton{Generar Credencial} de la pantalla IGU1 \IUref{UI01}{Pantalla de Inicio}.	
 		\UCpaso[\UCsist] Se conecta a la BD \Trayref{A}.
-		\UCpaso[\UCsist] Valida las reglas de negocio RN2 y RN3 \Trayref{B}.
+		\UCpaso[\UCsist] Valida las reglas de negocio RN2 y RN15 \Trayref{B}.
 		\UCpaso[\UCsist] Produce la credencial del usuario
-		\UCpaso[\UCsist] Envía al usuario el mensaje \MSGref{MSG01}{Operación realizada exitosamente}.
+		\UCpaso[\UCsist] Envía al usuario el mensaje \MSGref{MSG01}{Operación realizada exitosamente}. \Trayref{C}.
 		\UCpaso[\UCactor]Da click en \IUbutton{Aceptar}.
 
 		\end{UCtrayectoria}		
@@ -60,11 +60,15 @@
 			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
 		\end{UCtrayectoriaA}
 		
-		\begin{UCtrayectoriaA}{B}{El usuario tiene adeudos o no está registrado}
-			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{MSG02}{ El usuario no está dado de alta o cuenta con adeudos}
+		\begin{UCtrayectoriaA}{B}{Campos nulos}
+			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{E3}{Los campos no pueden estar vacios}
 			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
 		\end{UCtrayectoriaA}
 		
+		
+
+
+
 
 
 %-------------------------------------- TERMINA descripción del caso de uso.
