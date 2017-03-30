@@ -2,11 +2,11 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU08}{Préstamo interbibliotecario}{
-		Muestra al administrador la opción de préstamo interbibliotecario y este desplegara las opciones de Pedir libro a biblioteca y Prestar libro a biblioteca, al seleccionar alguna mandara a su respectiva pantalla
+		Muestra al administrador la opción de préstamo interbibliotecario y este desplegara las opciones de Pedir libro a biblioteca , Prestar libro a biblioteca y Notificación de préstamo interbibliotecario, al seleccionar alguna mandara a su respectiva pantalla
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Dar a elegir la opción que el administrador desea hacer, solicitar un libro o responder a peticiones de libros.}
+		\UCitem{Propósito}{Dar a elegir la opción que el administrador desea hacer, solicitar un libro, responder a peticiones de libros o revisar el estatus de la solicitud.}
 		\UCitem{Entradas}{Presionar botón préstamo interbibliotecario}
 		\UCitem{Salidas}{Patalla correspondiente al botón presionado }
 		\UCitem{Precondiciones}{ 
@@ -23,7 +23,7 @@
 		\UCpaso[\UCactor] Presionara el botón:  \IUbutton{Préstamo interbibliotecario} de la pantalla \IUref{UI08.1}{Pantalla de inicio}.
 		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI08.2}{pantalla de préstamo interbibliotecario}.
 		\UCpaso[\UCactor]Seleccionara  una opción de préstamo interbibliotecario dando clic en alguno de los botones: \IUbutton{Pedir libro a biblioteca} \IUbutton{Préstamo de libro a Biblioteca}
-		\UCpaso[\UCsist] Mostrara a la pantalla correspondiente de cada botón Pedir libro a biblioteca \UCref{CU21} y Prestar libro a biblioteca \UCref{CU22}
+		\UCpaso[\UCsist] Mostrara a la pantalla correspondiente de cada botón Pedir libro a biblioteca \UCref{CU21} , Prestar libro a biblioteca \UCref{CU22} y Notificacion de prestamo interbibliotecario \UCref{CU23}
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 TERMINA descripción del caso de uso.

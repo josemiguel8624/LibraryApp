@@ -1,0 +1,34 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU23}{Notificación de préstamo interbibliotecario}{
+		El administrador podrá consultar todas la solicitudes de prestamo a otras bibliotecas que ha echo para saber cuales ya han sido autorizadas y cuales no esto lo hace mostrando una tabla y el estatus en que se encuentra la peticion Pendiente o Autorizada
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Administrador}
+		\UCitem{Propósito}{Visualizar las solicitudes de libro que han sido autorizadas por la otra biblioteca.}
+		\UCitem{Entradas}{Ninguna}
+		\UCitem{Salidas}{Titulo, autor, numero de paginas, fecha de publicacion editorial, biblioteca, estatus.Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{MSG03}{El libro no está disponible.}}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador debe estar logueado en el sistema. 
+				\item conexión a la base de datos.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Autor}{Rodriguez Ceravates Arturo y Monserrat Ceron Rodriguez .}
+		\UCitem{Revisó}{Diego Manriquez Molina y Abiran Natanael Salas Hernandez}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Del CU08 presionara el botón:  \IUbutton{Notificación préstamo interbiblitecario} de la pantalla \IUref{UI08.2}{préstamo interbibliotecario}.
+		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI23.1}{notificacion de prestamo interbibliotecario}. Con todas las solicitudes de préstamo que se han echo con el estatus
+		\UCpaso[\UCactor]Visualizara los datos en la pantalla.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Error al conectar a la BD}
+			\UCpaso[\UCsist] Mostrara el mensaje \MSGref{E1}{Error al conectar a la base de datos.}
+			\UCpaso[\UCactor] Presionara el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+TERMINA descripción del caso de uso.
