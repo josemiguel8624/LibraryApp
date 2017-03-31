@@ -10,10 +10,9 @@
 			\item Teléfono
 			\item Fecha de emisión y la Fecha de expedición
 			\item Tipo de usuario
-		\end{itemize}				
-		
+		\end{itemize}									
 	}
-		\UCitem{Versión}{0.2}
+		\UCitem{Versión}{0.4}
 		\UCitem{Actor}{Administrador}
 		\UCitem{Propósito}{Brindar al usuario una credencial que lo reconozca como miembro de la biblioteca para que pueda hacer uso de sus servicios. }
 		\UCitem{Entradas}{Usuario:
@@ -26,7 +25,7 @@
 			\item Fecha de Emision [Date] (dd/mm/aaaa)
 			\item Fecha de Expiración [Date] (dd/mm/aaaa)
 		\end{itemize}
-}
+		}
 		\UCitem{Salidas}{El usuario obtiene su credencial}
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
@@ -41,34 +40,43 @@
 			\end{itemize} 
 			}
 		\UCitem{Autores}{Hernández Flores Luis Ángel y Hernandez Aguirre Ezequiel Absalon}
-		\UCitem{Revisó}{Durán MArtínez Josué y Castañeda Sánchez Miguel Ángel}
+     	\UCitem{Status}{Aprobado}
+		\UCitem{Responsables de revisión}{Durán Martínez Josué y Castañeda Sánchez Miguel Ángel}
 	\end{UseCase}
 	
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] Selecciona el botón:  \IUbutton{Generar Credencial} de la pantalla IGU1 \IUref{UI01}{Pantalla de Inicio}.	
-		\UCpaso[\UCsist] Se conecta a la BD \Trayref{A}.
-		\UCpaso[\UCsist] Valida las reglas de negocio RN2 y RN15 \Trayref{B}.
-		\UCpaso[\UCsist] Produce la credencial del usuario
-		\UCpaso[\UCsist] Envía al usuario el mensaje \MSGref{MSG01}{Operación realizada exitosamente}. \Trayref{C}.
+	\UCpaso[\UCactor] El administrador busca y da click en la página principal en la pestaña "Generar credencial".
+	\UCpaso[\UCactor] El administrador ingresa los datos del usuario y valida la \BRref{RN15}{Campos llenos usuario}\Trayref{A} .Selecciona el botón:  \IUbutton{Generar Credencial} de la pantalla IGU1 \IUref{UI01}{Pantalla de Inicio}.	
+
+		\UCpaso[\UCsist] Se conecta a la BD para registrar los datos de la credencial, validando la \BRref{RN2}{Generar Credencial}  \Trayref{B}.
+		\UCpaso[\UCsist] Produce la credencial del usuario.El formato de la credencial es indistinto, pero debe tener los siguientes datos
+		\begin{itemize}
+			\item Nombre completo
+			\item Teléfono
+			\item Fecha de emisións
+			\item Fecha de expiración
+			\item Un cuadro para la foto
+			
+		\end{itemize}		 
+		
+		\UCpaso[\UCsist] Envía al usuario el mensaje \MSGref{MSG01}{Operación realizada exitosamente}.
 		\UCpaso[\UCactor]Da click en \IUbutton{Aceptar}.
 
 		\end{UCtrayectoria}		
-		%	-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
-		\begin{UCtrayectoriaA}{A}{No se puede conectar a la Base de datos}
+%		%	-------------------------------------- COMIENZA descripción de las Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Campos nulos}
+			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{E3}{Los campos no pueden estar vacios}
+			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
+		\end{UCtrayectoriaA}
+
+		\begin{UCtrayectoriaA}{B}{No se puede conectar a la Base de datos}
 			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{E1}{Error al conectar la Base de datos}
 			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
 		\end{UCtrayectoriaA}
 		
-		\begin{UCtrayectoriaA}{B}{Campos nulos}
-			\UCpaso[\UCsist] Envía al usuario un mensaje \MSGref{E3}{Los campos no pueden estar vacios}
-			\UCpaso[\UCsist] El administrador da click en el botón \IUbutton{Aceptar}.
-		\end{UCtrayectoriaA}
+
 		
-		
-
-
-
-
+				
 
 %-------------------------------------- TERMINA descripción del caso de uso.
