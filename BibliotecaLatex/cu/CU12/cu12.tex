@@ -2,7 +2,7 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU12}{Apartar Libro}{
-		El objetivo es describir la funcionalidad del sistema donde se podrá apartar un libro cuando este no este disponible, para que un libro no este disponible quiere decir que otro Usuario lo tiene, el apartado genera una orden para que el pueda recogerlo al estar disponible nuevamente y solo puede existir una orden para un libro, el libro debe existir en la biblioteca para ser apartado, para que de esta manera el usuario que aparte tenga la seguridad de que al llegar el libro a la biblioteca pueda ir a recogerlo y hacer uso de el. Siempre y cuando el usuario este registrado.
+		El objetivo es describir la funcionalidad del sistema donde se podrá apartar un libro cuando este no este disponible, para que un libro no este disponible quiere decir que otro Usuario lo tiene, el apartado genera una orden para que el pueda recogerlo al estar disponible nuevamente y solo puede existir una orden para un libro, el libro debe existir en la biblioteca para ser apartado, para que de esta manera el usuario que aparte tenga la seguridad de que al llegar el libro a la biblioteca pueda ir a recogerlo y hacer uso de el. Siempre y cuando el usuario este registrado. Puede haber mas de un libro para poder ser prestado pero solo se considera el primer caso cuando no existe ninguno disponible. Pueden extistir libros en la biblioteca pero no pueden ser prestados como Libros Viejos, Libros Maltratados, etc. El usuario registrado debe estar limpio de multas y penalizaciones. El usuario debera asistir a la biblioteca a recoger el libro cuando este este disponible. El sistema envia un correo cuando tenga 1 libro disponible.
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Usuario}
@@ -16,13 +16,14 @@
 			\item Nombre de Libro Requerido
 		\end{itemize}		
 		}
-		\UCitem{Salidas}{Orden de cita. Que contendrá: fecha del día en que se hizo la orden, nombre de quien hizo la orden, nombre del libro, autor, id del libro.}
+		\UCitem{Salidas}{Orden de Apartado de Libro. Que contendrá: fecha del día en que se hizo la orden, nombre de quien hizo la orden, nombre del libro, autor, id del libro.}
 		
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
 				\item Interna: Que exista el libro. 
 				\item Interna: Que el libro no esté disponible.
 				\item Interna: Que el libro no este apartado ya.
+				\item Interna: Que el usuario este registrado en la base de datos.
 			\end{itemize}
 		}
 		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
