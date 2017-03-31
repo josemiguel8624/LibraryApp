@@ -6,16 +6,16 @@
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador bibliotecario}
-		\UCitem{Propósito}{Definir el estado actual con el que cuenta un libro después de su entrega por parte del usuario para facilitar el control de inventario y futuras consultas.}
+		\UCitem{Propósito}{Cambiar la disponibilidad de un libro después de un proceso de préstamo o entrega y registrar el estado físico que tiene el libro cuando se realiza la transición de estado.}
 		\UCitem{Entradas}{El identificador del libro , la fecha -hora cuando se realiza el registro y los estados que se asocian al libro.}
-		\UCitem{Salidas}{Se registra la fecha y hora del cambio de estado del libro , esto indica la disponibilidad y características durante ese cambio.}
+		\UCitem{Salidas}{Se registra la fecha y hora del cambio de disponibilidad y una actualización en el estado físico si se presenta una variación. }
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
 			\item El Libro  debe existir en los registros.
  			\item  Se realizó el proceso de préstamo previamente \UCref(CU09)o se realizó en proceso de 						devolución  \UCref(CU07) para identificar el libro para realizar el cambio de estado.
 			\end{itemize}
 		}
-		\UCitem{Postcondiciones}{El cambio de estado queda registrado con una fecha y hora, una disponibilidad y  0 o más condiciones físicas.}
+		\UCitem{Postcondiciones}{El cambio en la disponibilidad de un libro o libros asociados a un préstamo  si existe un cambio en el estado físico  este  se asocia al cambio de disponibilidad en una fecha y hora específica.}
 		\UCitem{Autor}{BAUTISTA ROSALES MAURICIO}
 	\end{UseCase}
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
@@ -24,6 +24,7 @@
 	\UCpaso[\UCactor] El administrador realiza el proceso de préstamo de libro o devolución  \UCref(CU7) , \UCref(CU09).
 	\UCpaso[\UCsist]   identifica si se trata de un préstamo o devolución con base a la regla de negocio \BRref{RN31}.
  	\UCpaso[\UCsist]  establece la disponibilidad actual con base a la regla de negocio  \BRref{RN31} .
+	\UCpaso[\UCsist]  Obtiene los estados físicos asociados al último cambio de disponibilidad que se realizó.
 	\UCpaso[\UCsist] despliega \IUref{UI6} solicitando al usuario que seleccione las  condiciones físicas del libro que apliquen.
 	\UCpaso[\UCactor]El administrador selecciona las condiciones físicas actuales.
 	\UCpaso[\UCactor] El administrador presiona el botón \IUbutton{CONTINUAR}
@@ -31,7 +32,8 @@
 	\UCpaso[\UCsist] obtiene la fecha y hora en la que se hace el registro.
 	\UCpaso[\UCsist] solicita a través del \MSGref{MSG6}  que el administrador confirme los datos.\Trayref{A}
 	\UCpaso[\UCactor] El administrador confirma los datos presionando el botón  \IUbutton{OK}
-	\UCpaso[\UCsist] registra la  disponibilidad del libro y sus condiciones físicas en la 			fecha y hora indicada.\Trayref{B}
+	\UCpaso[\UCsist] registra el cambio de disponibilidad del libro en la fecha y hora indicada.\Trayref{B}
+	\UCpaso[\UCsist] comprueba si existe una variación en los estados físicos del libro , actualiza los estados asociados.
 	\UCpaso[\UCsist] muestra el mensaje \MSGref{MSG1} como resultado del éxito de registró.\Trayref{C}
 	\UCpaso[\UCactor] El administrador confirma presionando el botón  \IUbutton{OK}
 			
