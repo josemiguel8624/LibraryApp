@@ -9,7 +9,7 @@ publicación, editorial o biblioteca a la cual le pedirá el préstamo y selecci
 		\UCitem{Actor}{Administrador}
 		\UCitem{Propósito}{Pedir un libro a otra biblioteca, mediante los datos del formulario.}
 		\UCitem{Entradas}{Nombre, autor, numero de paginas, fecha de publicacion, editorial del libro o biblioteca}
-		\UCitem{Salidas}{una tabla con todos los libros que se encontrar con esa busqueda y las bibliotecas que tiene esos libros disponibles así como cuantos ejemplares.Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{E3}{Datos introducidos incorrectamente.}Mensaje\MSGref{MSG03}{La biblioteca no tiene convenio.}}
+		\UCitem{Salidas}{Una tabla con todos los libros que se encontró con la búsqueda y las bibliotecas que tiene esos libros disponibles así como cuantos ejemplares.Mensaje \MSGref{MSG01}{Operación realizada exitosa mente}.Mensaje\MSGref{E3}{Datos introducidos incorrectamente.}Mensaje\MSGref{MSG03}{La biblioteca no tiene convenio.}}
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
 				\item conexión a la base de datos.
@@ -23,10 +23,10 @@ publicación, editorial o biblioteca a la cual le pedirá el préstamo y selecci
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] Del \UCref{CU08} presionara el botón:  \IUbutton{Pedir libro a biblioteca} de la pantalla \IUref{UI08.2}{Pantalla de prestamo interbibliotecario}.
-		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI21.1}{pantalla de pedir libro a biblioteca}.
+		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI21.1}{pantalla de pedir libro a biblioteca búsqueda}.
 		\UCpaso[\UCactor]seleccionara un método de búsqueda e ingresara el datos y presionara el botón: \IUbutton{Buscar} se verifican reglas de negocio \BRref{RN46}{Convenio con biblioteca} \BRref{RN42}{Datos completos}\Trayref{A} \Trayref{B}\Trayref{C}.
 		\UCpaso[\UCsist] Mostrara la pantalla \IUref{UI21.2}{pantalla resultados}
-		\UCpaso[\UCactor]seleccionara que ejemplar desea solicitar y presionara el botón \IUbutton{Solicitar préstamo}
+		\UCpaso[\UCactor]seleccionara que ejemplar desea solicitar, la cantidad de ejemplares que necesita y presionara el botón \IUbutton{Solicitar préstamo}
 		\UCpaso[\UCsist] Dará el mensaje \MSGref{MSG01}{Operación realizada exitosa mente}
 		\UCpaso[\UCactor] presionara el botón \IUbutton{OK}
 	\end{UCtrayectoria}

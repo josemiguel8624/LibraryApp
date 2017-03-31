@@ -29,21 +29,21 @@
 \subsection{IU21.2 Pedir libro a biblioteca consulta}
 
 \subsubsection{Objetivo}
-	Pantalla donde se muestra los resultados de la consulta de la pantalla \IUref{UI21.2}{Pedir libro a biblioteca consulta}
+	Pantalla donde se muestra los resultados de la búsqueda de la pantalla \IUref{UI21.1}{Pedir libro a biblioteca búsqueda}. Mostrara al administrador una tabla con la información de todos los libros que coincidieron con búsqueda
 
 \subsubsection{Diseño}
-	Esta pantalla aparece cuando presionas el botón \IUbutton{Buscar} de la pantalla \IUref{UI21.1}{Pedir libro} Contiene una tabla donde se muestran los resultados de la consulta la tabla tiene: titulo, autor, editorial, año de publicación, paginas. biblioteca que tiene el libro, ejemplares y una casilla para marcar y solicitar el libro  \\\\
+	Esta pantalla aparece cuando presionas el botón \IUbutton{Buscar} de la pantalla \IUref{UI21.1}{Pedir libro a biblioteca búsqueda} Contiene una tabla donde se muestran los resultados de la búsqueda, la tabla tiene: titulo, autor, editorial, año de publicación, paginas. biblioteca que tiene el libro, ejemplares y una casilla para seleccionar la cantidad de ejemplares que solicitara  \\\\
 
 \IUfig[.7]{CU21/UI02}{UI21.2}{Pedir libro a biblioteca consulta.}
 
 \subsubsection{Salidas}
 	\begin{Citemize}
-		\item se envia la solicitud de préstamo y dará el mensaje \MSGref{MSG1}{Operación realizada exitosa mente}. 
+		\item Se envía la solicitud de préstamo y dará el mensaje \MSGref{MSG1}{Operación realizada exitosa mente}. 
 	\end{Citemize}
 	
 \subsubsection{Entradas}
 	\begin{Citemize}
-		\item El administrador marcara las casillas de los libros que desee pedir prestados
+		\item El administrador marcara en la casilla la cantidad de libros que desee pedir prestados
 	\end{Citemize}
 
 
