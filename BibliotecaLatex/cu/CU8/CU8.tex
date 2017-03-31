@@ -6,7 +6,7 @@
 	}
 		\UCitem{Versión}{0.1}
 		\UCitem{Actor}{Administrador}
-		\UCitem{Propósito}{Dar a elegir la opción que el administrador desea hacer, solicitar un libro, responder a peticiones de libros o revisar el estatus de la solicitud.}
+		\UCitem{Propósito}{Dar a elegir la opción que el administrador desea hacer, solicitar un libro, responder a peticiones de libros o revisar el estatus de la solicitudes de libros que a enviado.}
 		\UCitem{Entradas}{Presionar botón préstamo interbibliotecario}
 		\UCitem{Salidas}{Patalla correspondiente al botón presionado }
 		\UCitem{Precondiciones}{ 
@@ -15,15 +15,15 @@
 			\end{itemize}
 		}
 		\UCitem{Postcondiciones}{El sistema mostrara las pantallas que corresponde al botón}
-		\UCitem{Autor}{Rodriguez Ceravates Arturo y Monserrat Ceron Rodriguez .}
+		\UCitem{Autor}{Rodriguez Cervantes Arturo y Monserrat Ceron Rodriguez .}
 		\UCitem{Revisó}{Diego Manriquez Molina y Abiran Natanael Salas Hernandez}
 	\end{UseCase}
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] Presionara el botón:  \IUbutton{Préstamo interbibliotecario} de la pantalla \IUref{UI08.1}{Pantalla de inicio}.
 		\UCpaso[\UCsist]Mostrara la pantalla \IUref{UI08.2}{pantalla de préstamo interbibliotecario}.
-		\UCpaso[\UCactor]Seleccionara  una opción de préstamo interbibliotecario dando clic en alguno de los botones: \IUbutton{Pedir libro a biblioteca} \IUbutton{Préstamo de libro a Biblioteca}
-		\UCpaso[\UCsist] Mostrara a la pantalla correspondiente de cada botón Pedir libro a biblioteca \UCref{CU21} , Prestar libro a biblioteca \UCref{CU22} y Notificacion de prestamo interbibliotecario \UCref{CU23}
+		\UCpaso[\UCactor]Seleccionara  una opción de préstamo interbibliotecario dando clic en alguno de los botones: \IUbutton{Pedir libro a biblioteca} \IUbutton{Préstamo de libro a Biblioteca} \IUbutton{Notificación de préstamo interbibliotecario}
+		\UCpaso[\UCsist] Mostrara a la pantalla correspondiente de cada botón Pedir libro a biblioteca \UCref{CU21} , Prestar libro a biblioteca \UCref{CU22} y Notificación de préstamo interbibliotecario \UCref{CU23}
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 TERMINA descripción del caso de uso.
