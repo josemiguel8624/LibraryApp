@@ -4,7 +4,7 @@
 	\begin{UseCase}{CU02}{Generar cuentas de usuario}{
 	   Se le pedirá al administrador de las cuentas de usuario que ingrese los datos solicitados, a partir de éste momento se comenzará con la  validación de los mismos; una vez realizado esto, se almacenará la instancia de usuario final en la base de datos "Se generará su cuenta" para poder acceder a los servicios ofrecidos en la biblioteca, los usuarios finales serán de varios tipos dependiendo del rol que se le asigne.
 	}
-		\UCitem{Versión}{0.2}
+		\UCitem{Versión}{1}
 		\UCitem{Actor}{Administrador de Cuentas de Usuario}
 		\UCitem{Propósito}{Generar nuevas a los usuarios finales, para que puedan acceder a los servicios ofrecidos por la biblioteca (consultar procesos de negocio). Se hace énfasis, los servicios a los que se tendrá acceso por usuario dependerán en función del rol asignado a cada cuenta de usuario.}
 		\UCitem{Entradas}{
@@ -50,7 +50,7 @@
 		 \item López Eder Guillermo
 		\end{itemize}		 		 
 		}
-		\UCitem{Status}{En Revisión}
+		\UCitem{Status}{Aprobado}
 		\UCitem{Revisó}{
 		\begin{itemize}
 		\item Recoder Jiménez Bryan 
@@ -72,7 +72,8 @@
 	  \UCpaso[\UCsist]Envía la información del campo curp a la API de RENAPO.[Trayectoria E]
 	  \UCpaso[\UCsist]Obtiene la información de la API de RENAPO. [Trayectoria F]
 	  \UCpaso[\UCsist]El sistema valida la información ingresada por el usuario comparando con la enviada por la API. [Trayectoria G]
-	    \UCpaso[\UCsist]Informa que el registro fue exitoso, guarda la instancia del usuario en la base de datos y envia un correo de confirmación al usuario(El id del usuario es generado automáticamente por la base de datos auto\_increment).Se muestra en pantalla la \IUref{UI03}{Inserción Exitosa!}.
+	    \UCpaso[\UCsist]Informa que el registro fue exitoso, guarda la instancia del usuario en la base de datos y envia un correo de confirmación al usuario con los siguientes datos: idUsuario (El id del usuario es generado automáticamente por la base de datos auto\_increment) y todos los campos de la instancia de usuario que ha sido almacenada en la base de datos.Se muestra en pantalla la \IUref{UI03}{Inserción Exitosa!}.
+	    \UCpaso[\UCsist]Regresa al paso 2 de la trayectoria principal
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\begin{UCtrayectoriaA}{A}{Campos sin llenar.}
