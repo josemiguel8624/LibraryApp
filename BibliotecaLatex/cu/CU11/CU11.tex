@@ -22,10 +22,12 @@
 		\UCpaso Muestra la \IUref{IU11}{Registro de donaciones}
 		\UCpaso [\UCactor] Ingresara el dato ISBN del libro y pulsara el botón \IUbutton{Verificar} \Trayref{A}
 		\UCpaso Buscará el ISBN en la base de datos, si los datos coincide con alguno previamente registrado de la base de datos, el sistema llenara de forma automática el formulario con los datos generales del libro (Paso 6 trayectoria principal), si no, el sistema continúa en el paso 5 de la trayectoria principal.
-		\UCpaso [\UCactor] Llama a \UCref{CU05} para registrar los datos del libro donado
+		\UCpaso [\UCactor] Llama a \UCref{CU04} para registrar los datos del libro donado
 		\UCpaso [\UCactor] Ingresa los datos referentes al estado del libro, en el cual detallara el estado actual del libro
 		\UCpaso [\UCactor] Ingresa el nombre del donador del libro, especificando si es una persona o librería el que hizo la donación,su mail y teléfono 
-		\UCpaso Verifica los datos ingresados referentes a las \BRref{RN16} y \BRref{RN17} \Trayref{B} \ Trayref{C}
+		\UCpaso [\UCactor] Pulsa el botón \IUbutton{Registrar} para registrar la donación 
+		\UCpaso Verifica los datos ingresados referentes a las \BRref{RN16}{Registro libros} y \BRref{RN17}{Datos de donante} \Trayref{B} \Trayref{C}
+		\UCpaso Registra los datos en la Base de Datos  \Trayref{A}
 		\UCpaso Muestra en la pantalla el mensaje \MSGref{MSG1}{Operación realizada exitosamente}
 		%\UCpaso Muestra en la pantallla el mensaje \MSGref{MSG01}
 		%\UCpaso Verifica los datos ingresados referentes a las% \BRref{RN16} %y \BRref{RN17} \Trayref{B} \Trayref{C}
