@@ -1,7 +1,7 @@
 \begin{UseCase}{CU14}{Generar Multas}{
-		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas que se establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca, las cuales corresponden a: pérdida, devolución a desatiempo, maltrato o sustitución de un libro.
+		Generar las multas a las cuales los usuarios serán acreedores cuando no se cumple con las normas establecidas y aceptadas al solicitar la credencial correspondiente para el préstamo de ejemplares de la biblioteca, las cuales corresponden a: pérdida, devolución a desatiempo, maltrato o sustitución de un libro.
 	}
-		\UCitem{Versión}{1.0}
+		\UCitem{Versión}{1.3}
 		\UCitem{Actor}{Administrador}
 		\UCitem{Propósito}{Generar multas a los usuarios del servicio de la biblioteca que no cumplan con las condiciones de devolución.}
 		\UCitem{Entradas}{
@@ -67,16 +67,16 @@
 	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
 	1. "Pérdida de libro". Se considerará el costo total obtenido en el paso 2. \BRitem
 	2. "Devolución a destiempo". Se tomará la fecha de devolución del paso 3 y contarán los días dde diferencia entre la fecha actual. La cantidad de días multiplicará por 20. \BRitem
-	3. "Maltrato de libro". Se cosiderará el costo en el paso 2 y se multiplicara por 0.35 \BRitem
-	4. "Sustitución de libro". Se considerará el costo obtenido en el paso 2 y se multiplicará por 0.5.
+	3. "Maltrato de libro". Se cosiderará el 35 porciento del costo en el paso 2. \BRitem
+	4. "Sustitución de libro". Se considerará el 50 porciento del costo obtenido en el paso 2.
 	\UCpaso[\UCsist] El sistema descargara el DOC-1, en el que devolverá la cantidad de multa correspondiente al paso anterior, la cual se asociará al usuario dado por el identificador de entrada. \Trayref{B} 
-	\UCpaso[\UCsist] Se mostrará el mensaje MSG1
+	\UCpaso[\UCsist] Se mostrará el mensaje \MSGref{MSG1}{Operación exitosa}.
 \end{UCtrayectoria}
 \begin{UCtrayectoriaA}{A}{Se introdujo un número de multa inexistente}	
-			\UCpaso[\UCsist] El sistema mostrará el mensaje [E2].
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{[E2]}{Datos incorrectos}.
 			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal. 
 \end{UCtrayectoriaA}
 \begin{UCtrayectoriaA}{B}{Se presentó un error en la conexión y/o en la transacción actual con base de datos}
-			\UCpaso[\UCsist] El sistema mostrará el mensaeje [E1].
+			\UCpaso[\UCsist] El sistema mostrará el mensaeje \MSGref{[E1]}{Error de conexión}.
 			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal.
 \end{UCtrayectoriaA}
