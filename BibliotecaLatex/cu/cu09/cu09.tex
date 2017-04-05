@@ -4,13 +4,14 @@
 	\begin{UseCase}{CU09}{Registrar Devolución de libro}{
 		El bibliotecario registrará la devolución de un libro que fue previamente prestado con base a al ISBN del libro(Identificador del libro) e identificador del usuario al que se le fue prestado dicho libro, al mismo tiempo se actualizará y verificará el estado del libro devuelto refiriendose a la disponibilidad y al estado fisico.
 	}
-		\UCitem{Versión}{0.4}
+		\UCitem{Versión}{0.5}
 		\UCitem{Actor}{Bibliotecario, Usuario}
 		\UCitem{Propósito}{Registrar y verificar en el sistema la devolución de un libro, con base al nombre del usuario e identificador del libro actulizando las disponibilidad del mismo para su prestamo en un futuro, con el fin de tener un control sobre el inventario de libros de la biblioteca.}
 		\UCitem{Entradas}{
 		Se necesitan de los siguientes datos
 					\begin{itemize}
-				\item Identificador del libro 
+				\item Identificador del libro
+				\item Identificador del Usuario que devuelve el libro 
 				\item Nombre del usuario que devuelve el libro
 			\end{itemize}}
 		\UCitem{Salidas}{
@@ -38,14 +39,15 @@
 		%-------------------------------------- COMIENZA descripción Trayectoria Principal
 	\begin{UCtrayectoria}{Principal}
 		\UCpaso[\UCactor] El usuario se identifica y solicita devolver un libro en prestamo al bibliotecario.  
-		\UCpaso[\UCactor] El bibliotecario ingresará el nombre del usuario que devuelve el libro de acuerdo con el formato de la regla de negocio \BRref{RN37}{Formato del nombre}, el identificador del libro que se va a devolver \Trayref{A}\IUref{UI0109}{Pantalla de verificación} 
+		\UCpaso[\UCactor] El bibliotecario ingresará el identificador y el nombre del usuario que devuelve el libro de acuerdo con el formato de la regla de negocio \BRref{RN37}{Formato del nombre}, el identificador del libro que se va a devolver \Trayref{A}\IUref{UI0109}{Pantalla de verificación}
+		\UCpaso[\UCactor] El Usuario verificará que los datos ingresados son los correctos
 		\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{Verificar}.
 		\UCpaso[\UCsist] El sistema obtendra la fecha de entrega del libro.
 				\UCpaso[\UCsist] Obtiene los datos ingresados y muestra la información correspondiente como: el usuario, libro a devolver, fecha en la que se devuelve, fecha limite a devolver dicho libro y la seccion del estado fisico en el que se devuelve el libro \IUref{UI0209}{Pantalla de información}.
 \UCpaso[\UCactor] El bibliotecario seleccionará la casilla indicando las condiciones fisicas del libro devuelto.						
 						\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{Registrar Devolución} .
 		\UCpaso[\UCsist] Se verificara la fecha en la que el usuario devuelve con la fecha limite para devolver el libro con base en la \BRref{RN10}{Devolucion en fecha} y las condiciones en las que se encuentra dicho libro. \Trayref{B}
-				\UCpaso[\UCsist] Se actualiza el registro del estado del libro asi como su Disponibilidad.  \IUref{UI0309}{Pantalla de información} \Trayref{C}
+				\UCpaso[\UCsist] Se actualiza el registro del estado del libro asi como su Disponibilidad y mostrará una tabla con los libros pendientes que tiene el usuario en prestamo.  \IUref{UI0309}{Pantalla de información} \Trayref{C}
 	\UCpaso[\UCactor] El bibliotecario dara click al Boton \IUbutton{OK}.
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
