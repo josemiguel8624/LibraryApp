@@ -1,21 +1,104 @@
-MENSAJES GENERALES
 	\begin{Citemize}
-		\item {\bf [E1]} Error al conectar a la BD.
-		\item {\bf [E2]} Error al generar las citas de entrevista. 
-		\item {\bf [E3]} Datos incompletos. Favor de completar todos los campos de entrada.
-	\item {\bf [E4]}Registro no encontrado.
-	\item {\bf [E5]}Registro ya existente en el catálogo.
-	\item {\bf [E6]}Error en el envío de email.
-	\item {\bf [E7]}Error de escritura en la base de datos. Intentalo nuevamente.
-
-	\item {\bf [MASG1]} Operación realizada exitosamente.
-	\item {\bf [MASG2]} El usuario cuenta con adeudos. No se puede completar la operación.
-	\item {\bf [MASG3]} El libro no está disponible.
-	\item {\bf [MASG4]} El usuario se encuentra bloqueado.
-	\item {\bf [MASG5]} El recurso solicitado está disponible.
-	\item {\bf [MASG6]} Confirma que los datos ingresados sean correctos.
-	\item {\bf [MASG7]} Límite máximo de intentos alcanzado.
-
+		\item
+		\begin{Message}{[E1]}{Error al conectar con la base de datos.}
+			\MSGitem[Tipo: ] Error.
+			\MSGitem[Objetivo: ] Notificar que no se pudo establecer conexión con la base de datos.
+			\MSGitem[Redacción: ] Se presentó un problema al intentar conectarse con la BD.
+		\end{Message}
+	
+		\item
+		\begin{Message}{[E2]}{Datos introducidos incorrectamente.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar que los datos proporcionados son incorrectos.
+			\MSGitem[Redacción: ] Los datos proporcionados no cumplen con las condiciones solicitadas.
+		\end{Message}
+	
+		\item 
+		\begin{Message}{[E3]}{Datos incompletos.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar que faltan datos de entrada.
+			\MSGitem[Redacción: ] Datos incompletos. Favor de completar todos los campos de entrada.
+		\end{Message}
+	
+		\item 
+		\begin{Message}{[E4]}{Registro no encontrado.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar que el elemento a buscar no fue encontrado.
+			\MSGitem[Redacción: ] El registro que a buscar no se encuentra en la BD.
+		\end{Message}
+	
+		\item
+		\begin{Message}{[E5]}{Registro ya existente en el catálogo.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar que el elemento a insertar ya existe.
+			\MSGitem[Redacción: ] El registro que desea agregar ya se encuentra en la BD.
+		\end{Message}
+	
+		\item
+		\begin{Message}{[E6]}{Error en el envío de email.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar que el email solicitado no se pudo enviar.
+			\MSGitem[Redacción: ] Se ha presentado un error al intentar enviar email. Favor de intentar nuevamente.
+		\end{Message}
+		
+		\item
+		\begin{Message}{[E7]}{Error de escritura en la base de datos.}
+			\MSGitem[Tipo: ] Error
+			\MSGitem[Objetivo: ] Notificar cuando se presente un error de escritura en la DB.
+			\MSGitem[Redacción: ] Se ha presentado un error al guardar en la base de datos. Favor de intentar nuevamente.
+		\end{Message}
+		
+		%Mensajes generales
+	
+		\item
+		\begin{Message}{MSG1}{Operación exitosa.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Notificar cuando se realice una operación correctamente.
+			\MSGitem[Redacción: ] La operación ha sido realizada exitosamente.
+		\end{Message}
+		
+		\item
+		\begin{Message}{MSG2}{Usuario con adeudos.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Notificar cuando un usuario cuenta con adeudos en biblioteca.
+			\MSGitem[Redacción: ] El usuario cuenta con adeudos. No se puede completar la operación.
+		\end{Message}
+		
+		\item
+		\begin{Message}{MSG3}{Libro no disponible.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Notificar cuando un libro no está disponible.
+			\MSGitem[Redacción: ] El libro solicitado no está disponible.
+		\end{Message}
+		
+		\item
+		\begin{Message}{MSG4}{Usuario bloqueado.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Notificar cuando un usuario ha sido bloqueado por algún incumplimiento.
+			\MSGitem[Redacción: ] El usuario se encuentra bloqueado temporalmente.
+		\end{Message}
+		
+		\item
+		\begin{Message}{MSG5}{Elemento disponible.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Confirmar de que un elemento existe en la BD.
+			\MSGitem[Redacción: ] El recurso solicitado se encuentra disponible.
+		\end{Message}
+	
+		\item
+		\begin{Message}{MSG6}{Verificar datos.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Verificar los datos de entrada.
+			\MSGitem[Redacción: ] Favor de verificar los datos introducidos.
+		\end{Message}
+	
+		\item
+		\begin{Message}{MSG7}{Límite máximo de intentos alcanzado.}
+			\MSGitem[Tipo: ] Información
+			\MSGitem[Objetivo: ] Notificar sobre el límite de intentos en una operación.
+			\MSGitem[Redacción: ] Has alcanzado el número máximo de intentos en la operación actual.
+		\end{Message}
+		
 CONSIDERANDO LOS CASOS DE USO
 
 	\item {\bf [1]} Directorio de roles
@@ -34,7 +117,13 @@ CONSIDERANDO LOS CASOS DE USO
 	\item {\bf [4]} Registro de libro
 		\begin{enumerate}
 			\item Referencia a [E3]
-			\item MSG8. El ISBN no corresponde a la edición del libro
+			\item
+			\begin{Message}{MSG8}{ISBN incorrecto.}
+				\MSGitem[Tipo: ] Información
+				\MSGitem[Objetivo: ] Notificar sobre una inconsistencia en la información del libro y el ISBN proporcionado.
+				\MSGitem[Redacción: ] El ISBN no corresponde a la edición del libro.
+			\end{Message}
+			
 			\item Referencia a [E1]	
 		\end{enumerate}
 	\item {\bf [5]} Consulta de libros
@@ -51,7 +140,13 @@ CONSIDERANDO LOS CASOS DE USO
 			\item Referencia a [E3]
 			\item Referencia a [E1]
 			\item Referencia a [E4]
-			\item MSG0. El límite de préstamos para este usuario ha alcanzado su límite, no se pueden hacer más préstamos a este usuario.
+			\item
+			\begin{Message}{MSG9}{Límite de préstamos alcanzado.}
+				\MSGitem[Tipo: ] Información
+				\MSGitem[Objetivo: ] Notificar cuando un usuario ha alcanzado el límite de préstamos permitidos.
+				\MSGitem[Redacción: ] El límite de préstamos para este usuario ha alcanzado su límite, no se pueden hacer más préstamos a este usuario por el momento.
+			\end{Message}
+			
 			\item Referencia a MSG2
 			\item Referencia a MSG4
 			\item Referencia a MSG3
@@ -59,8 +154,20 @@ CONSIDERANDO LOS CASOS DE USO
 	\item {\bf [8]} Préstamo interbibliotecario
 	\item {\bf [9]} Devolución de libro
 		\begin{enumerate}
-			\item MSG10. La fecha de entrega se ha vencido para este libro, se cobrará multa por devolver el libro fuera de tiempo.
-			\item MSG11. El registro no se realizó correctamente, por favor inténtelo de nuevo.
+			\item
+			\begin{Message}{MSG10}{Fecha de entrega vencida.}
+				\MSGitem[Tipo: ] Información
+				\MSGitem[Objetivo: ] Notificar cuando un libro no ha sido devuelto a tiempo.
+				\MSGitem[Redacción: ] La fecha de entrega se ha vencido para este libro, se cobrará multa por devolver el libro fuera de tiempo.
+			\end{Message}
+			
+			\item
+			\begin{Message}{MSG11}{Registro no guardado.}
+				\MSGitem[Tipo: ] Información
+				\MSGitem[Objetivo: ] Notificar cuando no se ha realizado un reistro en la BD debido a problemas de transacción.
+				\MSGitem[Redacción: ] El registro no se realizó correctamente. Favor de intentarlo de nuevo.
+			\end{Message}
+			
 		\end{enumerate}
 	\item {\bf [10]} Renovación de préstamo
 	\item {\bf [11]} Donación de libro

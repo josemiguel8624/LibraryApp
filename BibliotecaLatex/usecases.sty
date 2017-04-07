@@ -263,6 +263,21 @@
 }
 
 
+\newenvironment{Message}[2]%linea original
+{%
+	\hypertarget{#1}{}%Linea original
+	\noindent{\large{\bf Mensaje:} #1 #2}%line Original
+	\begin{description}\addtolength{\itemsep}{-0.5\baselineskip}%
+}
+{%
+	\end{description}
+}
+
+
+%Agregar item de mensaje
+\newcommand{\MSGitem}[1][]{\item[#1]}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Agregar salto de línea en un paso
 %usar \BRitem

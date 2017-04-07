@@ -36,7 +36,7 @@
 \BOOKMARK [2][-]{subsection.2.6.2}{Atributos importantes}{section.2.6}% 36
 \BOOKMARK [2][-]{subsection.2.6.3}{Trayectorias del Caso de Uso}{section.2.6}% 37
 \BOOKMARK [2][-]{subsection.2.6.4}{IU6 Pantalla Cambio de Estado de un Libro}{section.2.6}% 38
-\BOOKMARK [1][-]{section.2.7}{CU07 Prestamo de Libros a domicilio}{chapter.2}% 39
+\BOOKMARK [1][-]{section.2.7}{CU07 Prestar libros a domicilio}{chapter.2}% 39
 \BOOKMARK [2][-]{subsection.2.7.1}{Descripci\363n completa}{section.2.7}% 40
 \BOOKMARK [2][-]{subsection.2.7.2}{Atributos importantes}{section.2.7}% 41
 \BOOKMARK [2][-]{subsection.2.7.3}{Trayectorias del Caso de Uso}{section.2.7}% 42
@@ -73,39 +73,56 @@
 \BOOKMARK [2][-]{subsection.2.12.4}{IU01 Pantalla de Inicio}{section.2.12}% 73
 \BOOKMARK [2][-]{subsection.2.12.5}{IU02 Pantalla Apartar Libro}{section.2.12}% 74
 \BOOKMARK [2][-]{subsection.2.12.6}{IU03 Pantalla de Formulario para Apartar Libro}{section.2.12}% 75
-\BOOKMARK [1][-]{section.2.13}{CU14 Generar Multas}{chapter.2}% 76
+\BOOKMARK [1][-]{section.2.13}{CU13 Registrar Multas}{chapter.2}% 76
 \BOOKMARK [2][-]{subsection.2.13.1}{Descripci\363n completa}{section.2.13}% 77
 \BOOKMARK [2][-]{subsection.2.13.2}{Atributos importantes}{section.2.13}% 78
 \BOOKMARK [2][-]{subsection.2.13.3}{Trayectorias del Caso de Uso}{section.2.13}% 79
-\BOOKMARK [1][-]{section.2.14}{CU15 Consultar inventario}{chapter.2}% 80
-\BOOKMARK [2][-]{subsection.2.14.1}{Descripci\363n completa}{section.2.14}% 81
-\BOOKMARK [2][-]{subsection.2.14.2}{Atributos importantes}{section.2.14}% 82
-\BOOKMARK [2][-]{subsection.2.14.3}{Trayectorias del Caso de Uso}{section.2.14}% 83
-\BOOKMARK [2][-]{subsection.2.14.4}{IU1501 Men\372 }{section.2.14}% 84
-\BOOKMARK [2][-]{subsection.2.14.5}{IU1502 Consultar Inventario }{section.2.14}% 85
-\BOOKMARK [1][-]{section.2.15}{CU16 Registrar empleado}{chapter.2}% 86
+\BOOKMARK [2][-]{subsection.2.13.4}{IU13A Pantalla de Registro de Multa}{section.2.13}% 80
+\BOOKMARK [2][-]{subsection.2.13.5}{IU13B Pantalla de Confirmaci\363n de multa}{section.2.13}% 81
+\BOOKMARK [1][-]{section.2.14}{CU14 Generar Multas}{chapter.2}% 82
+\BOOKMARK [2][-]{subsection.2.14.1}{Descripci\363n completa}{section.2.14}% 83
+\BOOKMARK [2][-]{subsection.2.14.2}{Atributos importantes}{section.2.14}% 84
+\BOOKMARK [2][-]{subsection.2.14.3}{Trayectorias del Caso de Uso}{section.2.14}% 85
+\BOOKMARK [1][-]{section.2.15}{CU15 Consultar inventario}{chapter.2}% 86
 \BOOKMARK [2][-]{subsection.2.15.1}{Descripci\363n completa}{section.2.15}% 87
 \BOOKMARK [2][-]{subsection.2.15.2}{Atributos importantes}{section.2.15}% 88
 \BOOKMARK [2][-]{subsection.2.15.3}{Trayectorias del Caso de Uso}{section.2.15}% 89
-\BOOKMARK [2][-]{subsection.2.15.4}{IU16 Pantalla de Registro de Empleados}{section.2.15}% 90
-\BOOKMARK [1][-]{section.2.16}{CU17 Crear nuevo rol}{chapter.2}% 91
-\BOOKMARK [2][-]{subsection.2.16.1}{Descripci\363n completa}{section.2.16}% 92
-\BOOKMARK [2][-]{subsection.2.16.2}{Atributos importantes}{section.2.16}% 93
-\BOOKMARK [2][-]{subsection.2.16.3}{Trayectorias del Caso de Uso}{section.2.16}% 94
-\BOOKMARK [2][-]{subsection.2.16.4}{IU17 Crear Rol}{section.2.16}% 95
-\BOOKMARK [1][-]{section.2.17}{CU18 Consultar rol}{chapter.2}% 96
-\BOOKMARK [2][-]{subsection.2.17.1}{Descripci\363n completa}{section.2.17}% 97
-\BOOKMARK [2][-]{subsection.2.17.2}{Atributos importantes}{section.2.17}% 98
-\BOOKMARK [2][-]{subsection.2.17.3}{Trayectorias del Caso de Uso}{section.2.17}% 99
-\BOOKMARK [2][-]{subsection.2.17.4}{IU18 Consultar Rol}{section.2.17}% 100
-\BOOKMARK [1][-]{section.2.18}{CU19 Modificar rol}{chapter.2}% 101
-\BOOKMARK [2][-]{subsection.2.18.1}{Descripci\363n completa}{section.2.18}% 102
-\BOOKMARK [2][-]{subsection.2.18.2}{Atributos importantes}{section.2.18}% 103
-\BOOKMARK [2][-]{subsection.2.18.3}{Trayectorias del Caso de Uso}{section.2.18}% 104
-\BOOKMARK [2][-]{subsection.2.18.4}{IU19 Modificar rol}{section.2.18}% 105
-\BOOKMARK [1][-]{section.2.19}{CU20 Eliminar rol}{chapter.2}% 106
-\BOOKMARK [2][-]{subsection.2.19.1}{Descripci\363n completa}{section.2.19}% 107
-\BOOKMARK [2][-]{subsection.2.19.2}{Atributos importantes}{section.2.19}% 108
-\BOOKMARK [2][-]{subsection.2.19.3}{Trayectorias del Caso de Uso}{section.2.19}% 109
-\BOOKMARK [2][-]{subsection.2.19.4}{IU20 Eliminar Rol}{section.2.19}% 110
-\BOOKMARK [1][-]{section.2.20}{Catalogo de Mensajes}{chapter.2}% 111
+\BOOKMARK [2][-]{subsection.2.15.4}{IU1501 Men\372 }{section.2.15}% 90
+\BOOKMARK [2][-]{subsection.2.15.5}{IU1502 Consultar Inventario }{section.2.15}% 91
+\BOOKMARK [1][-]{section.2.16}{CU16 Registrar empleado}{chapter.2}% 92
+\BOOKMARK [2][-]{subsection.2.16.1}{Descripci\363n completa}{section.2.16}% 93
+\BOOKMARK [2][-]{subsection.2.16.2}{Atributos importantes}{section.2.16}% 94
+\BOOKMARK [2][-]{subsection.2.16.3}{Trayectorias del Caso de Uso}{section.2.16}% 95
+\BOOKMARK [2][-]{subsection.2.16.4}{IU16 Pantalla de Registro de Empleados}{section.2.16}% 96
+\BOOKMARK [1][-]{section.2.17}{CU17 Crear nuevo rol}{chapter.2}% 97
+\BOOKMARK [2][-]{subsection.2.17.1}{Descripci\363n completa}{section.2.17}% 98
+\BOOKMARK [2][-]{subsection.2.17.2}{Atributos importantes}{section.2.17}% 99
+\BOOKMARK [2][-]{subsection.2.17.3}{Trayectorias del Caso de Uso}{section.2.17}% 100
+\BOOKMARK [2][-]{subsection.2.17.4}{IU17 Crear Rol}{section.2.17}% 101
+\BOOKMARK [1][-]{section.2.18}{CU18 Consultar rol}{chapter.2}% 102
+\BOOKMARK [2][-]{subsection.2.18.1}{Descripci\363n completa}{section.2.18}% 103
+\BOOKMARK [2][-]{subsection.2.18.2}{Atributos importantes}{section.2.18}% 104
+\BOOKMARK [2][-]{subsection.2.18.3}{Trayectorias del Caso de Uso}{section.2.18}% 105
+\BOOKMARK [2][-]{subsection.2.18.4}{IU18 Consultar Rol}{section.2.18}% 106
+\BOOKMARK [1][-]{section.2.19}{CU19 Modificar rol}{chapter.2}% 107
+\BOOKMARK [2][-]{subsection.2.19.1}{Descripci\363n completa}{section.2.19}% 108
+\BOOKMARK [2][-]{subsection.2.19.2}{Atributos importantes}{section.2.19}% 109
+\BOOKMARK [2][-]{subsection.2.19.3}{Trayectorias del Caso de Uso}{section.2.19}% 110
+\BOOKMARK [2][-]{subsection.2.19.4}{IU19 Modificar rol}{section.2.19}% 111
+\BOOKMARK [1][-]{section.2.20}{CU20 Eliminar rol}{chapter.2}% 112
+\BOOKMARK [2][-]{subsection.2.20.1}{Descripci\363n completa}{section.2.20}% 113
+\BOOKMARK [2][-]{subsection.2.20.2}{Atributos importantes}{section.2.20}% 114
+\BOOKMARK [2][-]{subsection.2.20.3}{Trayectorias del Caso de Uso}{section.2.20}% 115
+\BOOKMARK [2][-]{subsection.2.20.4}{IU20 Eliminar Rol}{section.2.20}% 116
+\BOOKMARK [1][-]{section.2.21}{CU21 Pedir libro a biblioteca}{chapter.2}% 117
+\BOOKMARK [2][-]{subsection.2.21.1}{Descripci\363n completa}{section.2.21}% 118
+\BOOKMARK [2][-]{subsection.2.21.2}{Atributos importantes}{section.2.21}% 119
+\BOOKMARK [2][-]{subsection.2.21.3}{Trayectorias del Caso de Uso}{section.2.21}% 120
+\BOOKMARK [2][-]{subsection.2.21.4}{IU21.1 Pedir libro a biblioteca b\372squeda}{section.2.21}% 121
+\BOOKMARK [2][-]{subsection.2.21.5}{IU21.2 Pedir libro a biblioteca consulta}{section.2.21}% 122
+\BOOKMARK [1][-]{section.2.22}{CU22 Prestar libro a biblioteca}{chapter.2}% 123
+\BOOKMARK [2][-]{subsection.2.22.1}{Descripci\363n completa}{section.2.22}% 124
+\BOOKMARK [2][-]{subsection.2.22.2}{Atributos importantes}{section.2.22}% 125
+\BOOKMARK [2][-]{subsection.2.22.3}{Trayectorias del Caso de Uso}{section.2.22}% 126
+\BOOKMARK [2][-]{subsection.2.22.4}{IU22.1 Prestar libro a biblioteca}{section.2.22}% 127
+\BOOKMARK [1][-]{section.2.23}{Catalogo de Mensajes}{chapter.2}% 128
