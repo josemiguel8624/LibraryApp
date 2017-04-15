@@ -23,16 +23,39 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referencia a un Punto de Extensión
-%usar \UCExtensionPoint{Id}{nombre}
+%use \UCExtensionPoint{Id}{nombre}
 \newcommand{\UCExtensionPoint}[2]{%
 	\hypersetup{linkcolor=UCExtensionPointColor}%
 	\hyperlink{#1}{ $[$PE #1 #2$]$}%
 	\hypersetup{linkcolor=refColor}
 }%
 
+
+
+\newcommand{\UCRealization}[2]{%
+	\hypersetup{linkcolor=UCRealizationColor}%
+	\hyperlink{#1}{ $[$Realizado por #1 #2$]$}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+
+\newcommand{\UCref}[1]{%
+	\hypersetup{linkcolor=UCExtensionPointColor}%
+	\hyperlink{#1}{#1}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+
+\newcommand{\FRMref}[2]{%
+	\hypersetup{linkcolor=FRMColor}%
+	\hyperlink{#1}{#1 #2}%
+	\hypersetup{linkcolor=refColor}%
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referencia para una Regla de Negocio
-%usar \BRref{Id}{nombre}
+%use \UCBussinesRule{Id}{nombre}
 \newcommand{\BRref}[2]{%
 	\hypersetup{linkcolor=UCBussinesRuleColor}%
 	\hyperlink{#1}{#1~#2}%
@@ -41,26 +64,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referencia para un Mensaje
-%usar \MSGref{Id}{nombre}
+%use \UCMessage{Id}{nombre}
 \newcommand{\MSGref}[2]{%
 	\hypersetup{linkcolor=UCBussinesRuleColor}%
 	\hyperlink{#1}{#1 #2}%
 	\hypersetup{linkcolor=refColor}%
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Comandos para referencias IU
-% use \IUref{Id}{Nombre}
-\newcommand{\IUref}[2]{%
-\includegraphics[height=10pt]{images/uc/iu}~%
-\hypersetup{linkcolor=UCInterfaceColor}%
-\hyperlink{#1}{#1 #2}%
-\hypersetup{linkcolor=refColor}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Comandos para referenciar una trayectoria
-% use \Trayref{Id}
 \newcommand{\Trayref}[1]{$[$Trayectoria #1$]$}
 \newcommand{\RFref}[1]{%
 \hypersetup{linkcolor=RFReferenceColor}%
@@ -69,36 +79,29 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Comandos para referenciar un caso de uso
-% use \UCref{Id}
-\newcommand{\UCref}[1]{%
-	\hypersetup{linkcolor=UCExtensionPointColor}%
-	\hyperlink{#1}{#1}%
-	\hypersetup{linkcolor=refColor}%
+% Comandos para la descripción de Use Cases
+% use \UCInterface{Id}{Nombre}
+\newcommand{\IUref}[2]{%
+\includegraphics[height=10pt]{images/uc/iu}~%
+\hypersetup{linkcolor=UCInterfaceColor}%
+\hyperlink{#1}{#1 #2}%
+\hypersetup{linkcolor=refColor}%
 }
 
-
+\newcommand{\Emailref}[2]{%
+\includegraphics[height=10pt]{images/uc/email}~%
+\hypersetup{linkcolor=UCInterfaceColor}%
+\hyperlink{#1}{#1 #2}%
+\hypersetup{linkcolor=refColor}%
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comandos para la descripción de Use Cases
+% use \UCInterface{Id}{Nombre}
 \newcommand{\CMDref}[2]{%
 \includegraphics[height=10pt]{images/cmd}~%
 \hypersetup{linkcolor=UCCommandColor}%
 \hyperlink{#1}{#1 #2}%
 \hypersetup{linkcolor=refColor}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\UCRealization}[2]{%
-	\hypersetup{linkcolor=UCRealizationColor}%
-	\hyperlink{#1}{ $[$Realizado por #1 #2$]$}%
-	\hypersetup{linkcolor=refColor}%
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\FRMref}[2]{%
-	\hypersetup{linkcolor=FRMColor}%
-	\hyperlink{#1}{#1 #2}%
-	\hypersetup{linkcolor=refColor}%
 }
 
 
@@ -112,10 +115,19 @@
 		\end{center}%
 	\end{figure}%
 }
+\newcommand{\Emailfig}[4][0.7]{%
+	\begin{figure}[ht!]%
+		\begin{center}%
+			\hypertarget{#3}{\includegraphics[width=#1\textwidth]{images/#2}}%
+			\caption{#3 #4}%
+			\label{#3}%
+		\end{center}%
+	\end{figure}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Item de descripción de un Use Case
-% usar \UCitem{item}{descripción}
+% use \UCitem{item}{descripción}
 \newcommand{\UCitem}[2]{{\bf {#1:}} & {#2} \\ \hline}
 
 
@@ -239,18 +251,185 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definición de los iconos para usar en los pasos
 % de una trayectoria actor o sistema
+%---------Iconos Inscripción--------- 
+\newcommand\IUbuttonVer{\includegraphics[height=11pt]{images/gui/inscripcion/BxI}}
+\newcommand\IUbuttonEditar{\includegraphics[height=11pt]{images/gui/inscripcion/Bx1I}}
+\newcommand\IUbuttonActualizar{\includegraphics[height=11pt]{images/gui/inscripcion/Bx2I}}
+\newcommand\IUbuttonCancelar{\includegraphics[height=11pt]{images/gui/inscripcion/Bx3I}}
+\newcommand\IUbuttonComprobante{\includegraphics[height=11pt]{images/gui/inscripcion/Bx4}}
+\newcommand\IUbuttonNuevoIngreso{\includegraphics[height=11pt]{images/gui/inscripcion/B5I}}
+\newcommand\IUbuttonBuscarAlumno{\includegraphics[height=11pt]{images/gui/inscripcion/B6I}}
+\newcommand\IUbuttonCompleto{\includegraphics[height=11pt]{images/gui/inscripcion/B7I}}
+\newcommand\IUbuttonIncompleto{\includegraphics[height=11pt]{images/gui/inscripcion/B8I}}
+\newcommand\IUbuttonPendiente{\includegraphics[height=11pt]{images/gui/inscripcion/B9I}}
+\newcommand\IUbuttonBuscarxPrebo{\includegraphics[height=11pt]{images/gui/inscripcion/BuscarxPrebo}}
+\newcommand\IUbuttonBuscarxNombre{\includegraphics[height=11pt]{images/gui/inscripcion/BuscarxNombre}}
+\newcommand\IUbuttonBuscarlupa{\includegraphics[height=11pt]{images/gui/inscripcion/Buscarlupa}}
+\newcommand\IUbuttonSiguiente{\includegraphics[height=11pt]{images/gui/inscripcion/B10I}}
+\newcommand\IUbuttonimprimir{\includegraphics[height=11pt]{images/gui/inscripcion/imprimir}}
+\newcommand\IUbuttonGestionar{\includegraphics[height=11pt]{images/gui/inscripcion/gestionar}}
+\newcommand\IUbuttonInicio{\includegraphics[height=11pt]{images/gui/inscripcion/inicio}}
+\newcommand\IUbuttonFin{\includegraphics[height=11pt]{images/gui/inscripcion/fin}}
+\newcommand\IUbuttonDefinir{\includegraphics[height=11pt]{images/gui/inscripcion/definir}}
+\newcommand\IUbuttonOK{\includegraphics[height=11pt]{images/gui/inscripcion/ok}}
+\newcommand\IUbuttonPeriodo{\includegraphics[height=11pt]{images/gui/inscripcion/btnperiodoAdmision}}
+\newcommand\IUbuttonAceptarI{\includegraphics[height=11pt]{images/gui/inscripcion/aceptar}}
+\newcommand\IUbuttonNotificarError{\includegraphics[height=11pt]{images/gui/inscripcion/NotificarError}}
+\newcommand\IUbuttonEnviarCorreodeNotificacion{\includegraphics[height=11pt]{images/gui/inscripcion/EnviarCorreoDeNotificacion}}
+\newcommand\IUbuttonRevisar{\includegraphics[height=11pt]{images/gui/inscripcion/Revisar}}
+\newcommand\IUbuttonAbrir{\includegraphics[height=11pt]{images/gui/inscripcion/Abrir}}
+\newcommand\IUbuttonTerminarYNotificar{\includegraphics[height=11pt]{images/gui/inscripcion/TerminaryNotificar}}
+\newcommand\IUbuttonBotonAdmision{\includegraphics[height=11pt]{images/gui/inscripcion/botonAdmision}}
+\newcommand\IUbuttonRegistrate{\includegraphics[height=11pt]{images/gui/inscripcion/registrate}}
+\newcommand\IUbuttonCorreo{\includegraphics[height=11pt]{images/gui/inscripcion/correo}}
+\newcommand\IUbuttonConfirmaCorreo{\includegraphics[height=11pt]{images/gui/inscripcion/confirmaCorreo}}
+\newcommand\IUbuttonRobot{\includegraphics[height=11pt]{images/gui/inscripcion/robot}}
+\newcommand\IUbuttonEnviar{\includegraphics[height=11pt]{images/gui/inscripcion/enviar}}
+\newcommand\IUbuttonFolio{\includegraphics[height=11pt]{images/gui/inscripcion/folio}}
+\newcommand\IUbuttonNumeroFolio{\includegraphics[height=11pt]{images/gui/inscripcion/numeroFolio}}
+
+\newcommand\IUbuttonRegistrarDatos{\includegraphics[height=11pt]{images/gui/inscripcion/RegistrarDatos}}
+\newcommand\IUbuttonImprimirSolicitudRegistro{\includegraphics[height=11pt]{images/gui/inscripcion/ImprimirSolicituRegistro}}
+\newcommand\IUbuttonEnviarDocumentos{\includegraphics[height=11pt]{images/gui/inscripcion/EnviarDocumentos}}
+\newcommand\IUSeleccionarArchivo{\includegraphics[height=11pt]{images/gui/inscripcion/SeleccionarArchivo}}
+\newcommand\IUbuttonEliminar{\includegraphics[height=11pt]{images/gui/inscripcion/Eliminar}}
+\newcommand\IUbuttonEstudiantesAdmitidos{\includegraphics[height=11pt]{images/gui/inscripcion/EstudiantesAdmitidos}}
+\newcommand\IUbuttonAciertos{\includegraphics[height=11pt]{images/gui/inscripcion/Aciertos}}
+\newcommand\IUbuttonGuardar{\includegraphics[height=11pt]{images/gui/inscripcion/Guardar}}
+\newcommand\IUbuttonCerrarProceso{\includegraphics[height=11pt]{images/gui/inscripcion/CerrarProceso}}
+\newcommand\IUbuttonTerminarProceso{\includegraphics[height=11pt]{images/gui/inscripcion/TerminarProceso}}
+\newcommand\IUbuttonBuscarPorFolio{\includegraphics[height=11pt]{images/gui/inscripcion/BuscarPorFolio}}
+\newcommand\IUbuttonBuscarAspirante{\includegraphics[height=11pt]{images/gui/inscripcion/BuscarAspirante}}
+\newcommand\IUbuttonSearch{\includegraphics[height=11pt]{images/gui/inscripcion/Search}}
+\newcommand\IUbuttonBuscarPorNombre{\includegraphics[height=11pt]{images/gui/inscripcion/BuscarPorNombre}}
+\newcommand\IUbuttonSiguienteI{\includegraphics[height=11pt]{images/gui/inscripcion/SiguienteI}}
+\newcommand\IUbuttonComprobanteIns{\includegraphics[height=11pt]{images/gui/inscripcion/Comprobante}}
+\newcommand\IUbuttonCambiargrupo{\includegraphics[height=11pt]{images/gui/inscripcion/Cambiargrupo}}
+\newcommand\IUbuttonInicioCasa{\includegraphics[height=11pt]{images/gui/inscripcion/BotonInsinicio}}
+
+\newcommand\IUbuttonGuardarnewgrup{\includegraphics[height=11pt]{images/gui/inscripcion/Guadarnuevogrupo}}
+\newcommand\IUbuttonCancelnew{\includegraphics[height=11pt]{images/gui/inscripcion/Cancelnuevogrupo}}
+\newcommand\IUbuttonMenuActualizar{\includegraphics[height=11pt]{images/gui/inscripcion/MActualizar}}
+
+
+
+%---------Iconos Inscripción FIN--------- 
 \newcommand\UCactor{\includegraphics[height=11pt]{images/uc/actor}}
 \newcommand\UCsist{\includegraphics[height=11pt]{images/uc/usecase}}
+\newcommand\IUbuttonAsignar{\includegraphics[height=11pt]{images/gui/evaluacion/B1}}
+\newcommand\IUbuttonCalendario{\includegraphics[height=11pt]{images/gui/evaluacion/B2}}
+\newcommand\IUbuttonEstablecerPeriodo{\includegraphics[height=11pt]{images/gui/evaluacion/B3}}
+\newcommand\IUbuttonCambiar{\includegraphics[height=11pt]{images/gui/evaluacion/cambiar}}
+\newcommand\IUbuttonTache{\includegraphics[height=11pt]{images/gui/evaluacion/B4}}
+\newcommand\IUbuttonAsignarCalificacion{\includegraphics[height=11pt]{images/gui/evaluacion/AsignarCalificacion}}
+\newcommand\IUbuttonGuardarCalificacion{\includegraphics[height=11pt]{images/gui/evaluacion/Guardar}}
+\newcommand\IUbuttonAceptar{\includegraphics[height=11pt]{images/gui/evaluacion/Aceptar}}
+\newcommand\IUbuttonModificarCalificacion{\includegraphics[height=11pt]{images/gui/evaluacion/Modificar}}
+\newcommand\IUbuttonVisualizarActa{\includegraphics[height=11pt]{images/gui/evaluacion/VisualizarActa}}
+\newcommand\IUbuttonGenerarPDF{\includegraphics[height=11pt]{images/gui/evaluacion/GenerarPDF}}
+\newcommand\IUbuttonIngresar{\includegraphics[height=11pt]{images/gui/evaluacion/Ingresar}}
 
 
+
+
+%---------Iconos Generación Horarios--------- 
+\newcommand\IUbuttonNuevo{\includegraphics[height=11pt]{images/gui/nuevo}}
+\newcommand\IUbuttonObtenerGrupos{\includegraphics[height=11pt]{images/gui/horarios/obtenerGrupos}}
+\newcommand\IUbuttonObtenerProfesores{\includegraphics[height=11pt]{images/gui/horarios/obtenerProfesores}}
+\newcommand\IUbuttonCrearHorario{\includegraphics[height=11pt]{images/gui/horarios/crearHorario}}
+\newcommand\IUbuttonDespliega{\includegraphics[height=11pt]{images/gui/horarios/Despliega}}
+\newcommand\IUbuttonEditarIcon{\includegraphics[height=11pt]{images/gui/editar}}
+\newcommand\IUbuttonConsultarGH{\includegraphics[height=11pt]{images/gui/horarios/consultar}}
+\newcommand\IUbuttonIntercambiarH{\includegraphics[height=11pt]{images/gui/horarios/intercambiarHorario}}
+\newcommand\IUbuttonIntercambiarP{\includegraphics[height=11pt]{images/gui/horarios/intercambiarProfesor}}
+\newcommand\IUbuttonIntercambiarM{\includegraphics[height=11pt]{images/gui/horarios/intercambiarMateria}}
+\newcommand\IUbuttonIntercambiar{\includegraphics[height=11pt]{images/gui/horarios/intercambiar}}
+\newcommand\IUbuttonCancelarGH{\includegraphics[height=11pt]{images/gui/cancelar}}
+\newcommand\IUbuttonEliminarGH{\includegraphics[height=11pt]{images/gui/eliminar}}
+\newcommand\IUbuttonAceptarGH{\includegraphics[height=11pt]{images/gui/aceptar}}
+\newcommand\IUbuttonAgregarGH{\includegraphics[height=11pt]{images/gui/horarios/agregar}}
+\newcommand\IUbuttonGuardarGH{\includegraphics[height=11pt]{images/gui/horarios/guardar}}
+\newcommand\IUbuttonPublicar{\includegraphics[height=11pt]{images/gui//horarios/Publicar}}
+\newcommand\IUbuttonSi{\includegraphics[height=11pt]{images/gui//horarios/Si}}
+\newcommand\IUbuttonCancel{\includegraphics[height=11pt]{images/gui//horarios/Cancel}}
+\newcommand\IUbuttonOk{\includegraphics[height=11pt]{images/gui//horarios/Ok}}
+\newcommand\IUbuttonModificar{\includegraphics[height=11pt]{images/gui//horarios/Modificar}}
+\newcommand\IUbuttonCalendarioGH{\includegraphics[height=11pt]{images/gui//horarios/Calendario}}
+\newcommand\IUbuttonDefinirGH{\includegraphics[height=11pt]{images/gui//horarios/Definir}}
+\newcommand\IUbuttonGestionarGH{\includegraphics[height=11pt]{images/gui//horarios/Gestionar}}
+\newcommand\IUbuttonAsignarProfesor{\includegraphics[height=11pt]{images/gui//horarios/asignarProfesor}}
+\newcommand\IUbuttonGuardarHorarios{\includegraphics[height=11pt]{images/gui//horarios/guardarHorarios}}
+\newcommand\IUbuttonAgregarMateria{\includegraphics[height=11pt]{images/gui//horarios/agregarMateria}}
+%\newcommand\IUbuttonFlechaabajo{\includegraphics[height=11pt]{images/gui/horarios/Despliega}}
+\newcommand\IUbuttonNombreProfesor{\includegraphics[height=11pt]{images/gui//horarios/nombreProfesor}}
+\newcommand\IUbuttonCrearSolicitud{\includegraphics[height=11pt]{images/gui//horarios/crearSolicitud}}
+\newcommand\IUbuttonAgregarP{\includegraphics[height=11pt]{images/gui//horarios/AgregarP}}
+\newcommand\IUbuttonBorrar{\includegraphics[height=11pt]{images/gui//horarios/Borrar}}
+\newcommand\IUbuttonCambiarGH{\includegraphics[height=11pt]{images/gui//horarios/Cambiar}}
+
+
+
+%---------Iconos Generación Horarios FIN--------- 
+
+%---------Iconos Reinscripción-------- 
+\newcommand\IUbuttonHora{\includegraphics[height=11pt]{images/gui/reinscripcion/Hora}}
+\newcommand\IUbuttonCheckBox{\includegraphics[height=11pt]{images/gui/reinscripcion/CheckBox}}
+\newcommand\IUbuttonAgregarmateria{\includegraphics[height=11pt]{images/gui/reinscripcion/Agregarmateria}}
+\newcommand\IUbuttonAgregar{\includegraphics[height=11pt]{images/gui/reinscripcion/Agregar}}
+\newcommand\IUbuttonReinscripcion{\includegraphics[height=11pt]{images/gui/reinscripcion/Reinscripcion}}
+\newcommand\IUbuttonEliminarmateria{\includegraphics[height=11pt]{images/gui/reinscripcion/Eliminarmateria}}
+\newcommand\IUbuttonGuardarm{\includegraphics[height=11pt]{images/gui/reinscripcion/Guardarm}}
+\newcommand\IUbuttonAceptaR{\includegraphics[height=11pt]{images/gui/reinscripcion/Aceptar}}
+\newcommand\IUbuttonBuscarAlumnoR{\includegraphics[height=11pt]{images/gui/reinscripcion/BuscarAlumno}}
+\newcommand\IUbuttonBuscar{\includegraphics[height=11pt]{images/gui/reinscripcion/Buscar}}
+\newcommand\IUbuttonBuscarPorR{\includegraphics[height=11pt]{images/gui/reinscripcion/BuscarPorR}}
+\newcommand\IUbuttonApellidoR{\includegraphics[height=11pt]{images/gui/reinscripcion/ApellidoR}}
+\newcommand\IUbuttonVerHorario{\includegraphics[height=11pt]{images/gui/reinscripcion/VerHorario}}
+\newcommand\IUbuttonImprimir{\includegraphics[height=11pt]{images/gui/reinscripcion/Imprimir}}
+\newcommand\IUbuttonComprobanteInscripcion{\includegraphics[height=11pt]{images/gui/reinscripcion/BotoncomprobanteInscripcion}}
+\newcommand\IUbuttonDesplegable{\includegraphics[height=11pt]{images/gui/reinscripcion/Desplegable}}
+\newcommand\IUbuttonDesplegableR{\includegraphics[height=11pt]{images/gui/reinscripcion/DesplegableR}}
+\newcommand\IUbuttonBusquedaTurno{\includegraphics[height=11pt]{images/gui/reinscripcion/BusquedaTurno}}
+\newcommand\IUbuttonBusquedaSemestre{\includegraphics[height=11pt]{images/gui/reinscripcion/BusquedaSemestre}}
+\newcommand\IUbuttonBusquedaGrupo{\includegraphics[height=11pt]{images/gui/reinscripcion/BusquedaGrupo}}
+\newcommand\IUbuttonConsultarHorarios{\includegraphics[height=11pt]{images/gui/reinscripcion/ConsultarHorarios}}
+\newcommand\IUbuttonOkR{\includegraphics[height=11pt]{images/gui/reinscripcion/Ok}}
+\newcommand\IUbuttonGestionarPeriodoR{\includegraphics[height=11pt]{images/gui/reinscripcion/GestionarPeriodoR}}
+\newcommand\IUbuttonConsultarPeriodosR{\includegraphics[height=11pt]{images/gui/reinscripcion/ConsultarPeriodosR}}
+\newcommand\IUbuttonModificarR{\includegraphics[height=11pt]{images/gui/reinscripcion/ModificarR}}
+\newcommand\IUbuttonCalendarioR{\includegraphics[height=11pt]{images/gui/reinscripcion/CalendarioR}}
+\newcommand\IUbuttonVerHorarioR{\includegraphics[height=11pt]{images/gui/reinscripcion/VerHorarioR}}
+\newcommand\IUbuttonConsultarCitaR{\includegraphics[height=11pt]{images/gui/reinscripcion/ConsultarCitaR}}
+\newcommand\IUbuttonConsultarR{\includegraphics[height=11pt]{images/gui/reinscripcion/ConsultarR}}	
+\newcommand\IUbuttonGuardarR{\includegraphics[height=11pt]{images/gui/reinscripcion/GuardarR}}
+\newcommand\IUbuttonBarra{\includegraphics[height=11pt]{images/gui/reinscripcion/b1pdf}}
+%\newcommand\IUbuttonBuscar{\includegraphics[height=11pt]{images/gui/reinscripcion/b2pdf}}
+\newcommand\IUbuttonPanterior{\includegraphics[height=11pt]{images/gui/reinscripcion/b3pdf}}
+\newcommand\IUbuttonPsig{\includegraphics[height=11pt]{images/gui/reinscripcion/b4pdf}}
+\newcommand\IUbuttonReducir{\includegraphics[height=11pt]{images/gui/reinscripcion/b5pdf}}
+\newcommand\IUbuttonAumentar{\includegraphics[height=11pt]{images/gui/reinscripcion/b6pdf}}
+%\newcommand\IUbuttonImprimir{\includegraphics[height=11pt]{images/gui/reinscripcion/b7pdf}}
+\newcommand\IUbuttonDescargar{\includegraphics[height=11pt]{images/gui/reinscripcion/b8pdf}}
+\newcommand\IUbuttonVista{\includegraphics[height=11pt]{images/gui/reinscripcion/b9pdf}}
+\newcommand\IUbuttonHerramientas{\includegraphics[height=11pt]{images/gui/reinscripcion/b10pdf}}
+\newcommand\IUbuttonAc{\includegraphics[height=11pt]{images/gui/reinscripcion/ac}}
+\newcommand\IUbuttonEstablecerPeriodoR{\includegraphics[height=11pt]{images/gui/reinscripcion/EstablecerPeriodo}}
+\newcommand\IUbuttonHorarioR{\includegraphics[height=11pt]{images/gui/reinscripcion/Horario}}
+\newcommand\IUbuttonBorraR{\includegraphics[height=11pt]{images/gui/reinscripcion/btn}}
+%\newcommand\IUbuttonCancel{\includegraphics[height=11pt]{images/gui/reinscripcion/cancelar}}
+%%%%
+
+
+
+
+
+%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comandos para agregar un paso a una trayectoria, el paso puede ser 
 % dado por el actor \UCactor o por el sistema \UCsist, por defecto el 
 % paso es dado por el sistema.
 % usar \UCpaso[\UCactor]
 \newcommand{\UCpaso}[1][\UCsist]{\item #1 }
-
-
 
 \newenvironment{BussinesRule}[2]%linea original
 {%
@@ -262,6 +441,7 @@
 	\end{description}
 }
 
+<<<<<<< HEAD
 
 \newenvironment{Message}[2]%linea original
 {%
@@ -281,12 +461,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Agregar salto de línea en un paso
 %usar \BRitem
+=======
+>>>>>>> refs/remotes/Bardofaragon/master
 \newcommand{\BRitem}[1][]{\item[#1]}
 
+\newenvironment{Message}[2]%linea original
+{%
+	\hypertarget{#1}{}%Linea original
+	\noindent{\large{\bf Mensaje:} #1 #2}%line Original
+	\begin{description}\addtolength{\itemsep}{-0.5\baselineskip}%
+}
+{%
+	\end{description}
+
+}
+
+\newcommand{\MSGitem}[1][]{\item[#1]}
  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Agregar un Item Button
-%usar \IUbutton{nombre}
 \newcommand{\IUbutton}[1]{\framebox[1.1\width][c]{#1}}
 
 \newenvironment{Citemize}%
@@ -312,7 +503,7 @@
 
 \newcommand{\Revision}%
 {\vspace{10cm}\normalsize\flushleft{\bf Revisión:} %
-\Square Aprobado \Square Rechazado \Square Corregir\\\bigskip%
+\Square Aprovado \Square Rechazado \Square Corregir\\\bigskip%
 Comentarios:\bigskip\\%
 %\begin{tabular}{p{\textwidth}} \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \end{tabular}%
 %\frame{\makebox[5cm]{asdas}}%
