@@ -1,7 +1,7 @@
 \begin{UseCase}{CU14}{Generar Multas}{
-		En este caso de uso tiene como objetivo generar las multas a las cuales los usuarios serán 			 acreedores, por no cumplir con las normas que se establecierón y que ellos aceptarón, cuando crearón su credencial para poder obtener los ejemplares de la biblioteca. Estas se les generaran solo si no cumples con las reglas establecidas.
+		Generar las multas a las cuales los usuarios serán acreedores por no cumplir las normas establecidas y aceptadas al obtener su credencial para poder obtener ejemplares de la biblioteca.
 	}
-		\UCitem{Versión}{1.0}
+		\UCitem{Versión}{1.3}
 		\UCitem{Actor}{Administrador}
 		\UCitem{Propósito}{Generar multas a los usuarios del servicio de la biblioteca que no cumplan con las condiciones de devolución.}
 		\UCitem{Entradas}{
@@ -13,7 +13,7 @@
 		}
 		\UCitem{Salidas}{
 			\begin{itemize}
-				\item Monto de multa aplicable.
+				\item Documento con la informacion relacionada a la multa generada, conteniendo: usuario, libro afectado, tipo de multa y monto.
 			\end{itemize}					
 		}
 		\UCitem{Precondiciones}{ 
@@ -29,28 +29,38 @@
 			\end{itemize}					
 		}
 		\UCitem{Autor}{
-				Miguel Tejeda
-				Erubey Martínez					
+				José Miguel Tejeda Martínez
+				Erubey Martínez de los Santos
+		}
+		\UCitem{Revisores}{
+			Luis Gerardo Jimenez Chavez
+			Diego Efraín López Orozco
+		}
+		\UCitem{Estado}{
+			Aprobado
 		}
 \end{UseCase}
 \begin{UCtrayectoria}{Principal}
-	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable de acuerdo a las reglas de negocio RN-11, RN-12, RN-13, RN-14.
-	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}. \Trayref{A}
+	\UCpaso[\UCactor] El administrador introduce el tipo de multa aplicable.
+	\UCpaso[\UCactor] El administrador introduce el identificador del usuario que será sancionado.
+	\UCpaso[\UCactor] El administrador introduce el identificador del libro afectado.
+	\UCpaso[\UCactor] El administrador selecciona el botón \IUbutton{Generar} de la interfaz: \IUref{UI14}{Generar Multa}.
+	\UCpaso[\UCsist] El sistema verifica los tipos de multa y datos introducidos de acuerdo a las reglas de negocio \BRref{RN11}{Perdida de libro}, \BRref{RN11}{Devolución a desatiempo}, \BRref{RN11}{Maltrato de libro}, \BRref{RN11}{Sustitución de libro}.\Trayref{A}
 	\UCpaso[\UCsist] El sistema obtiene el costo del libro de a cuerdo al identificador proporcionado y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema obtiene las fechas de préstamo y de devolución establecidas en la emisión anterior y se muestra en la interfaz \IUref{UI14}{Generar Multa}. \Trayref{B}
 	\UCpaso[\UCsist] El sistema calcula la multa de acuerdo a las siguientes condiciones, correspondientes al tipo de multa: \BRitem
 	1. "Pérdida de libro". Se considerará el costo total obtenido en el paso 2. \BRitem
 	2. "Devolución a destiempo". Se tomará la fecha de devolución del paso 3 y contarán los días dde diferencia entre la fecha actual. La cantidad de días multiplicará por 20. \BRitem
-	3. "Maltrato de libro". Se cosiderará el costo en el paso 2 y se multiplicara por 0.35 \BRitem
-	4. "Sustitución de libro". Se considerará el costo obtenido en el paso 2 y se multiplicará por 0.5.
+	3. "Maltrato de libro". Se cosiderará el 35 por ciento del costo en el paso 2. \BRitem
+	4. "Sustitución de libro". Se considerará el 50 por ciento del costo obtenido en el paso 2.
 	\UCpaso[\UCsist] El sistema descargara el DOC-1, en el que devolverá la cantidad de multa correspondiente al paso anterior, la cual se asociará al usuario dado por el identificador de entrada. \Trayref{B} 
-	\UCpaso[\UCsist] Se mostrará el mensaje MSG1
+	\UCpaso[\UCsist] Se mostrará el \MSGref{MSG1}{Operación exitosa}.
 \end{UCtrayectoria}
 \begin{UCtrayectoriaA}{A}{Se introdujo un número de multa inexistente}	
-			\UCpaso[\UCsist] El sistema mostrará el mensaje [E2].
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{[E2]}{Datos incorrectos}.
 			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal. 
 \end{UCtrayectoriaA}
 \begin{UCtrayectoriaA}{B}{Se presentó un error en la conexión y/o en la transacción actual con base de datos}
-			\UCpaso[\UCsist] El sistema mostrará el mensaeje [E1].
+			\UCpaso[\UCsist] El sistema mostrará el mensaeje \MSGref{[E2]}{Error de conexión con BD}.
 			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal.
 \end{UCtrayectoriaA}
